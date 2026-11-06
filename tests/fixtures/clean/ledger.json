@@ -1,0 +1,154 @@
+{
+  "transactions": [
+    {
+      "id": "bank-0001",
+      "source": "bank",
+      "date": "2026-01-05",
+      "month_idx": 0,
+      "amount_cents": 500000,
+      "counterparty": "Stripe",
+      "memo": "payout",
+      "category_hint": "Revenue"
+    },
+    {
+      "id": "bank-0002",
+      "source": "bank",
+      "date": "2026-01-01",
+      "month_idx": 0,
+      "amount_cents": -200000,
+      "counterparty": "Landlord LLC",
+      "memo": "rent",
+      "category_hint": "Rent"
+    },
+    {
+      "id": "bank-0003",
+      "source": "bank",
+      "date": "2026-02-05",
+      "month_idx": 1,
+      "amount_cents": 600000,
+      "counterparty": "Stripe",
+      "memo": "payout",
+      "category_hint": "Revenue"
+    },
+    {
+      "id": "bank-0004",
+      "source": "bank",
+      "date": "2026-02-01",
+      "month_idx": 1,
+      "amount_cents": -200000,
+      "counterparty": "Landlord LLC",
+      "memo": "rent",
+      "category_hint": "Rent"
+    },
+    {
+      "id": "bank-0005",
+      "source": "bank",
+      "date": "2026-03-05",
+      "month_idx": 2,
+      "amount_cents": 700000,
+      "counterparty": "Stripe",
+      "memo": "payout",
+      "category_hint": "Revenue"
+    },
+    {
+      "id": "bank-0006",
+      "source": "bank",
+      "date": "2026-03-01",
+      "month_idx": 2,
+      "amount_cents": -200000,
+      "counterparty": "Landlord LLC",
+      "memo": "rent",
+      "category_hint": "Rent"
+    },
+    {
+      "id": "payroll-0001",
+      "source": "payroll",
+      "date": "2026-01-31",
+      "month_idx": 0,
+      "amount_cents": -330000,
+      "counterparty": "Payroll",
+      "memo": "gross 3000.00 + taxes 300.00",
+      "category_hint": "Payroll"
+    },
+    {
+      "id": "payroll-0002",
+      "source": "payroll",
+      "date": "2026-02-28",
+      "month_idx": 1,
+      "amount_cents": -330000,
+      "counterparty": "Payroll",
+      "memo": "gross 3000.00 + taxes 300.00",
+      "category_hint": "Payroll"
+    },
+    {
+      "id": "payroll-0003",
+      "source": "payroll",
+      "date": "2026-03-31",
+      "month_idx": 2,
+      "amount_cents": -330000,
+      "counterparty": "Payroll",
+      "memo": "gross 3000.00 + taxes 300.00",
+      "category_hint": "Payroll"
+    },
+    {
+      "id": "ramp-0001",
+      "source": "ramp",
+      "date": "2026-01-10",
+      "month_idx": 0,
+      "amount_cents": -15000,
+      "counterparty": "Figma",
+      "memo": "",
+      "category_hint": "Software"
+    },
+    {
+      "id": "ramp-0002",
+      "source": "ramp",
+      "date": "2026-01-15",
+      "month_idx": 0,
+      "amount_cents": -50000,
+      "counterparty": "Upwork",
+      "memo": "",
+      "category_hint": "Contractors"
+    },
+    {
+      "id": "ramp-0003",
+      "source": "ramp",
+      "date": "2026-02-10",
+      "month_idx": 1,
+      "amount_cents": -15000,
+      "counterparty": "Figma",
+      "memo": "",
+      "category_hint": "Software"
+    },
+    {
+      "id": "ramp-0004",
+      "source": "ramp",
+      "date": "2026-02-12",
+      "month_idx": 1,
+      "amount_cents": -8000,
+      "counterparty": "Notion",
+      "memo": "",
+      "category_hint": "Software"
+    },
+    {
+      "id": "ramp-0005",
+      "source": "ramp",
+      "date": "2026-03-10",
+      "month_idx": 2,
+      "amount_cents": -15000,
+      "counterparty": "Figma",
+      "memo": "",
+      "category_hint": "Software"
+    },
+    {
+      "id": "ramp-0006",
+      "source": "ramp",
+      "date": "2026-03-20",
+      "month_idx": 2,
+      "amount_cents": -60000,
+      "counterparty": "Upwork",
+      "memo": "",
+      "category_hint": "Contractors"
+    }
+  ]
+}

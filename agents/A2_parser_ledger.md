@@ -15,7 +15,7 @@ Get from an `.xlsx` to a `CheckInput` with **no LLM**, so the checker can be dem
 5. Wire `proof check model.xlsx` in `cli.py` to run ingest → rules → assign → checker.
 
 ## Acceptance
-- On `data/lumen_clean.xlsx`: CheckInput produced, checker (once A3 lands) returns `ok: true`.
+- On `data/slope_clean.xlsx`: CheckInput produced, checker (once A3 lands) returns `ok: true`.
 - On the 3 bug workbooks: the expected invariant fires (see bug taxonomy).
 - Unit tests for the formula-ref regex and the SUMIFS criteria extractor, including wildcards and multi-criteria.
 

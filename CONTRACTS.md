@@ -1,6 +1,6 @@
 # Proof: shared contracts
 
-Every agent follows this file exactly. Changes to it go through Sophie.
+Every agent follows this file exactly. Changes to it need to be manually approved.
 
 ## Stack
 
@@ -31,7 +31,7 @@ tests/fixtures/       A0 seeds, everyone adds
 
 ## The demo company (A1 generates; everyone assumes this shape)
 
-"Lumen Labs", seed-stage SaaS, 12 months: **Jan–Dec 2026**, months indexed `0..11`.
+"Slope", seed-stage SaaS, 12 months: **Jan–Dec 2026**, months indexed `0..11`.
 
 Workbook tabs:
 - `Ramp`: card/bill-pay export: `id, date, merchant, amount, category, memo`

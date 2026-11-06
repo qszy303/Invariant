@@ -1,0 +1,217 @@
+{
+  "months": 3,
+  "lines": [
+    {
+      "line_id": "start",
+      "kind": "start",
+      "values_cents": [
+        1000000,
+        905000,
+        952000
+      ]
+    },
+    {
+      "line_id": "revenue",
+      "kind": "inflow",
+      "values_cents": [
+        500000,
+        600000,
+        700000
+      ]
+    },
+    {
+      "line_id": "payroll",
+      "kind": "outflow",
+      "values_cents": [
+        -330000,
+        -330000,
+        -330000
+      ]
+    },
+    {
+      "line_id": "saas",
+      "kind": "outflow",
+      "values_cents": [
+        -15000,
+        -23000,
+        -15000
+      ]
+    },
+    {
+      "line_id": "contractors",
+      "kind": "outflow",
+      "values_cents": [
+        -50000,
+        0,
+        -60000
+      ]
+    },
+    {
+      "line_id": "rent",
+      "kind": "outflow",
+      "values_cents": [
+        -200000,
+        -200000,
+        -200000
+      ]
+    },
+    {
+      "line_id": "other",
+      "kind": "outflow",
+      "values_cents": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "line_id": "total_outflows",
+      "kind": "subtotal",
+      "values_cents": [
+        -595000,
+        -553000,
+        -605000
+      ]
+    },
+    {
+      "line_id": "net",
+      "kind": "net",
+      "values_cents": [
+        -95000,
+        47000,
+        95000
+      ]
+    },
+    {
+      "line_id": "end",
+      "kind": "end",
+      "values_cents": [
+        905000,
+        952000,
+        1047000
+      ]
+    }
+  ],
+  "txns": [
+    {
+      "id": "bank-0001",
+      "month_idx": 0,
+      "amount_cents": 500000,
+      "assigned_line_ids": [
+        "revenue"
+      ]
+    },
+    {
+      "id": "bank-0002",
+      "month_idx": 0,
+      "amount_cents": -200000,
+      "assigned_line_ids": [
+        "rent"
+      ]
+    },
+    {
+      "id": "bank-0003",
+      "month_idx": 1,
+      "amount_cents": 600000,
+      "assigned_line_ids": [
+        "revenue"
+      ]
+    },
+    {
+      "id": "bank-0004",
+      "month_idx": 1,
+      "amount_cents": -200000,
+      "assigned_line_ids": [
+        "rent"
+      ]
+    },
+    {
+      "id": "bank-0005",
+      "month_idx": 2,
+      "amount_cents": 700000,
+      "assigned_line_ids": [
+        "revenue"
+      ]
+    },
+    {
+      "id": "bank-0006",
+      "month_idx": 2,
+      "amount_cents": -200000,
+      "assigned_line_ids": [
+        "rent"
+      ]
+    },
+    {
+      "id": "payroll-0001",
+      "month_idx": 0,
+      "amount_cents": -330000,
+      "assigned_line_ids": [
+        "payroll"
+      ]
+    },
+    {
+      "id": "payroll-0002",
+      "month_idx": 1,
+      "amount_cents": -330000,
+      "assigned_line_ids": [
+        "payroll"
+      ]
+    },
+    {
+      "id": "payroll-0003",
+      "month_idx": 2,
+      "amount_cents": -330000,
+      "assigned_line_ids": [
+        "payroll"
+      ]
+    },
+    {
+      "id": "ramp-0001",
+      "month_idx": 0,
+      "amount_cents": -15000,
+      "assigned_line_ids": [
+        "saas"
+      ]
+    },
+    {
+      "id": "ramp-0002",
+      "month_idx": 0,
+      "amount_cents": -50000,
+      "assigned_line_ids": [
+        "contractors"
+      ]
+    },
+    {
+      "id": "ramp-0003",
+      "month_idx": 1,
+      "amount_cents": -15000,
+      "assigned_line_ids": [
+        "saas"
+      ]
+    },
+    {
+      "id": "ramp-0004",
+      "month_idx": 1,
+      "amount_cents": -8000,
+      "assigned_line_ids": [
+        "saas"
+      ]
+    },
+    {
+      "id": "ramp-0005",
+      "month_idx": 2,
+      "amount_cents": -15000,
+      "assigned_line_ids": [
+        "saas"
+      ]
+    },
+    {
+      "id": "ramp-0006",
+      "month_idx": 2,
+      "amount_cents": -60000,
+      "assigned_line_ids": [
+        "contractors"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "lines": [
+    {
+      "line_id": "start",
+      "row_label": "Starting Cash",
+      "kind": "start",
+      "rule": null,
+      "confidence": 1.0,
+      "rationale": "start row derived from other rows"
+    },
+    {
+      "line_id": "revenue",
+      "row_label": "Revenue",
+      "kind": "inflow",
+      "rule": {
+        "sources": [
+          "bank"
+        ],
+        "counterparty_in": [
+          "Stripe"
+        ],
+        "category_in": [
+          "Revenue"
+        ]
+      },
+      "confidence": 1.0,
+      "rationale": "SUMIFS over Bank payouts from Stripe"
+    },
+    {
+      "line_id": "payroll",
+      "row_label": "Payroll",
+      "kind": "outflow",
+      "rule": {
+        "sources": [
+          "payroll"
+        ],
+        "counterparty_in": [],
+        "category_in": []
+      },
+      "confidence": 1.0,
+      "rationale": "SUMIFS over Payroll gross + employer taxes"
+    },
+    {
+      "line_id": "saas",
+      "row_label": "SaaS",
+      "kind": "outflow",
+      "rule": {
+        "sources": [
+          "ramp"
+        ],
+        "counterparty_in": [
+          "Figma",
+          "Notion"
+        ],
+        "category_in": [
+          "Software"
+        ]
+      },
+      "confidence": 1.0,
+      "rationale": "SUMIFS over Ramp category=Software"
+    },
+    {
+      "line_id": "contractors",
+      "row_label": "Contractors",
+      "kind": "outflow",
+      "rule": {
+        "sources": [
+          "ramp"
+        ],
+        "counterparty_in": [
+          "Upwork"
+        ],
+        "category_in": [
+          "Contractors"
+        ]
+      },
+      "confidence": 1.0,
+      "rationale": "SUMIFS over Ramp category=Contractors"
+    },
+    {
+      "line_id": "rent",
+      "row_label": "Rent",
+      "kind": "outflow",
+      "rule": {
+        "sources": [
+          "bank"
+        ],
+        "counterparty_in": [
+          "Landlord LLC"
+        ],
+        "category_in": [
+          "Rent"
+        ]
+      },
+      "confidence": 1.0,
+      "rationale": "SUMIFS over Bank rent transfers"
+    },
+    {
+      "line_id": "other",
+      "row_label": "Other",
+      "kind": "outflow",
+      "rule": {
+        "sources": [
+          "ramp"
+        ],
+        "counterparty_in": [],
+        "category_in": [
+          "Other"
+        ]
+      },
+      "confidence": 1.0,
+      "rationale": "SUMIFS over Ramp category=Other"
+    },
+    {
+      "line_id": "total_outflows",
+      "row_label": "Total Outflows",
+      "kind": "subtotal",
+      "rule": null,
+      "confidence": 1.0,
+      "rationale": "subtotal row derived from other rows"
+    },
+    {
+      "line_id": "net",
+      "row_label": "Net Cash Flow",
+      "kind": "net",
+      "rule": null,
+      "confidence": 1.0,
+      "rationale": "net row derived from other rows"
+    },
+    {
+      "line_id": "end",
+      "row_label": "Ending Cash",
+      "kind": "end",
+      "rule": null,
+      "confidence": 1.0,
+      "rationale": "end row derived from other rows"
+    }
+  ]
+}

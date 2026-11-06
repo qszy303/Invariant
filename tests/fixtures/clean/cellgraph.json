@@ -1,0 +1,371 @@
+{
+  "cells": [
+    {
+      "ref": "Runway!B2",
+      "sheet": "Runway",
+      "row_label": "Starting Cash",
+      "month_idx": 0,
+      "value_cents": 1000000,
+      "formula": null,
+      "deps": []
+    },
+    {
+      "ref": "Runway!C2",
+      "sheet": "Runway",
+      "row_label": "Starting Cash",
+      "month_idx": 1,
+      "value_cents": 905000,
+      "formula": "=B11",
+      "deps": [
+        "Runway!B11"
+      ]
+    },
+    {
+      "ref": "Runway!D2",
+      "sheet": "Runway",
+      "row_label": "Starting Cash",
+      "month_idx": 2,
+      "value_cents": 952000,
+      "formula": "=C11",
+      "deps": [
+        "Runway!C11"
+      ]
+    },
+    {
+      "ref": "Runway!B3",
+      "sheet": "Runway",
+      "row_label": "Revenue",
+      "month_idx": 0,
+      "value_cents": 500000,
+      "formula": "=SUMIFS(Bank!D:D,Bank!C:C,\"Stripe*\",Bank!B:B,\">=\"&B$1,Bank!B:B,\"<\"&EDATE(B$1,1))",
+      "deps": [
+        "Bank!B2:B400",
+        "Bank!C2:C400",
+        "Bank!D2:D400"
+      ]
+    },
+    {
+      "ref": "Runway!C3",
+      "sheet": "Runway",
+      "row_label": "Revenue",
+      "month_idx": 1,
+      "value_cents": 600000,
+      "formula": "=SUMIFS(Bank!D:D,Bank!C:C,\"Stripe*\",Bank!B:B,\">=\"&C$1,Bank!B:B,\"<\"&EDATE(C$1,1))",
+      "deps": [
+        "Bank!B2:B400",
+        "Bank!C2:C400",
+        "Bank!D2:D400"
+      ]
+    },
+    {
+      "ref": "Runway!D3",
+      "sheet": "Runway",
+      "row_label": "Revenue",
+      "month_idx": 2,
+      "value_cents": 700000,
+      "formula": "=SUMIFS(Bank!D:D,Bank!C:C,\"Stripe*\",Bank!B:B,\">=\"&D$1,Bank!B:B,\"<\"&EDATE(D$1,1))",
+      "deps": [
+        "Bank!B2:B400",
+        "Bank!C2:C400",
+        "Bank!D2:D400"
+      ]
+    },
+    {
+      "ref": "Runway!B4",
+      "sheet": "Runway",
+      "row_label": "Payroll",
+      "month_idx": 0,
+      "value_cents": 330000,
+      "formula": "=SUMIFS(Payroll!D:D,Payroll!B:B,\">=\"&B$1,Payroll!B:B,\"<\"&EDATE(B$1,1))",
+      "deps": [
+        "Payroll!B2:B400",
+        "Payroll!D2:D400"
+      ]
+    },
+    {
+      "ref": "Runway!C4",
+      "sheet": "Runway",
+      "row_label": "Payroll",
+      "month_idx": 1,
+      "value_cents": 330000,
+      "formula": "=SUMIFS(Payroll!D:D,Payroll!B:B,\">=\"&C$1,Payroll!B:B,\"<\"&EDATE(C$1,1))",
+      "deps": [
+        "Payroll!B2:B400",
+        "Payroll!D2:D400"
+      ]
+    },
+    {
+      "ref": "Runway!D4",
+      "sheet": "Runway",
+      "row_label": "Payroll",
+      "month_idx": 2,
+      "value_cents": 330000,
+      "formula": "=SUMIFS(Payroll!D:D,Payroll!B:B,\">=\"&D$1,Payroll!B:B,\"<\"&EDATE(D$1,1))",
+      "deps": [
+        "Payroll!B2:B400",
+        "Payroll!D2:D400"
+      ]
+    },
+    {
+      "ref": "Runway!B5",
+      "sheet": "Runway",
+      "row_label": "SaaS",
+      "month_idx": 0,
+      "value_cents": 15000,
+      "formula": "=SUMIFS(Ramp!D:D,Ramp!E:E,\"Software\",Ramp!B:B,\">=\"&B$1,Ramp!B:B,\"<\"&EDATE(B$1,1))",
+      "deps": [
+        "Ramp!B2:B400",
+        "Ramp!D2:D400",
+        "Ramp!E2:E400"
+      ]
+    },
+    {
+      "ref": "Runway!C5",
+      "sheet": "Runway",
+      "row_label": "SaaS",
+      "month_idx": 1,
+      "value_cents": 23000,
+      "formula": "=SUMIFS(Ramp!D:D,Ramp!E:E,\"Software\",Ramp!B:B,\">=\"&C$1,Ramp!B:B,\"<\"&EDATE(C$1,1))",
+      "deps": [
+        "Ramp!B2:B400",
+        "Ramp!D2:D400",
+        "Ramp!E2:E400"
+      ]
+    },
+    {
+      "ref": "Runway!D5",
+      "sheet": "Runway",
+      "row_label": "SaaS",
+      "month_idx": 2,
+      "value_cents": 15000,
+      "formula": "=SUMIFS(Ramp!D:D,Ramp!E:E,\"Software\",Ramp!B:B,\">=\"&D$1,Ramp!B:B,\"<\"&EDATE(D$1,1))",
+      "deps": [
+        "Ramp!B2:B400",
+        "Ramp!D2:D400",
+        "Ramp!E2:E400"
+      ]
+    },
+    {
+      "ref": "Runway!B6",
+      "sheet": "Runway",
+      "row_label": "Contractors",
+      "month_idx": 0,
+      "value_cents": 50000,
+      "formula": "=SUMIFS(Ramp!D:D,Ramp!E:E,\"Contractors\",Ramp!B:B,\">=\"&B$1,Ramp!B:B,\"<\"&EDATE(B$1,1))",
+      "deps": [
+        "Ramp!B2:B400",
+        "Ramp!D2:D400",
+        "Ramp!E2:E400"
+      ]
+    },
+    {
+      "ref": "Runway!C6",
+      "sheet": "Runway",
+      "row_label": "Contractors",
+      "month_idx": 1,
+      "value_cents": 0,
+      "formula": "=SUMIFS(Ramp!D:D,Ramp!E:E,\"Contractors\",Ramp!B:B,\">=\"&C$1,Ramp!B:B,\"<\"&EDATE(C$1,1))",
+      "deps": [
+        "Ramp!B2:B400",
+        "Ramp!D2:D400",
+        "Ramp!E2:E400"
+      ]
+    },
+    {
+      "ref": "Runway!D6",
+      "sheet": "Runway",
+      "row_label": "Contractors",
+      "month_idx": 2,
+      "value_cents": 60000,
+      "formula": "=SUMIFS(Ramp!D:D,Ramp!E:E,\"Contractors\",Ramp!B:B,\">=\"&D$1,Ramp!B:B,\"<\"&EDATE(D$1,1))",
+      "deps": [
+        "Ramp!B2:B400",
+        "Ramp!D2:D400",
+        "Ramp!E2:E400"
+      ]
+    },
+    {
+      "ref": "Runway!B7",
+      "sheet": "Runway",
+      "row_label": "Rent",
+      "month_idx": 0,
+      "value_cents": 200000,
+      "formula": "=SUMIFS(Bank!D:D,Bank!C:C,\"Rent*\",Bank!B:B,\">=\"&B$1,Bank!B:B,\"<\"&EDATE(B$1,1))",
+      "deps": [
+        "Bank!B2:B400",
+        "Bank!C2:C400",
+        "Bank!D2:D400"
+      ]
+    },
+    {
+      "ref": "Runway!C7",
+      "sheet": "Runway",
+      "row_label": "Rent",
+      "month_idx": 1,
+      "value_cents": 200000,
+      "formula": "=SUMIFS(Bank!D:D,Bank!C:C,\"Rent*\",Bank!B:B,\">=\"&C$1,Bank!B:B,\"<\"&EDATE(C$1,1))",
+      "deps": [
+        "Bank!B2:B400",
+        "Bank!C2:C400",
+        "Bank!D2:D400"
+      ]
+    },
+    {
+      "ref": "Runway!D7",
+      "sheet": "Runway",
+      "row_label": "Rent",
+      "month_idx": 2,
+      "value_cents": 200000,
+      "formula": "=SUMIFS(Bank!D:D,Bank!C:C,\"Rent*\",Bank!B:B,\">=\"&D$1,Bank!B:B,\"<\"&EDATE(D$1,1))",
+      "deps": [
+        "Bank!B2:B400",
+        "Bank!C2:C400",
+        "Bank!D2:D400"
+      ]
+    },
+    {
+      "ref": "Runway!B8",
+      "sheet": "Runway",
+      "row_label": "Other",
+      "month_idx": 0,
+      "value_cents": 0,
+      "formula": "=SUMIFS(Ramp!D:D,Ramp!E:E,\"Other\",Ramp!B:B,\">=\"&B$1,Ramp!B:B,\"<\"&EDATE(B$1,1))",
+      "deps": [
+        "Ramp!B2:B400",
+        "Ramp!D2:D400",
+        "Ramp!E2:E400"
+      ]
+    },
+    {
+      "ref": "Runway!C8",
+      "sheet": "Runway",
+      "row_label": "Other",
+      "month_idx": 1,
+      "value_cents": 0,
+      "formula": "=SUMIFS(Ramp!D:D,Ramp!E:E,\"Other\",Ramp!B:B,\">=\"&C$1,Ramp!B:B,\"<\"&EDATE(C$1,1))",
+      "deps": [
+        "Ramp!B2:B400",
+        "Ramp!D2:D400",
+        "Ramp!E2:E400"
+      ]
+    },
+    {
+      "ref": "Runway!D8",
+      "sheet": "Runway",
+      "row_label": "Other",
+      "month_idx": 2,
+      "value_cents": 0,
+      "formula": "=SUMIFS(Ramp!D:D,Ramp!E:E,\"Other\",Ramp!B:B,\">=\"&D$1,Ramp!B:B,\"<\"&EDATE(D$1,1))",
+      "deps": [
+        "Ramp!B2:B400",
+        "Ramp!D2:D400",
+        "Ramp!E2:E400"
+      ]
+    },
+    {
+      "ref": "Runway!B9",
+      "sheet": "Runway",
+      "row_label": "Total Outflows",
+      "month_idx": 0,
+      "value_cents": 595000,
+      "formula": "=SUM(B4:B8)",
+      "deps": [
+        "Runway!B4:B8"
+      ]
+    },
+    {
+      "ref": "Runway!C9",
+      "sheet": "Runway",
+      "row_label": "Total Outflows",
+      "month_idx": 1,
+      "value_cents": 553000,
+      "formula": "=SUM(C4:C8)",
+      "deps": [
+        "Runway!C4:C8"
+      ]
+    },
+    {
+      "ref": "Runway!D9",
+      "sheet": "Runway",
+      "row_label": "Total Outflows",
+      "month_idx": 2,
+      "value_cents": 605000,
+      "formula": "=SUM(D4:D8)",
+      "deps": [
+        "Runway!D4:D8"
+      ]
+    },
+    {
+      "ref": "Runway!B10",
+      "sheet": "Runway",
+      "row_label": "Net Cash Flow",
+      "month_idx": 0,
+      "value_cents": -95000,
+      "formula": "=B3-B9",
+      "deps": [
+        "Runway!B3",
+        "Runway!B9"
+      ]
+    },
+    {
+      "ref": "Runway!C10",
+      "sheet": "Runway",
+      "row_label": "Net Cash Flow",
+      "month_idx": 1,
+      "value_cents": 47000,
+      "formula": "=C3-C9",
+      "deps": [
+        "Runway!C3",
+        "Runway!C9"
+      ]
+    },
+    {
+      "ref": "Runway!D10",
+      "sheet": "Runway",
+      "row_label": "Net Cash Flow",
+      "month_idx": 2,
+      "value_cents": 95000,
+      "formula": "=D3-D9",
+      "deps": [
+        "Runway!D3",
+        "Runway!D9"
+      ]
+    },
+    {
+      "ref": "Runway!B11",
+      "sheet": "Runway",
+      "row_label": "Ending Cash",
+      "month_idx": 0,
+      "value_cents": 905000,
+      "formula": "=B2+B10",
+      "deps": [
+        "Runway!B2",
+        "Runway!B10"
+      ]
+    },
+    {
+      "ref": "Runway!C11",
+      "sheet": "Runway",
+      "row_label": "Ending Cash",
+      "month_idx": 1,
+      "value_cents": 952000,
+      "formula": "=C2+C10",
+      "deps": [
+        "Runway!C2",
+        "Runway!C10"
+      ]
+    },
+    {
+      "ref": "Runway!D11",
+      "sheet": "Runway",
+      "row_label": "Ending Cash",
+      "month_idx": 2,
+      "value_cents": 1047000,
+      "formula": "=D2+D10",
+      "deps": [
+        "Runway!D2",
+        "Runway!D10"
+      ]
+    }
+  ]
+}

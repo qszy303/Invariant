@@ -14,7 +14,7 @@ Replace the deterministic baseline with an LLM that produces a `RuleSpec` from *
 6. `spec_accuracy(pred, gold) -> metrics`: per-line exact match on kind + matched-txn set. Used by A6.
 
 ## Acceptance
-- On `lumen_clean.xlsx`, the agent's spec yields the same assignment as `rules.py` (assignment equality, not text equality).
+- On `slope_clean.xlsx`, the agent's spec yields the same assignment as `rules.py` (assignment equality, not text equality).
 - ≥3 of 4 robustness variants match the gold assignment; failures are flagged low-confidence rather than wrong-and-confident. Report which.
 
 ## Don't
