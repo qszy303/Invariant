@@ -91,3 +91,20 @@ difference formatted as `1,234.56`.
   (`more` if |actual| > |expected|, otherwise `less`)
 - roll_forward link: `start in {Mon} is {AMT} {more|less} than end of {PrevMon}`
   (`more` if actual > expected, otherwise `less`)
+- roll_forward equation: `{end_line_id} in {Mon} is {AMT} {more|less} than {start_line_id} plus net flows`
+  (line_id is the `end` line; `more` if actual > expected)
+- arithmetic: `{line_id} in {Mon} is {AMT} {more|less} than the sum of its outflow lines`
+  for `subtotal` lines; for `net` lines the ending is `inflow and outflow lines`
+  (`more` if actual > expected)
+- no_double_count: `transaction {id} ({AMT}) in {Mon} is assigned to {n} lines: {sorted ids joined by ", "}`
+  (`line_id` null, `txn_ids` [id], expected/actual null)
+- coverage: `transaction {id} ({AMT}) in {Mon} is not assigned to any line`
+  (same shape as no_double_count)
+
+Other conventions (from A3, Python checker):
+- A `month_idx` outside 0..11 prints as `month N`.
+- No `$` in any message.
+- Lines are identified by `kind`: one `start`, one `end`; flows are all
+  `inflow` and `outflow` lines.
+- Violations from per-txn checks are emitted in ascending txn id order; traceability
+  `txn_ids` are sorted ascending.
