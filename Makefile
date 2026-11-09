@@ -4,7 +4,9 @@ test:
 	uv run pytest
 
 lean:
-	@echo "lean: not implemented yet (A4)"
+	cd lean && lake build
+	@! grep -rnE "\bsorry\b|\badmit\b|^axiom " lean/ProofCheck lean/Main.lean lean/ProofCheck.lean
+	cd lean && lake env lean AxiomsCheck.lean
 
 eval:
 	@echo "eval: not implemented yet (A6)"

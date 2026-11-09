@@ -1,0 +1,9 @@
+name = "ProofCheck"
+defaultTargets = ["proofcheck"]
+
+[[lean_lib]]
+name = "ProofCheck"
+
+[[lean_exe]]
+name = "proofcheck"
+root = "Main"
