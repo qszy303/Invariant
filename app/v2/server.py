@@ -26,7 +26,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, File, HTTPException, Request, UploadFile
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -48,6 +48,9 @@ MAX_UPLOAD = 25 * 1024 * 1024
 DEMO_CACHE = ROOT / "demo" / "cache"     # committed: spec + fix responses + values for demo files
 DEMO_FILES = {**core.SAMPLE_FILES,
               "slope_hardcoded_rent.xlsx": "Rent typed in from the lease (an ambiguous row)"}
+# Loadable by deep link (#demo=...), the API and the tests, but not offered in the picker:
+# the cached GPT-4.1 spec misreads its Other row (see "Known misses" in eval/RESULTS.md).
+HIDDEN_DEMO = {"slope_missing_vendor.xlsx"}
 
 
 def demo_mode() -> bool:
@@ -240,7 +243,7 @@ def check_json(c: Check, v: core.View) -> dict[str, Any]:
     st = _view_status(c.cur)[1]
     an = v.analysis
     line_of = {s.row_label: (s.line_id, s.kind) for s in an.spec.lines}
-    labels, values, marks = core.grid(v)
+    labels, _values, marks = core.grid(v)
     by = {(x.row_label, x.month_idx): x for x in an.graph.cells}
     vio_at: dict[tuple[str, int], str] = {}
     violations, explanations, fixes = [], {}, {}
@@ -317,7 +320,7 @@ async def _http_error(_: Request, e: HTTPException):
     return JSONResponse({"error": e.detail}, status_code=e.status_code)
 
 
-def start_check(src: Path, name: str, precomputed: bool) -> Check:
+def start_check(src: Path, name: str) -> Check:
     cid = uuid.uuid4().hex[:12]
     work = _TMP / cid
     work.mkdir(parents=True)
@@ -346,7 +349,7 @@ def start_check(src: Path, name: str, precomputed: bool) -> Check:
 @app.get("/api/demo-files")
 def demo_files():
     return [{"file": n, "label": l} for n, l in DEMO_FILES.items()
-            if (core.SAMPLES_DIR / n).exists()]
+            if n not in HIDDEN_DEMO and (core.SAMPLES_DIR / n).exists()]
 
 
 @app.post("/api/check")
@@ -366,7 +369,7 @@ async def api_check(request: Request):
         tmp = _TMP / f"upload_{uuid.uuid4().hex[:8]}.xlsx"
         tmp.write_bytes(data)
         try:
-            c = start_check(tmp, name, False)
+            c = start_check(tmp, name)
         finally:
             tmp.unlink(missing_ok=True)
     else:
@@ -377,7 +380,7 @@ async def api_check(request: Request):
         name = body.get("demo_file") if isinstance(body, dict) else None
         if name not in DEMO_FILES or not (core.SAMPLES_DIR / name).exists():
             raise _fail(404, "Unknown demo file.")
-        c = start_check(core.SAMPLES_DIR / name, name, True)
+        c = start_check(core.SAMPLES_DIR / name, name)
     return check_json(c, _view(c.cur))
 
 

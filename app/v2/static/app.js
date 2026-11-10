@@ -53,7 +53,11 @@
     $("demo-select").innerHTML = '<option value="">Choose a demo file\u2026</option>' + files.map((f) =>
       `<option value="${esc(f.file)}" title="${esc(f.file)}">${esc(f.label)}</option>`).join("");
     const m = location.hash.match(/demo=([\w.\-]+)/);
-    if (m && files.some((f) => f.file === m[1])) { $("demo-select").value = m[1]; runCheck(); }
+    if (m) {  // deep link; also works for files not listed in the picker
+      state.deepLink = m[1];
+      if (files.some((f) => f.file === m[1])) $("demo-select").value = m[1];
+      runCheck();
+    }
   }
 
   function setBusy(b) {
@@ -65,7 +69,7 @@
 
   async function runCheck() {
     if (state.busy) return;
-    if (!state.pendingFile && !$("demo-select").value) {
+    if (!state.pendingFile && !state.deepLink && !$("demo-select").value) {
       toast("Upload an .xlsx workbook first (or pick a demo file).", true);
       return;
     }
@@ -77,7 +81,7 @@
         data = await api("/api/check", { method: "POST", body: fd });
       } else {
         data = await api("/api/check", { method: "POST", headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ demo_file: $("demo-select").value }) });
+          body: JSON.stringify({ demo_file: state.deepLink || $("demo-select").value }) });
       }
       state.selKey = null; closeDrawer(); render(data);
       if (data.fix_error) toast("Could not get fix proposals: " + data.fix_error, true);
@@ -96,7 +100,7 @@
     $("file-sub").textContent = "Uploaded. Press Run check.";
   });
   $("demo-select").addEventListener("change", () => {
-    state.pendingFile = null; $("upload-input").value = ""; $("upload-btn").textContent = "Upload";
+    state.deepLink = null; state.pendingFile = null; $("upload-input").value = ""; $("upload-btn").textContent = "Upload";
   });
 
   // ---- rendering the check ---------------------------------------------------------

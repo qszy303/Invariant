@@ -16,13 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from proof.fix.propose import SYSTEM_PROMPT, TOOL_NAME, tool_schema
-
-DEFAULT_OPENAI_MODEL = "gpt-4.1"
-
-
-def openai_key() -> str | None:
-    """OPENAI_API_KEY, or OPEN_AI_API_KEY (the spelling used in this project's .env)."""
-    return os.environ.get("OPENAI_API_KEY") or os.environ.get("OPEN_AI_API_KEY") or None
+from proof.openai_client import DEFAULT_OPENAI_MODEL, openai_key
 
 
 class OpenAIProposer:
