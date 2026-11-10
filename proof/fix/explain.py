@@ -10,7 +10,11 @@ say what a founder needs to know.)
 from __future__ import annotations
 
 import difflib
+import hashlib
+import json
+import os
 import re
+import zipfile
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Callable
@@ -49,11 +53,42 @@ class Analysis:
     notes: dict[str, str] = field(default_factory=dict)
 
 
+def content_hash(path: Path) -> str:
+    """Hash of the workbook's parts, ignoring docProps (which hold timestamps)."""
+    h = hashlib.sha1()
+    with zipfile.ZipFile(path) as z:
+        for name in sorted(z.namelist()):
+            if not name.startswith("docProps/"):
+                h.update(name.encode())
+                h.update(z.read(name))
+    return h.hexdigest()
+
+
+def _values_cache(path: Path) -> Path:
+    d = Path(os.environ.get("PROOF_CACHE_DIR", ".proof_cache"))
+    return d / "values" / f"{content_hash(path)}.json"
+
+
 def load_graph(path: Path) -> CellGraph:
+    """CellGraph, recalculating (slowly) only for content not seen before.
+
+    Files written by openpyxl have no cached values, so recalculated values are
+    kept under PROOF_CACHE_DIR/values by content hash. Same content, same values.
+    """
     try:
         return load_cellgraph(path)
     except CachedValuesMissing:
-        return load_cellgraph(path, recalc_values_with_formulas(path))
+        f = _values_cache(path)
+        try:
+            values = json.loads(f.read_text())
+        except (OSError, ValueError):
+            values = recalc_values_with_formulas(path)
+            try:
+                f.parent.mkdir(parents=True, exist_ok=True)
+                f.write_text(json.dumps(values))
+            except OSError:
+                pass  # read-only cache dir: just recompute next time
+        return load_cellgraph(path, values)
 
 
 def analyze(path: str | Path, spec_fn: Callable[[CellGraph, Ledger, Path], RuleSpec]

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invariant: does your model's math add up?</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="mark">✓</span><span class="name">Invariant</span>
+      <span class="tag">Does your financial model's math add up?</span></div>
+    <div class="top-right">
+      <span class="chip" id="chip-lean"></span>
+      <span class="chip" id="chip-key"></span>
+      <button class="ghost" id="open-proven">What's proven</button>
+      <button class="ghost" id="open-settings">Settings</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="banner" class="banner" hidden role="alert"></div>
+
+    <!-- start: upload or pick a sample -->
+    <section id="start">
+      <label id="drop" class="drop" tabindex="0">
+        <input type="file" id="file" accept=".xlsx" hidden>
+        <div class="drop-title">Drop your model here, or click to choose a file</div>
+        <div class="drop-sub">An .xlsx workbook with a <b>Runway</b> tab (months across, SUMIFS rows)
+          and the export tabs it sums: <b>Ramp</b>, <b>Bank</b>, <b>Payroll</b>.
+          Your file is never changed: fixes are applied to a copy.</div>
+      </label>
+      <h2>Or try a sample</h2>
+      <div class="samples" id="samples"></div>
+    </section>
+
+    <!-- work: results -->
+    <section id="work" hidden>
+      <div class="filebar">
+        <div><span class="muted">Checking</span> <b id="fname"></b><span id="fcopy" class="muted"></span></div>
+        <button class="ghost" id="another">Open another model</button>
+      </div>
+      <div id="flash" class="flash" hidden></div>
+      <div id="summary" class="summary"></div>
+      <div class="actions" id="actions">
+        <button class="primary" id="find" hidden>Find verified fixes</button>
+        <button class="primary" id="apply-all" hidden></button>
+        <a class="button" id="download" hidden>Download fixed workbook</a>
+        <span class="hint" id="actions-hint"></span>
+      </div>
+
+      <h2>Runway</h2>
+      <div class="legend">
+        <span class="sw ok">verified</span><span class="sw violated">violated: click it</span>
+        <span class="sw review">needs review</span><span class="sw typed-key"><i></i>typed number</span>
+        <span class="muted">Whole dollars shown; click a cell for the exact value and formula.</span>
+      </div>
+      <div class="gridwrap"><table id="grid"></table></div>
+      <div class="inspector" id="inspector">Click any cell to see its formula.</div>
+
+      <div class="cols">
+        <div class="left" id="vlist-wrap">
+          <h2>Violations</h2>
+          <div class="vlist" id="vlist"></div>
+        </div>
+        <aside class="right" id="detail"></aside>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="settings">
+    <h2>Settings</h2>
+    <p>Checking, explaining and the Lean/Python verdict all run locally. Only <b>fix proposals</b>
+      call the model, using your Anthropic API key.</p>
+    <p id="key-state" class="muted"></p>
+    <form method="dialog" id="key-form">
+      <label>Anthropic API key <span class="muted">(kept in memory until you stop the server)</span>
+        <input type="password" id="key" autocomplete="off" placeholder="sk-ant-…">
+      </label>
+      <div class="dlg-actions"><button value="cancel" class="ghost">Close</button>
+        <button class="primary" id="save-key" value="default">Save key</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="proven">
+    <h2>What's proven</h2>
+    <p>The checker behind every verdict is written in Lean 4 and proved correct: it accepts exactly the
+      models that satisfy the math. One of the statements:</p>
+    <pre class="code" id="theorem"></pre>
+    <h3>Proven</h3><ul id="proven-list"></ul>
+    <h3>Not proven</h3><ul id="not-proven-list"></ul>
+    <p class="muted">Source: <code>lean/README.md</code> and <code>lean/ProofCheck/Spec.lean</code>.</p>
+    <div class="dlg-actions"><form method="dialog"><button class="ghost">Close</button></form></div>
+  </dialog>
+
+  <script src="/app.js"></script>
+</body>
+</html>

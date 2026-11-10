@@ -1,0 +1,244 @@
+{
+ "source": "/Users/qingyangzhang/Downloads/Invariant/demo/slope_dup_row.xlsx",
+ "initial_ok": false,
+ "final_ok": true,
+ "fixed_path": null,
+ "final_violations": [],
+ "reports": [
+  {
+   "violation": {
+    "invariant": "traceability",
+    "line_id": "saas",
+    "month_idx": 5,
+    "txn_ids": [
+     "ramp-0117",
+     "ramp-0118",
+     "ramp-0119",
+     "ramp-0120",
+     "ramp-0121",
+     "ramp-0122",
+     "ramp-0123",
+     "ramp-0124",
+     "ramp-0126",
+     "ramp-0127",
+     "ramp-0129",
+     "ramp-0130",
+     "ramp-0131",
+     "ramp-0134",
+     "ramp-0135",
+     "ramp-0136",
+     "ramp-0138"
+    ],
+    "expected_cents": -423650,
+    "actual_cents": -447652,
+    "message": "saas in Jun is 240.02 more than its matched transactions"
+   },
+   "explanation": "SaaS in Jun (G5) is 240.02 more than the transactions that belong in it add up to (4,476.52 shown vs 4,236.50). Likely cause: ramp-0120 (AWS, 240.02) appears twice in the Ramp tab (rows 121 and 122), so the sheet counts it twice.",
+   "context": {
+    "invariant": "traceability",
+    "row_label": "SaaS",
+    "month": "Jun",
+    "cell_ref": "Runway!G5",
+    "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&G$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(G$1),MONTH(G$1)+1,1))",
+    "sheet_value_cents": 447652,
+    "expected_cents": -423650,
+    "actual_cents": -447652,
+    "matched_txns": [
+     {
+      "id": "ramp-0124",
+      "date": "2026-06-09",
+      "counterparty": "Mixpanel",
+      "category": "Software",
+      "amount_cents": -108000,
+      "source": "ramp"
+     },
+     {
+      "id": "ramp-0134",
+      "date": "2026-06-21",
+      "counterparty": "HubSpot",
+      "category": "Software",
+      "amount_cents": -80000,
+      "source": "ramp"
+     },
+     {
+      "id": "ramp-0138",
+      "date": "2026-06-27",
+      "counterparty": "OpenAI",
+      "category": "Software",
+      "amount_cents": -54000,
+      "source": "ramp"
+     },
+     {
+      "id": "ramp-0135",
+      "date": "2026-06-23",
+      "counterparty": "Intercom",
+      "category": "Software",
+      "amount_cents": -39000,
+      "source": "ramp"
+     },
+     {
+      "id": "ramp-0129",
+      "date": "2026-06-15",
+      "counterparty": "Datadog",
+      "category": "Software",
+      "amount_cents": -31500,
+      "source": "ramp"
+     },
+     {
+      "id": "ramp-0120",
+      "date": "2026-06-03",
+      "counterparty": "AWS",
+      "category": "Software",
+      "amount_cents": -24002,
+      "source": "ramp"
+     },
+     {
+      "id": "ramp-0117",
+      "date": "2026-06-01",
+      "counterparty": "Figma",
+      "category": "Software",
+      "amount_cents": -13500,
+      "source": "ramp"
+     },
+     {
+      "id": "ramp-0136",
+      "date": "2026-06-25",
+      "counterparty": "Segment",
+      "category": "Software",
+      "amount_cents": -12000,
+      "source": "ramp"
+     },
+     {
+      "id": "ramp-0127",
+      "date": "2026-06-13",
+      "counterparty": "Google Workspace",
+      "category": "Software",
+      "amount_cents": -10800,
+      "source": "ramp"
+     },
+     {
+      "id": "ramp-0130",
+      "date": "2026-06-17",
+      "counterparty": "Sentry",
+      "category": "Software",
+      "amount_cents": -8900,
+      "source": "ramp"
+     }
+    ],
+    "problem_txns": [],
+    "duplicate_rows": [
+     {
+      "id": "ramp-0120",
+      "rows": [
+       {
+        "sheet": "Ramp",
+        "row": 121
+       },
+       {
+        "sheet": "Ramp",
+        "row": 122
+       }
+      ]
+     }
+    ],
+    "row_formulas": [
+     {
+      "ref": "Runway!B5",
+      "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))"
+     },
+     {
+      "ref": "Runway!C5",
+      "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&C$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))"
+     },
+     {
+      "ref": "Runway!D5",
+      "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&D$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))"
+     },
+     {
+      "ref": "Runway!E5",
+      "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&E$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(E$1),MONTH(E$1)+1,1))"
+     },
+     {
+      "ref": "Runway!F5",
+      "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&F$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))"
+     },
+     {
+      "ref": "Runway!G5",
+      "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&G$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(G$1),MONTH(G$1)+1,1))"
+     },
+     {
+      "ref": "Runway!H5",
+      "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))"
+     },
+     {
+      "ref": "Runway!I5",
+      "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&I$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(I$1),MONTH(I$1)+1,1))"
+     },
+     {
+      "ref": "Runway!J5",
+      "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&J$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1))"
+     },
+     {
+      "ref": "Runway!K5",
+      "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&K$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))"
+     },
+     {
+      "ref": "Runway!L5",
+      "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&L$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(L$1),MONTH(L$1)+1,1))"
+     },
+     {
+      "ref": "Runway!M5",
+      "formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&M$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(M$1),MONTH(M$1)+1,1))"
+     }
+    ]
+   },
+   "status": "verified",
+   "fix": {
+    "kind": "delete_duplicate_row",
+    "scope": "cell",
+    "cell_ref": null,
+    "old_formula": "ramp-0120, 2026-06-03 00:00:00, AWS, -240.02, Software, usage-based",
+    "new_formula": null,
+    "sheet": "Ramp",
+    "row": 122,
+    "reason": "The AWS charge ramp-0120 appears twice in the Ramp export, so June SaaS counted it twice; I'm removing the later copy."
+   },
+   "cell_ref": "Runway!G5",
+   "before_cents": 447652,
+   "after_cents": 423650,
+   "recheck": {
+    "ok": true,
+    "target_cleared": true,
+    "new_violations": [],
+    "remaining": 0,
+    "before": 1
+   },
+   "attempts": [
+    {
+     "proposal": {
+      "kind": "delete_duplicate_row",
+      "scope": "cell",
+      "cell_ref": null,
+      "old_formula": "ramp-0120, 2026-06-03 00:00:00, AWS, -240.02, Software, usage-based",
+      "new_formula": null,
+      "sheet": "Ramp",
+      "row": 122,
+      "reason": "The AWS charge ramp-0120 appears twice in the Ramp export, so June SaaS counted it twice; I'm removing the later copy."
+     },
+     "outcome": "accepted",
+     "detail": "",
+     "recheck": {
+      "ok": true,
+      "target_cleared": true,
+      "new_violations": [],
+      "remaining": 0,
+      "before": 1
+     }
+    }
+   ],
+   "resolved_by": null,
+   "note": ""
+  }
+ ],
+ "llm_calls": 0
+}

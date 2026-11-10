@@ -1,1 +1,1 @@
-"""Streamlit UI (owner: A8)."""
+"""Invariant web app: logic (core), API server, static frontend (owner: A8)."""

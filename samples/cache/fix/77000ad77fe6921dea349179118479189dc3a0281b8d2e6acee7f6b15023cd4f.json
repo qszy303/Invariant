@@ -1,0 +1,8 @@
+{
+ "cell_ref": "Runway!C2",
+ "kind": "edit_formula",
+ "new_formula": "=B11",
+ "old_formula": "(typed) 2.22492e+06",
+ "reason": "Feb Starting Cash was a typed number; it should link to Jan's Ending Cash like the other months.",
+ "scope": "cell"
+}

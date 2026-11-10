@@ -1,0 +1,382 @@
+{
+ "source": "/Users/qingyangzhang/Downloads/Invariant/demo/slope_missing_vendor.xlsx",
+ "initial_ok": false,
+ "final_ok": true,
+ "fixed_path": null,
+ "final_violations": [],
+ "reports": [
+  {
+   "violation": {
+    "invariant": "coverage",
+    "line_id": null,
+    "month_idx": 7,
+    "txn_ids": [
+     "ramp-0172"
+    ],
+    "expected_cents": null,
+    "actual_cents": null,
+    "message": "transaction ramp-0172 (250.00) in Aug is not assigned to any line"
+   },
+   "explanation": "Transaction ramp-0172 (Retool, 250.00, Aug) is not counted in any Runway line. Likely cause: its category 'Tools' is not one of the categories the model sums (Contractors, Legal, Marketing, Meals, Office, Software, Travel).",
+   "context": {
+    "invariant": "coverage",
+    "row_label": null,
+    "month": "Aug",
+    "cell_ref": null,
+    "formula": null,
+    "sheet_value_cents": null,
+    "expected_cents": null,
+    "actual_cents": null,
+    "matched_txns": [],
+    "problem_txns": [
+     {
+      "id": "ramp-0172",
+      "date": "2026-08-12",
+      "counterparty": "Retool",
+      "category": "Tools",
+      "amount_cents": -25000,
+      "source": "ramp"
+     }
+    ],
+    "duplicate_rows": [],
+    "row_formulas": [],
+    "categories_summed": [
+     "Contractors",
+     "Legal",
+     "Marketing",
+     "Meals",
+     "Office",
+     "Software",
+     "Travel"
+    ]
+   },
+   "status": "verified",
+   "fix": {
+    "kind": "edit_formula",
+    "scope": "row",
+    "cell_ref": "Runway!B5",
+    "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+    "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+    "sheet": null,
+    "row": null,
+    "reason": "Retool is a software tool; the 'Tools' category was missing from the SaaS row, so it was counted nowhere."
+   },
+   "cell_ref": "Runway!B5",
+   "before_cents": null,
+   "after_cents": null,
+   "recheck": {
+    "ok": true,
+    "target_cleared": true,
+    "new_violations": [],
+    "remaining": 0,
+    "before": 5
+   },
+   "attempts": [
+    {
+     "proposal": {
+      "kind": "edit_formula",
+      "scope": "row",
+      "cell_ref": "Runway!B5",
+      "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+      "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+      "sheet": null,
+      "row": null,
+      "reason": "Retool is a software tool; the 'Tools' category was missing from the SaaS row, so it was counted nowhere."
+     },
+     "outcome": "accepted",
+     "detail": "",
+     "recheck": {
+      "ok": true,
+      "target_cleared": true,
+      "new_violations": [],
+      "remaining": 0,
+      "before": 5
+     }
+    }
+   ],
+   "resolved_by": null,
+   "note": ""
+  },
+  {
+   "violation": {
+    "invariant": "coverage",
+    "line_id": null,
+    "month_idx": 8,
+    "txn_ids": [
+     "ramp-0197"
+    ],
+    "expected_cents": null,
+    "actual_cents": null,
+    "message": "transaction ramp-0197 (250.00) in Sep is not assigned to any line"
+   },
+   "explanation": "Transaction ramp-0197 (Retool, 250.00, Sep) is not counted in any Runway line. Likely cause: its category 'Tools' is not one of the categories the model sums (Contractors, Legal, Marketing, Meals, Office, Software, Travel).",
+   "context": {
+    "invariant": "coverage",
+    "row_label": null,
+    "month": "Sep",
+    "cell_ref": null,
+    "formula": null,
+    "sheet_value_cents": null,
+    "expected_cents": null,
+    "actual_cents": null,
+    "matched_txns": [],
+    "problem_txns": [
+     {
+      "id": "ramp-0197",
+      "date": "2026-09-12",
+      "counterparty": "Retool",
+      "category": "Tools",
+      "amount_cents": -25000,
+      "source": "ramp"
+     }
+    ],
+    "duplicate_rows": [],
+    "row_formulas": [],
+    "categories_summed": [
+     "Contractors",
+     "Legal",
+     "Marketing",
+     "Meals",
+     "Office",
+     "Software",
+     "Travel"
+    ]
+   },
+   "status": "verified",
+   "fix": {
+    "kind": "edit_formula",
+    "scope": "row",
+    "cell_ref": "Runway!B5",
+    "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+    "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+    "sheet": null,
+    "row": null,
+    "reason": "Retool is a software tool; the 'Tools' category was missing from the SaaS row, so it was counted nowhere."
+   },
+   "cell_ref": "Runway!B5",
+   "before_cents": null,
+   "after_cents": null,
+   "recheck": {
+    "ok": true,
+    "target_cleared": true,
+    "new_violations": [],
+    "remaining": 0,
+    "before": 5
+   },
+   "attempts": [],
+   "resolved_by": 0,
+   "note": "cleared by the fix for another violation"
+  },
+  {
+   "violation": {
+    "invariant": "coverage",
+    "line_id": null,
+    "month_idx": 9,
+    "txn_ids": [
+     "ramp-0222"
+    ],
+    "expected_cents": null,
+    "actual_cents": null,
+    "message": "transaction ramp-0222 (250.00) in Oct is not assigned to any line"
+   },
+   "explanation": "Transaction ramp-0222 (Retool, 250.00, Oct) is not counted in any Runway line. Likely cause: its category 'Tools' is not one of the categories the model sums (Contractors, Legal, Marketing, Meals, Office, Software, Travel).",
+   "context": {
+    "invariant": "coverage",
+    "row_label": null,
+    "month": "Oct",
+    "cell_ref": null,
+    "formula": null,
+    "sheet_value_cents": null,
+    "expected_cents": null,
+    "actual_cents": null,
+    "matched_txns": [],
+    "problem_txns": [
+     {
+      "id": "ramp-0222",
+      "date": "2026-10-12",
+      "counterparty": "Retool",
+      "category": "Tools",
+      "amount_cents": -25000,
+      "source": "ramp"
+     }
+    ],
+    "duplicate_rows": [],
+    "row_formulas": [],
+    "categories_summed": [
+     "Contractors",
+     "Legal",
+     "Marketing",
+     "Meals",
+     "Office",
+     "Software",
+     "Travel"
+    ]
+   },
+   "status": "verified",
+   "fix": {
+    "kind": "edit_formula",
+    "scope": "row",
+    "cell_ref": "Runway!B5",
+    "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+    "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+    "sheet": null,
+    "row": null,
+    "reason": "Retool is a software tool; the 'Tools' category was missing from the SaaS row, so it was counted nowhere."
+   },
+   "cell_ref": "Runway!B5",
+   "before_cents": null,
+   "after_cents": null,
+   "recheck": {
+    "ok": true,
+    "target_cleared": true,
+    "new_violations": [],
+    "remaining": 0,
+    "before": 5
+   },
+   "attempts": [],
+   "resolved_by": 0,
+   "note": "cleared by the fix for another violation"
+  },
+  {
+   "violation": {
+    "invariant": "coverage",
+    "line_id": null,
+    "month_idx": 10,
+    "txn_ids": [
+     "ramp-0246"
+    ],
+    "expected_cents": null,
+    "actual_cents": null,
+    "message": "transaction ramp-0246 (250.00) in Nov is not assigned to any line"
+   },
+   "explanation": "Transaction ramp-0246 (Retool, 250.00, Nov) is not counted in any Runway line. Likely cause: its category 'Tools' is not one of the categories the model sums (Contractors, Legal, Marketing, Meals, Office, Software, Travel).",
+   "context": {
+    "invariant": "coverage",
+    "row_label": null,
+    "month": "Nov",
+    "cell_ref": null,
+    "formula": null,
+    "sheet_value_cents": null,
+    "expected_cents": null,
+    "actual_cents": null,
+    "matched_txns": [],
+    "problem_txns": [
+     {
+      "id": "ramp-0246",
+      "date": "2026-11-12",
+      "counterparty": "Retool",
+      "category": "Tools",
+      "amount_cents": -25000,
+      "source": "ramp"
+     }
+    ],
+    "duplicate_rows": [],
+    "row_formulas": [],
+    "categories_summed": [
+     "Contractors",
+     "Legal",
+     "Marketing",
+     "Meals",
+     "Office",
+     "Software",
+     "Travel"
+    ]
+   },
+   "status": "verified",
+   "fix": {
+    "kind": "edit_formula",
+    "scope": "row",
+    "cell_ref": "Runway!B5",
+    "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+    "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+    "sheet": null,
+    "row": null,
+    "reason": "Retool is a software tool; the 'Tools' category was missing from the SaaS row, so it was counted nowhere."
+   },
+   "cell_ref": "Runway!B5",
+   "before_cents": null,
+   "after_cents": null,
+   "recheck": {
+    "ok": true,
+    "target_cleared": true,
+    "new_violations": [],
+    "remaining": 0,
+    "before": 5
+   },
+   "attempts": [],
+   "resolved_by": 0,
+   "note": "cleared by the fix for another violation"
+  },
+  {
+   "violation": {
+    "invariant": "coverage",
+    "line_id": null,
+    "month_idx": 11,
+    "txn_ids": [
+     "ramp-0267"
+    ],
+    "expected_cents": null,
+    "actual_cents": null,
+    "message": "transaction ramp-0267 (250.00) in Dec is not assigned to any line"
+   },
+   "explanation": "Transaction ramp-0267 (Retool, 250.00, Dec) is not counted in any Runway line. Likely cause: its category 'Tools' is not one of the categories the model sums (Contractors, Legal, Marketing, Meals, Office, Software, Travel).",
+   "context": {
+    "invariant": "coverage",
+    "row_label": null,
+    "month": "Dec",
+    "cell_ref": null,
+    "formula": null,
+    "sheet_value_cents": null,
+    "expected_cents": null,
+    "actual_cents": null,
+    "matched_txns": [],
+    "problem_txns": [
+     {
+      "id": "ramp-0267",
+      "date": "2026-12-12",
+      "counterparty": "Retool",
+      "category": "Tools",
+      "amount_cents": -25000,
+      "source": "ramp"
+     }
+    ],
+    "duplicate_rows": [],
+    "row_formulas": [],
+    "categories_summed": [
+     "Contractors",
+     "Legal",
+     "Marketing",
+     "Meals",
+     "Office",
+     "Software",
+     "Travel"
+    ]
+   },
+   "status": "verified",
+   "fix": {
+    "kind": "edit_formula",
+    "scope": "row",
+    "cell_ref": "Runway!B5",
+    "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+    "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+    "sheet": null,
+    "row": null,
+    "reason": "Retool is a software tool; the 'Tools' category was missing from the SaaS row, so it was counted nowhere."
+   },
+   "cell_ref": "Runway!B5",
+   "before_cents": null,
+   "after_cents": null,
+   "recheck": {
+    "ok": true,
+    "target_cleared": true,
+    "new_violations": [],
+    "remaining": 0,
+    "before": 5
+   },
+   "attempts": [],
+   "resolved_by": 0,
+   "note": "cleared by the fix for another violation"
+  }
+ ],
+ "llm_calls": 0
+}

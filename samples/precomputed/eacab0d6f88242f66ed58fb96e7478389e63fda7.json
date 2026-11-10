@@ -1,0 +1,131 @@
+{
+ "source": "/Users/qingyangzhang/Downloads/Invariant/demo/slope_broken_rollforward.xlsx",
+ "initial_ok": false,
+ "final_ok": true,
+ "fixed_path": null,
+ "final_violations": [],
+ "reports": [
+  {
+   "violation": {
+    "invariant": "roll_forward",
+    "line_id": "start",
+    "month_idx": 1,
+    "txn_ids": [],
+    "expected_cents": 223742188,
+    "actual_cents": 222492188,
+    "message": "start in Feb is 12,500.00 less than end of Jan"
+   },
+   "explanation": "Starting Cash in Feb (C2) is 12,500.00 less than Jan's Ending Cash (2,224,921.88 vs 2,237,421.88). Likely cause: it is a typed number instead of a link to the prior month's Ending Cash.",
+   "context": {
+    "invariant": "roll_forward",
+    "row_label": "Starting Cash",
+    "month": "Feb",
+    "cell_ref": "Runway!C2",
+    "formula": null,
+    "sheet_value_cents": 222492188,
+    "expected_cents": 223742188,
+    "actual_cents": 222492188,
+    "matched_txns": [],
+    "problem_txns": [],
+    "duplicate_rows": [],
+    "row_formulas": [
+     {
+      "ref": "Runway!B2",
+      "formula": "(typed) 2.4e+06"
+     },
+     {
+      "ref": "Runway!C2",
+      "formula": "(typed) 2.22492e+06"
+     },
+     {
+      "ref": "Runway!D2",
+      "formula": "=C11"
+     },
+     {
+      "ref": "Runway!E2",
+      "formula": "=D11"
+     },
+     {
+      "ref": "Runway!F2",
+      "formula": "=E11"
+     },
+     {
+      "ref": "Runway!G2",
+      "formula": "=F11"
+     },
+     {
+      "ref": "Runway!H2",
+      "formula": "=G11"
+     },
+     {
+      "ref": "Runway!I2",
+      "formula": "=H11"
+     },
+     {
+      "ref": "Runway!J2",
+      "formula": "=I11"
+     },
+     {
+      "ref": "Runway!K2",
+      "formula": "=J11"
+     },
+     {
+      "ref": "Runway!L2",
+      "formula": "=K11"
+     },
+     {
+      "ref": "Runway!M2",
+      "formula": "=L11"
+     }
+    ]
+   },
+   "status": "verified",
+   "fix": {
+    "kind": "edit_formula",
+    "scope": "cell",
+    "cell_ref": "Runway!C2",
+    "old_formula": "2224921.88",
+    "new_formula": "=B11",
+    "sheet": null,
+    "row": null,
+    "reason": "Feb Starting Cash was a typed number; it should link to Jan's Ending Cash like the other months."
+   },
+   "cell_ref": "Runway!C2",
+   "before_cents": 222492188,
+   "after_cents": 223742188,
+   "recheck": {
+    "ok": true,
+    "target_cleared": true,
+    "new_violations": [],
+    "remaining": 0,
+    "before": 1
+   },
+   "attempts": [
+    {
+     "proposal": {
+      "kind": "edit_formula",
+      "scope": "cell",
+      "cell_ref": "Runway!C2",
+      "old_formula": "2224921.88",
+      "new_formula": "=B11",
+      "sheet": null,
+      "row": null,
+      "reason": "Feb Starting Cash was a typed number; it should link to Jan's Ending Cash like the other months."
+     },
+     "outcome": "accepted",
+     "detail": "",
+     "recheck": {
+      "ok": true,
+      "target_cleared": true,
+      "new_violations": [],
+      "remaining": 0,
+      "before": 1
+     }
+    }
+   ],
+   "resolved_by": null,
+   "note": ""
+  }
+ ],
+ "llm_calls": 0
+}
