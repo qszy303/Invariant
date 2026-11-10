@@ -19,4 +19,4 @@ Rules for choosing a rule:
 4. If you cannot express a row's formula as a rule (for example it ANDs a vendor and a category, or its criteria come from other cells), give your best reading with confidence at most 0.4 and say why.
 5. Return exactly one entry per row, using the row label verbatim.
 
-Call the `submit_rulespec` tool with your answer.
+Respond only by calling the `submit_rulespec` tool with your answer; do not reply with plain text.

@@ -103,7 +103,7 @@ def test_request_shape(clean):
     build_rulespec_llm(clean, client=c, model="m")
     req = c.calls[0]
     assert req["model"] == "m"
-    assert req["tool_choice"] == {"type": "tool", "name": agent.TOOL_NAME}
+    assert req["tool_choice"] == {"type": "auto"}
     assert req["tools"][0]["name"] == agent.TOOL_NAME
     assert "SaaS" in req["messages"][0]["content"]
     # the model never sees ledger data or values

@@ -390,7 +390,7 @@ def build_rulespec_llm(graph: CellGraph, ledger: Ledger | None = None, *,
     for _ in range(MAX_ATTEMPTS):
         response = client.messages.create(
             model=model, max_tokens=4096, system=SYSTEM_PROMPT, messages=messages,
-            tools=[tool_schema()], tool_choice={"type": "tool", "name": TOOL_NAME})
+            tools=[tool_schema()], tool_choice={"type": "auto"})
         try:
             data = _tool_input(response)
             spec = rulespec_from_tool_input(data, graph)
