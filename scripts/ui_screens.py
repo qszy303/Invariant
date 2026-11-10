@@ -97,8 +97,15 @@ def main() -> int:
             print("3 repeats identical")
 
             for name in ("slope_missing_vendor.xlsx", "slope_broken_rollforward.xlsx"):
-                page.select_option("#demo-select", name)
-                page.click("#run-btn")
+                if name == "slope_missing_vendor.xlsx":  # hidden from the picker: deep link
+                    page.goto(URL + f"/#demo={name}")
+                    page.reload()
+                else:
+                    page.goto(URL + "/#/check")
+                    page.reload()
+                    page.wait_for_selector("#demo-select option", state="attached")
+                    page.select_option("#demo-select", name)
+                    page.click("#run-btn")
                 page.wait_for_selector("#grid td.cell")
                 page.wait_for_timeout(300)
                 page.screenshot(path=OUT / f"4_{name.split('.')[0]}.png")
