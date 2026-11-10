@@ -5,8 +5,7 @@ The AI decides what each line means. Lean decides whether the numbers are right.
 
 Built for the BBS × Ramp AI Hackathon (technical track).
 
-<!-- TODO: screenshot of the Check page with red cells + drawer open -->
-![Invariant catching a double-counted subscription](demo/screens/TODO.png)
+![Invariant catching a double-counted subscription](demo/screens/2_check_drawer.png)
 
 ---
 
@@ -40,8 +39,15 @@ cd lean && lake build         # build the verified checker
 make eval                     # mutation-suite eval -> eval/RESULTS.md
 ```
 
-To run on new workbooks with the LLM spec agent, set `ANTHROPIC_API_KEY` (and optionally `PROOF_MODEL`).
-<!-- TODO: confirm port and commands match the repo -->
+To run on new workbooks with the LLM spec agent, put a key in `.env` (git-ignored; it is read at startup) and run `make demo` *without* `PROOF_DEMO=1`:
+
+```bash
+ANTHROPIC_API_KEY=sk-ant-...   # Claude, the model the eval ran on
+# or, if there is no Anthropic key:
+OPEN_AI_API_KEY=sk-...         # OpenAI (default model gpt-4.1; override with OPENAI_MODEL)
+```
+
+`PROOF_SPEC=rules` switches the spec step to the deterministic rules baseline (no model). `make screens` retakes the 1920x1080 screenshots in `demo/screens/`.
 
 ## How it works
 
@@ -72,11 +78,12 @@ To run on new workbooks with the LLM spec agent, set `ANTHROPIC_API_KEY` (and op
 
 ## What's proven, and what isn't
 
-<!-- TODO: list ONLY what lean/AXIOMS.md confirms. Delete any invariant that isn't fully proven. -->
 For each invariant, the Lean checker is proven **sound and complete** against its mathematical spec:
 `checkX inp = true ↔ XHolds inp`. No `sorry`, no custom axioms (see `lean/AXIOMS.md`).
 
-- Proven: TODO (e.g. roll-forward, traceability, no double counting, coverage, arithmetic)
+- **Proven (`checkX_iff`, all five):** roll-forward, arithmetic, traceability, no double counting, coverage. Each depends only on the standard axioms `propext` and `Quot.sound`.
+- **Also proven:** the witness finders for no-double-counting and coverage return a transaction that really violates the rule (and none exactly when the rule holds), and the reported no-double-counting and coverage violations are exactly the violating transactions (`noDoubleCountViolations_sound`, `*_nil_iff`; these also use `Classical.choice`).
+- **Not proven in Lean:** that the violation *lists* for roll-forward, arithmetic and traceability correspond to their rules. Only their yes/no checkers are proven; the lists are tested against the Python twin instead. Message text and sorting are also only tested.
 
 **Not verified, and why that's OK:**
 - **The LLM spec step.** It can misread a row. That's why it reports confidence and flags uncertain rows, why the eval measures it directly, and why it never computes or compares a number.
@@ -86,16 +93,19 @@ The proofs guarantee the math is right *given the input*. The eval tests whether
 
 ## Eval
 
-There are no labeled real-world spreadsheets, so we plant bugs on purpose (mutation testing) in a synthetic seed-stage company ("Lumen Labs", 12 months) and measure what gets caught.
+There are no labeled real-world spreadsheets, so we plant bugs on purpose (mutation testing) in a synthetic seed-stage company ("Slope", 12 months) and measure what gets caught.
 
-<!-- TODO: fill from eval/RESULTS.md -->
 | Metric | Result |
 |---|---|
 | Detection (105 planted bugs, 7 types) | 105 / 105 |
-| Localized to the right cell | TODO |
+| Localized to the right cell | 76 / 90 (84%) |
 | False positives (20 clean models) | 0 / 20 |
 | Lean vs Python checker, byte-identical output | 125 / 125 |
-| LLM spec on messy sheets (4 variants) | TODO |
+| LLM spec on messy sheets (4 variants) | 4 / 4 read correctly; 2 flagged for review; 0 wrong and confident |
+
+*Localized to the right cell* is strict: a flagged violation must sit on a ground-truth Runway cell. `missing_vendor` has no Runway cell (the uncounted transactions are in no row), so its 15 bugs are excluded rather than counted as misses; `overlap_category` scores 1 / 15 because a double count flags transactions, not a cell.
+
+**Which model produced what.** The 105 / 125-model suite used the LLM spec from `claude-sonnet-5-5` (replayed from its cache). The 4-variant messy-sheet result was run with `gpt-4.1`. The live demo (`demo/cache`) also reads rows with `gpt-4.1`, so demo output is not the same model as the suite numbers.
 
 Bug types: duplicated row, dropped month in a range, new vendor missing from criteria, vendor matched by two categories, flipped sign, formula overwritten by a stale number, broken roll-forward.
 
@@ -118,7 +128,7 @@ Bug types: duplicated row, dropped month in a range, new vendor missing from cri
 - **Timing and accruals.** A charge on Mar 31 may settle Apr 2; accrual accounting books costs when incurred. Real use needs tolerance rules for both.
 - **Messy real workbooks.** Cross-workbook links, pivot tables, and manual adjustments aren't handled yet.
 - **Exports, not integrations.** Transactions come from export tabs inside the workbook.
-<!-- TODO: if the demo uses the rules baseline instead of the LLM spec, say so here -->
+- **The demo reads rows with the LLM spec (`gpt-4.1`), not the rules baseline.** That model misreads the `Other` row of `slope_missing_vendor.xlsx` (it leaves out bank fees). Invariant flags that row for review and blocks "Apply verified fix" on it, so that file is left out of the demo picker and listed under known misses in `eval/RESULTS.md`.
 
 ## Roadmap
 
