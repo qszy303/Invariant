@@ -97,6 +97,7 @@ Spec accuracy vs the baseline reading of the same sheet (125 models where the ba
 | spec | model | bug | why |
 |---|---|---|---|
 | agent | `overlap_category/s105_p2` | `overlap_category` | detected, but wrong place: the agent misread the `Other` row (the one carrying the extra merchant term); it flagged that line for review (confidence below the threshold), so the wrong spec was not confident. The sheet-vs-spec gap then showed up as traceability on `Other`, not as the double count |
+| demo (gpt-4.1 spec) | `slope_missing_vendor.xlsx` | `missing_vendor` | GPT-4.1 spec misreads the Other row (excludes bank fees); flagged for review, fix correctly blocked |
 
 ## Messy spreadsheets (LLM spec robustness)
 

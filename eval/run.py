@@ -353,6 +353,14 @@ MISS_NOTES: dict[tuple[str, str], str] = {
 }
 
 
+# Demo-only misses: not part of the synthetic suite, so they are listed by hand.
+DEMO_MISSES: list[tuple[str, str, str, str]] = [
+    ("demo (gpt-4.1 spec)", "slope_missing_vendor.xlsx", "missing_vendor",
+     "GPT-4.1 spec misreads the Other row (excludes bank fees); flagged for review, "
+     "fix correctly blocked"),
+]
+
+
 def _pct(x) -> str:
     return "n/a" if x is None else f"{100 * x:.0f}%"
 
@@ -505,6 +513,7 @@ def render_markdown(results: dict, manifest: dict, fix: dict | None = None) -> s
                 note = MISS_NOTES.get((src, m["id"]))
                 misses.append((src, m["id"], m["bug_id"],
                                why + (f": {note}" if note else "")))
+    misses += DEMO_MISSES
     if misses:
         L += ["| spec | model | bug | why |", "|---|---|---|---|"]
         L += [f"| {a} | `{b}` | `{c}` | {d} |" for a, b, c, d in misses]
