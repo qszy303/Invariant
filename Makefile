@@ -10,6 +10,7 @@ lean:
 
 eval:
 	uv run python -m eval.run
+	uv run python -m eval.fix_run
 
 demo:
 	@echo "demo: not implemented yet (A8)"

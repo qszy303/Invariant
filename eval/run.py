@@ -331,12 +331,59 @@ def compute_metrics(models: list[dict]) -> dict[str, Any]:
 # results; anything not listed prints as unexplained so it cannot hide.
 REASONS: dict[str, str] = {}
 
+# Notes on individual misses, checked against results.json by hand.
+MISS_NOTES: dict[tuple[str, str], str] = {
+    ("agent", "overlap_category/s105_p2"):
+        "the agent misread the `Other` row (the one carrying the extra merchant term); "
+        "it flagged that line for review (confidence below the threshold), so the wrong "
+        "spec was not confident. The sheet-vs-spec gap then showed up as traceability "
+        "on `Other`, not as the double count",
+}
+
 
 def _pct(x) -> str:
     return "n/a" if x is None else f"{100 * x:.0f}%"
 
 
-def render_markdown(results: dict, manifest: dict) -> str:
+def render_fix_section(fix: dict, manifest: dict) -> list[str]:
+    m = fix['metrics']
+    o = m['overall']
+    L = ['## Verified fixes (A7)', '']
+    if o['ran'] == 0:
+        return L + ['Skipped: no `ANTHROPIC_API_KEY` and no cached proposals.', '']
+    L += [f"Each buggy model is explained, a fix is proposed by `{fix['meta']['proposer_model']}`, "
+          'applied to a copy, recalculated and re-checked; it is accepted only if the targeted '
+          'violation is gone and no new one appears (up to 3 proposals per violation). '
+          '"Restored clean" is a separate check the loop never sees: the fixed copy recomputes '
+          "to exactly the clean model's Runway values.", '',
+          '| bug | n | not run | fixed (of those run) | first try | restored clean | needs human | proposals per model |',
+          '|---|---|---|---|---|---|---|---|']
+    for bug in manifest['bug_ids']:
+        b = m['by_bug'].get(bug)
+        if b:
+            rc = f"{b['restored_clean']}/{b['restored_clean_of']}" if b['restored_clean_of'] else 'n/a'
+            L.append(f"| `{bug}` | {b['n']} | {b['errors'] + b['skipped']} | {b['fixed']} ({_pct(b['fix_rate'])}) | {b['first_try']} "
+                     f"| {rc} | {b['needs_human']} | {b['mean_proposals']} |")
+    rc = f"{o['restored_clean']}/{o['restored_clean_of']}" if o['restored_clean_of'] else 'n/a'
+    L += [f"| **all** | {o['n']} | {o['errors'] + o['skipped']} | **{o['fixed']} ({_pct(o['fix_rate'])})** | {o['first_try']} "
+          f"| {rc} | {o['needs_human']} | {o['mean_proposals']} |", '']
+    if o['errors'] or o['skipped']:
+        errs = sorted({r['error'] for r in fix['models'] if r['status'] == 'error'})
+        L += [f"{o['errors'] + o['skipped']} of {o['n']} models were not run (errors {o['errors']}, "
+              f"skipped {o['skipped']}); they are excluded from the rates above, not counted as misses."]
+        L += [f"First error: `{errs[0][:200]}`"] if errs else []
+        L += ['']
+    bad = [r for r in fix['models'] if r['status'] == 'ok' and (not r['fixed'] or r['restored_clean'] is False)]
+    L += ['Fix misses:', '']
+    if bad:
+        L += ['| model | fixed | restored clean | needs human |', '|---|---|---|---|']
+        L += [f"| `{r['id']}` | {r['fixed']} | {r['restored_clean']} | {r['needs_human']} |" for r in bad]
+    else:
+        L += ['None.']
+    return L + ['']
+
+
+def render_markdown(results: dict, manifest: dict, fix: dict | None = None) -> str:
     metrics = results["metrics"]
     models = results["models"]
     nb = sum(1 for m in models if m["kind"] == "buggy")
@@ -406,15 +453,19 @@ def render_markdown(results: dict, manifest: dict) -> str:
                 misses.append((src, m["id"], m["bug_id"],
                                REASONS.get(m["bug_id"], "unexplained: investigate")))
             elif not s["python"]["correct_invariant"] or not s["python"]["localized"]:
+                why = ("detected, but " + ("wrong invariant" if not
+                                           s["python"]["correct_invariant"]
+                                           else "wrong place"))
+                note = MISS_NOTES.get((src, m["id"]))
                 misses.append((src, m["id"], m["bug_id"],
-                               "detected, but " + ("wrong invariant" if not
-                                                   s["python"]["correct_invariant"]
-                                                   else "wrong place")))
+                               why + (f": {note}" if note else "")))
     if misses:
         L += ["| spec | model | bug | why |", "|---|---|---|---|"]
         L += [f"| {a} | `{b}` | `{c}` | {d} |" for a, b, c, d in misses]
     else:
         L += ["None: every injected bug was detected, with the right invariant and place."]
+    if fix is not None:
+        L += [""] + render_fix_section(fix, manifest)
     L += ["", "## Scope and limits", "",
           "- Every mutation edits the workbook (a formula, a typed cell or an export row).",
           "- The Ledger is read from the export tabs, so an edit that keeps the export and "
@@ -429,6 +480,16 @@ def render_markdown(results: dict, manifest: dict) -> str:
           "- The suite is synthetic (one company shape, five seeds). Detection rates "
           "say what the checker does on this family, not on arbitrary real models.", ""]
     return "\n".join(L)
+
+
+def write_report(out_dir: Path, suite_dir: Path = SUITE_DIR) -> None:
+    """Regenerate RESULTS.md from results.json (+ fix_results.json if present)."""
+    out_dir = Path(out_dir)
+    manifest = load_manifest(suite_dir)
+    res = json.loads((out_dir / "results.json").read_text())
+    fp = out_dir / "fix_results.json"
+    fix = json.loads(fp.read_text()) if fp.exists() else None
+    (out_dir / "RESULTS.md").write_text(render_markdown(res, manifest, fix))
 
 
 # ---- entry point -----------------------------------------------------------
@@ -466,7 +527,7 @@ def main(argv: list[str] | None = None) -> int:
     }
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "results.json").write_text(json.dumps(res, indent=1, sort_keys=True))
-    (args.out / "RESULTS.md").write_text(render_markdown(res, manifest))
+    write_report(args.out, args.suite)
     print(f"wrote {args.out / 'results.json'} and {args.out / 'RESULTS.md'}")
     return 0
 

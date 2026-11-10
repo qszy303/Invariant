@@ -4,7 +4,7 @@
 
 - Agent model: `claude-sonnet-5-5`; low-confidence threshold 0.8
 - Lean checker: ran
-- Agent spec source: skipped
+- Agent spec source: ran
 
 ## Baseline spec (`rules.py`)
 
@@ -42,15 +42,76 @@ Violations on buggy models that were not the injected bug (wrong invariant or wr
 
 Python vs Lean byte-identical output: 125 of 125 (100%).
 
-Median runtime per model: check 0.0293s, spec 0.004s.
+Median runtime per model: check 0.0284s, spec 0.004s.
 
 ## LLM spec agent
 
-Skipped: no `ANTHROPIC_API_KEY` and no cached responses.
+### Python checker
+
+| bug | n | detected | right invariant | localized | pipeline errors |
+|---|---|---|---|---|---|
+| `dup_row` | 15 | 15 (100%) | 15 | 15 | 0 |
+| `dropped_month` | 15 | 15 (100%) | 15 | 15 | 0 |
+| `missing_vendor` | 15 | 15 (100%) | 15 | 15 | 0 |
+| `overlap_category` | 15 | 15 (100%) | 15 | 14 | 0 |
+| `sign_flip` | 15 | 15 (100%) | 15 | 15 | 0 |
+| `stale_hardcode` | 15 | 15 (100%) | 15 | 15 | 0 |
+| `broken_rollforward` | 15 | 15 (100%) | 15 | 15 | 0 |
+| **all** | 105 | **105 (100%)** | 105 | 104 | 0 |
+
+False positives on clean models: **0 of 20** (0%), 0 violations in total.
+Violations on buggy models that were not the injected bug (wrong invariant or wrong place): 12.
+
+### Lean checker
+
+| bug | n | detected | right invariant | localized | pipeline errors |
+|---|---|---|---|---|---|
+| `dup_row` | 15 | 15 (100%) | 15 | 15 | 0 |
+| `dropped_month` | 15 | 15 (100%) | 15 | 15 | 0 |
+| `missing_vendor` | 15 | 15 (100%) | 15 | 15 | 0 |
+| `overlap_category` | 15 | 15 (100%) | 15 | 14 | 0 |
+| `sign_flip` | 15 | 15 (100%) | 15 | 15 | 0 |
+| `stale_hardcode` | 15 | 15 (100%) | 15 | 15 | 0 |
+| `broken_rollforward` | 15 | 15 (100%) | 15 | 15 | 0 |
+| **all** | 105 | **105 (100%)** | 105 | 104 | 0 |
+
+False positives on clean models: **0 of 20** (0%), 0 violations in total.
+Violations on buggy models that were not the injected bug (wrong invariant or wrong place): 12.
+
+Python vs Lean byte-identical output: 125 of 125 (100%).
+
+Median runtime per model: check 0.0272s, spec 5.249s.
+
+Spec accuracy vs the baseline reading of the same sheet (125 models where the baseline could read it): mean line accuracy 100%, identical assignment on 124 (99%); 1 wrong specs, 1 of them had at least one line flagged for review.
 
 ## Known misses
 
-None: every injected bug was detected, with the right invariant and place.
+| spec | model | bug | why |
+|---|---|---|---|
+| agent | `overlap_category/s105_p2` | `overlap_category` | detected, but wrong place: the agent misread the `Other` row (the one carrying the extra merchant term); it flagged that line for review (confidence below the threshold), so the wrong spec was not confident. The sheet-vs-spec gap then showed up as traceability on `Other`, not as the double count |
+
+## Verified fixes (A7)
+
+Each buggy model is explained, a fix is proposed by `claude-sonnet-5-5`, applied to a copy, recalculated and re-checked; it is accepted only if the targeted violation is gone and no new one appears (up to 3 proposals per violation). "Restored clean" is a separate check the loop never sees: the fixed copy recomputes to exactly the clean model's Runway values.
+
+| bug | n | not run | fixed (of those run) | first try | restored clean | needs human | proposals per model |
+|---|---|---|---|---|---|---|---|
+| `dup_row` | 15 | 3 | 12 (100%) | 12 | 12/12 | 0 | 1 |
+| `dropped_month` | 15 | 3 | 12 (100%) | 12 | 12/12 | 0 | 1 |
+| `missing_vendor` | 15 | 2 | 13 (100%) | 13 | n/a | 0 | 1 |
+| `overlap_category` | 15 | 3 | 12 (100%) | 12 | 12/12 | 0 | 1 |
+| `sign_flip` | 15 | 3 | 12 (100%) | 12 | 12/12 | 0 | 1 |
+| `stale_hardcode` | 15 | 3 | 12 (100%) | 12 | 12/12 | 0 | 1 |
+| `broken_rollforward` | 15 | 3 | 12 (100%) | 12 | 12/12 | 0 | 1 |
+| **all** | 105 | 20 | **85 (100%)** | 85 | 72/72 | 0 | 1 |
+
+20 of 105 models were not run (errors 20, skipped 0); they are excluded from the rates above, not counted as misses.
+First error: `no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans `
+
+Fix misses:
+
+None.
+
 
 ## Scope and limits
 

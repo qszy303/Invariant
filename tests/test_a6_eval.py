@@ -157,3 +157,35 @@ def test_report_lists_every_undetected_bug_and_refusal(small):
     rules = out["metrics"]["rules"]["python"]["overall"]
     assert rules["n"] == 7 and rules["detected"] == 5 and rules["errors"] == 1
     assert out["metrics"]["rules"]["python"]["clean"]["flagged"] == 0
+
+
+def test_fix_metrics_count_unrun_models_separately():
+    from eval.fix_run import summarize
+    ok = {"status": "ok", "bug_id": "dup_row", "fixed": True, "first_try": True,
+          "needs_human": 0, "restored_clean": True, "llm_calls": 1, "attempts": 1}
+    rows = [dict(ok, id="a"), dict(ok, id="b", fixed=False, needs_human=1, restored_clean=None),
+            {"status": "error", "bug_id": "dup_row", "id": "c", "error": "billing"},
+            {"status": "skipped", "bug_id": "dup_row", "id": "d", "error": "no key"}]
+    o = summarize(rows, ["dup_row"])["overall"]
+    assert (o["n"], o["ran"], o["errors"], o["skipped"]) == (4, 2, 1, 1)
+    assert o["fixed"] == 1 and o["fix_rate"] == 0.5          # of those that ran
+    assert o["restored_clean"] == 1 and o["restored_clean_of"] == 1
+
+
+def test_known_miss_note_is_rendered(small):
+    manifest, _, res = small
+    models = [dict(m, sources=dict(m["sources"])) for m in res["models"]]
+    m = next(x for x in models if x["bug_id"] == "dup_row")
+    m["id"] = "overlap_category/s105_p2"
+    m["sources"]["rules"] = dict(m["sources"]["rules"], python={
+        "detected": True, "correct_invariant": True, "localized": False,
+        "n_violations": 1, "invariants": ["traceability"], "off_target": 1})
+    models = [x for x in models if x is m or x["kind"] == "clean"]
+    models[0]["sources"]["agent"] = dict(models[0]["sources"]["rules"])
+    for x in models:
+        x["sources"]["agent"] = {"status": "skipped", "error": "x"}
+    m["sources"]["agent"] = dict(m["sources"]["rules"])
+    out = {"models": models, "metrics": ev.compute_metrics(models),
+           "meta": {"agent_model": "m", "confidence_min": 0.8, "lean": False,
+                    "agent_status": "ran"}}
+    assert "misread the `Other` row" in ev.render_markdown(out, manifest)

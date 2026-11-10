@@ -1,0 +1,2465 @@
+{
+ "meta": {
+  "proposer_model": "claude-sonnet-5-5"
+ },
+ "metrics": {
+  "by_bug": {
+   "broken_rollforward": {
+    "errors": 3,
+    "first_try": 12,
+    "fix_rate": 1.0,
+    "fixed": 12,
+    "mean_proposals": 1,
+    "n": 15,
+    "needs_human": 0,
+    "ran": 12,
+    "restored_clean": 12,
+    "restored_clean_of": 12,
+    "skipped": 0
+   },
+   "dropped_month": {
+    "errors": 3,
+    "first_try": 12,
+    "fix_rate": 1.0,
+    "fixed": 12,
+    "mean_proposals": 1,
+    "n": 15,
+    "needs_human": 0,
+    "ran": 12,
+    "restored_clean": 12,
+    "restored_clean_of": 12,
+    "skipped": 0
+   },
+   "dup_row": {
+    "errors": 3,
+    "first_try": 12,
+    "fix_rate": 1.0,
+    "fixed": 12,
+    "mean_proposals": 1,
+    "n": 15,
+    "needs_human": 0,
+    "ran": 12,
+    "restored_clean": 12,
+    "restored_clean_of": 12,
+    "skipped": 0
+   },
+   "missing_vendor": {
+    "errors": 2,
+    "first_try": 13,
+    "fix_rate": 1.0,
+    "fixed": 13,
+    "mean_proposals": 1,
+    "n": 15,
+    "needs_human": 0,
+    "ran": 13,
+    "restored_clean": 0,
+    "restored_clean_of": 0,
+    "skipped": 0
+   },
+   "overlap_category": {
+    "errors": 3,
+    "first_try": 12,
+    "fix_rate": 1.0,
+    "fixed": 12,
+    "mean_proposals": 1,
+    "n": 15,
+    "needs_human": 0,
+    "ran": 12,
+    "restored_clean": 12,
+    "restored_clean_of": 12,
+    "skipped": 0
+   },
+   "sign_flip": {
+    "errors": 3,
+    "first_try": 12,
+    "fix_rate": 1.0,
+    "fixed": 12,
+    "mean_proposals": 1,
+    "n": 15,
+    "needs_human": 0,
+    "ran": 12,
+    "restored_clean": 12,
+    "restored_clean_of": 12,
+    "skipped": 0
+   },
+   "stale_hardcode": {
+    "errors": 3,
+    "first_try": 12,
+    "fix_rate": 1.0,
+    "fixed": 12,
+    "mean_proposals": 1,
+    "n": 15,
+    "needs_human": 0,
+    "ran": 12,
+    "restored_clean": 12,
+    "restored_clean_of": 12,
+    "skipped": 0
+   }
+  },
+  "overall": {
+   "errors": 20,
+   "first_try": 85,
+   "fix_rate": 1.0,
+   "fixed": 85,
+   "mean_proposals": 1,
+   "n": 105,
+   "needs_human": 0,
+   "ran": 85,
+   "restored_clean": 72,
+   "restored_clean_of": 72,
+   "skipped": 0
+  }
+ },
+ "models": [
+  {
+   "attempts": 1,
+   "bug_id": "dup_row",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": null,
+     "kind": "delete_duplicate_row",
+     "new_formula": null,
+     "old_formula": "ramp-0046, 2026-03-01 00:00:00, Figma, -135, Software, monthly subscription",
+     "reason": "The Figma charge (ramp-0046) appears twice in the Ramp export, so I'm deleting the later copy.",
+     "row": 48,
+     "scope": "cell",
+     "sheet": "Ramp"
+    }
+   ],
+   "id": "dup_row/s101_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.0,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dup_row",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": null,
+     "kind": "delete_duplicate_row",
+     "new_formula": null,
+     "old_formula": "ramp-0189, 2026-09-11 00:00:00, Fiverr Pro, -8565, Contractors, bill-pay invoice",
+     "reason": "The Fiverr Pro payment ramp-0189 is listed twice in the Ramp export, so I'm removing the later copy.",
+     "row": 191,
+     "scope": "cell",
+     "sheet": "Ramp"
+    }
+   ],
+   "id": "dup_row/s101_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.0,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dup_row",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": null,
+     "kind": "delete_duplicate_row",
+     "new_formula": null,
+     "old_formula": "ramp-0153, 2026-07-22 00:00:00, Delta, -483, Travel, None",
+     "reason": "Ramp transaction ramp-0153 (Delta, 483.00) is listed twice in the export, so July Other counts it twice; remove the later copy.",
+     "row": 155,
+     "scope": "cell",
+     "sheet": "Ramp"
+    }
+   ],
+   "id": "dup_row/s101_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.0,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dropped_month",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(B$1),MONTH(B$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "January SaaS start date was shifted a month ahead, so the window was empty; it now matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "dropped_month/s101_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.0,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dropped_month",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!G6",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&G$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(G$1),MONTH(G$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(G$1),MONTH(G$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(G$1),MONTH(G$1)+1,1))",
+     "reason": "June's start-date criterion was shifted a month ahead, so it matched nothing; it now matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "dropped_month/s101_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 5.7,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dropped_month",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!F8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&F$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&F$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&F$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&F$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&F$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&F$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1)))",
+     "old_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(F$1),MONTH(F$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(F$1),MONTH(F$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(F$1),MONTH(F$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(F$1),MONTH(F$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(F$1),MONTH(F$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&DATE(YEAR(F$1),MONTH(F$1)+1,1),Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1)))",
+     "reason": "May's Other formula used next month's start date as its lower bound, so it matched nothing; now matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "dropped_month/s101_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 5.9,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Supabase is a software tool categorized as 'Tools' in Ramp, so it belongs in the SaaS row.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s101_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 6.1,
+   "status": "ok",
+   "verified": 11,
+   "violations": 11
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Postman is a software tool, so the 'Tools' category now counts in the SaaS line.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s101_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 6.1,
+   "status": "ok",
+   "verified": 7,
+   "violations": 7
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Postman is a software tool, so the 'Tools' category now counts in the SaaS row.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s101_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 7.1,
+   "status": "ok",
+   "verified": 2,
+   "violations": 2
+  },
+  {
+   "attempts": 1,
+   "bug_id": "overlap_category",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B6",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$C$2:$C$2000,\"AWS\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "AWS is categorized as Software, so SaaS already counts it; Contractors should only count its own category.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "overlap_category/s101_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.0,
+   "status": "ok",
+   "verified": 12,
+   "violations": 12
+  },
+  {
+   "attempts": 1,
+   "bug_id": "overlap_category",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$C$2:$C$2000,\"Fiverr Pro\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Fiverr Pro is categorised as Contractors, so SaaS should not also count it by merchant name.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "overlap_category/s101_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.1,
+   "status": "ok",
+   "verified": 5,
+   "violations": 5
+  },
+  {
+   "attempts": 1,
+   "bug_id": "overlap_category",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&B$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&B$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$C$2:$C$2000,\"Zoom\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Zoom is a Software expense already counted in SaaS, so remove the extra Zoom term from Other.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "overlap_category/s101_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.1,
+   "status": "ok",
+   "verified": 12,
+   "violations": 12
+  },
+  {
+   "attempts": 1,
+   "bug_id": "sign_flip",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!E5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&E$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(E$1),MONTH(E$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&E$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(E$1),MONTH(E$1)+1,1))+2*135",
+     "reason": "April SaaS had a hardcoded +2*135 adjustment that other months don't have; removing it matches the rest of the row.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "sign_flip/s101_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "sign_flip",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!H8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&H$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1)))",
+     "old_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&H$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1)))+2*420",
+     "reason": "July's Other had a stray typed +2*420 adjustment; removing it makes July match the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "sign_flip/s101_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.6,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "sign_flip",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!K5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&K$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&K$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))+2*390",
+     "reason": "Removes a hardcoded +2*390 adjustment in October so SaaS matches the other months' formula.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "sign_flip/s101_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.7,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "stale_hardcode",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!E5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&E$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(E$1),MONTH(E$1)+1,1))",
+     "old_formula": "2963",
+     "reason": "April SaaS was a typed number; it now uses the same formula as the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "stale_hardcode/s101_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.6,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "stale_hardcode",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!E6",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&E$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(E$1),MONTH(E$1)+1,1))",
+     "old_formula": "8987",
+     "reason": "April Contractors was a typed number; it now uses the same formula as the other months so it picks up all Contractors spend.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "stale_hardcode/s101_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.1,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "stale_hardcode",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!M8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&M$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(M$1),MONTH(M$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&M$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(M$1),MONTH(M$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&M$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(M$1),MONTH(M$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&M$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(M$1),MONTH(M$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&M$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(M$1),MONTH(M$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&M$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(M$1),MONTH(M$1)+1,1)))",
+     "old_formula": "18683",
+     "reason": "December Other was a typed number; restore the same formula the other months use.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "stale_hardcode/s101_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.0,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "broken_rollforward",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!E2",
+     "kind": "edit_formula",
+     "new_formula": "=D11",
+     "old_formula": "1906762",
+     "reason": "April's Starting Cash was a typed number; it now links to March's Ending Cash like the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "broken_rollforward/s101_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.1,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "broken_rollforward",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!I2",
+     "kind": "edit_formula",
+     "new_formula": "=H11",
+     "old_formula": "1274557",
+     "reason": "Aug Starting Cash was a typed number; it should link to July's Ending Cash like the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "broken_rollforward/s101_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.1,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "broken_rollforward",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!M2",
+     "kind": "edit_formula",
+     "new_formula": "=L11",
+     "old_formula": "639163",
+     "reason": "December's Starting Cash was a typed number; it should link to November's Ending Cash like the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "broken_rollforward/s101_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.3,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dup_row",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": null,
+     "kind": "delete_duplicate_row",
+     "new_formula": null,
+     "old_formula": "ramp-0223, 2026-10-25 00:00:00, Segment, -120, Software, monthly subscription",
+     "reason": "The Segment 120.00 charge (ramp-0223) was exported twice, so SaaS counted it twice in October.",
+     "row": 225,
+     "scope": "cell",
+     "sheet": "Ramp"
+    }
+   ],
+   "id": "dup_row/s102_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.4,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dup_row",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": null,
+     "kind": "delete_duplicate_row",
+     "new_formula": null,
+     "old_formula": "ramp-0075, 2026-04-11 00:00:00, Fiverr Pro, -12354, Contractors, bill-pay invoice",
+     "reason": "Fiverr Pro payment ramp-0075 was exported twice, so the later duplicate row is removed.",
+     "row": 77,
+     "scope": "cell",
+     "sheet": "Ramp"
+    }
+   ],
+   "id": "dup_row/s102_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.5,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dup_row",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": null,
+     "kind": "delete_duplicate_row",
+     "new_formula": null,
+     "old_formula": "ramp-0128, 2026-06-22 00:00:00, Delta, -509, Travel, None",
+     "reason": "Ramp transaction ramp-0128 (Delta, 509.00) was exported twice, so the later copy is removed.",
+     "row": 130,
+     "scope": "cell",
+     "sheet": "Ramp"
+    }
+   ],
+   "id": "dup_row/s102_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 7.5,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dropped_month",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!G5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&G$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(G$1),MONTH(G$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(G$1),MONTH(G$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(G$1),MONTH(G$1)+1,1))",
+     "reason": "June SaaS used next month's start as its lower date bound, so it matched nothing; it now matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "dropped_month/s102_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.2,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dropped_month",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!D6",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&D$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(D$1),MONTH(D$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))",
+     "reason": "March's Contractors formula started its date window a month late, so it matched nothing; it now matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "dropped_month/s102_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dropped_month",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!J8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&J$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&J$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&J$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&J$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&J$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&J$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1)))",
+     "old_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(J$1),MONTH(J$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(J$1),MONTH(J$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(J$1),MONTH(J$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(J$1),MONTH(J$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(J$1),MONTH(J$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&DATE(YEAR(J$1),MONTH(J$1)+1,1),Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(J$1),MONTH(J$1)+1,1)))",
+     "reason": "September's Other formula had a start date pushed to the next month, so it matched nothing; it now matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": "Runway"
+    }
+   ],
+   "id": "dropped_month/s102_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.3,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Postman is a software tool paid on Ramp, so the 'Tools' category now counts in the SaaS line.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s102_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 6.5,
+   "status": "ok",
+   "verified": 11,
+   "violations": 11
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Webflow is a software subscription tagged 'Tools', so the SaaS line should count the Tools category too.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s102_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 6.8,
+   "status": "ok",
+   "verified": 6,
+   "violations": 6
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Postman is a software tool, so the 'Tools' category now counts in the SaaS line.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s102_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 6.8,
+   "status": "ok",
+   "verified": 2,
+   "violations": 2
+  },
+  {
+   "attempts": 1,
+   "bug_id": "overlap_category",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B6",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$C$2:$C$2000,\"AWS\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "AWS is categorised as Software, so SaaS owns it; Contractors should only count its own category.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "overlap_category/s102_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.8,
+   "status": "ok",
+   "verified": 12,
+   "violations": 12
+  },
+  {
+   "attempts": 1,
+   "bug_id": "overlap_category",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$C$2:$C$2000,\"Toptal\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Toptal is a Contractors-category payment, so SaaS should count only the Software category and not double-count it.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "overlap_category/s102_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.9,
+   "status": "ok",
+   "verified": 4,
+   "violations": 4
+  },
+  {
+   "attempts": 1,
+   "bug_id": "overlap_category",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&B$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&B$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$C$2:$C$2000,\"1Password\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "1Password is a Software expense already counted in SaaS, so remove it from Other.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "overlap_category/s102_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 12,
+   "violations": 12
+  },
+  {
+   "attempts": 1,
+   "bug_id": "sign_flip",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!E5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&E$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(E$1),MONTH(E$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&E$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(E$1),MONTH(E$1)+1,1))+2*135",
+     "reason": "April SaaS had a stray +2*135 added; removing it makes the month match the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "sign_flip/s102_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.3,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "sign_flip",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!H8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&H$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1)))",
+     "old_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&H$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1)))+2*420",
+     "reason": "July's Other cell had a stray hard-coded +2*420 added; removing it matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "sign_flip/s102_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "sign_flip",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!K5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&K$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&K$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))+2*390",
+     "reason": "October SaaS had a hardcoded +2*390 adjustment that no other month has; removing it matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "sign_flip/s102_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.3,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "stale_hardcode",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!F5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&F$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))",
+     "old_formula": "2984",
+     "reason": "May SaaS was a typed number; restore the same formula the other months use so it matches the Software transactions.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "stale_hardcode/s102_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.1,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "stale_hardcode",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!F6",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&F$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))",
+     "old_formula": "23055",
+     "reason": "May contractors was a typed number; restored the same formula the other months use so it matches the transactions.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "stale_hardcode/s102_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.2,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "stale_hardcode",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!H8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&H$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1)))",
+     "old_formula": "17170",
+     "reason": "July Other was a typed number; restore the same formula the other months use.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "stale_hardcode/s102_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.1,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "broken_rollforward",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!C2",
+     "kind": "edit_formula",
+     "new_formula": "=B11",
+     "old_formula": "2228824",
+     "reason": "Feb Starting Cash was a typed number; it should link to Jan's Ending Cash like the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "broken_rollforward/s102_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.2,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "broken_rollforward",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!H2",
+     "kind": "edit_formula",
+     "new_formula": "=G11",
+     "old_formula": "1407470",
+     "reason": "July's Starting Cash was a typed number; it should link to June's Ending Cash like the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "broken_rollforward/s102_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.2,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "broken_rollforward",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!M2",
+     "kind": "edit_formula",
+     "new_formula": "=L11",
+     "old_formula": "587670",
+     "reason": "December's Starting Cash was a typed number; it should link to November's Ending Cash like the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "broken_rollforward/s102_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.3,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dup_row",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": null,
+     "kind": "delete_duplicate_row",
+     "new_formula": null,
+     "old_formula": "ramp-0006, 2026-01-07 00:00:00, Slack, -87.5, Software, monthly subscription",
+     "reason": "The Slack charge (ramp-0006, 87.50) appears twice in the Ramp export, so I'm deleting the later copy.",
+     "row": 8,
+     "scope": "cell",
+     "sheet": "Ramp"
+    }
+   ],
+   "id": "dup_row/s103_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.3,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dup_row",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": null,
+     "kind": "delete_duplicate_row",
+     "new_formula": null,
+     "old_formula": "ramp-0202, 2026-09-26 00:00:00, Toptal, -7800, Contractors, bill-pay invoice",
+     "reason": "The Toptal payment ramp-0202 appears twice in the Ramp export, so I'm removing the later copy.",
+     "row": 204,
+     "scope": "cell",
+     "sheet": "Ramp"
+    }
+   ],
+   "id": "dup_row/s103_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.3,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dup_row",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": null,
+     "kind": "delete_duplicate_row",
+     "new_formula": null,
+     "old_formula": "ramp-0192, 2026-09-14 00:00:00, Google Ads, -14966, Marketing, None",
+     "reason": "Google Ads transaction ramp-0192 was exported twice, so the later duplicate row is removed.",
+     "row": 194,
+     "scope": "cell",
+     "sheet": "Ramp"
+    }
+   ],
+   "id": "dup_row/s103_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.1,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dropped_month",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!K5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&K$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(K$1),MONTH(K$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))",
+     "reason": "October SaaS had a start-date criterion shifted a month ahead, so it matched nothing; it now matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "dropped_month/s103_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.1,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dropped_month",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!C6",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&C$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(C$1),MONTH(C$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))",
+     "reason": "Feb's start-date criterion was shifted a month ahead, so the range was empty; it now matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "dropped_month/s103_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.3,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dropped_month",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!D8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&D$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&D$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&D$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&D$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&D$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&D$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1)))",
+     "old_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(D$1),MONTH(D$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(D$1),MONTH(D$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(D$1),MONTH(D$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(D$1),MONTH(D$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(D$1),MONTH(D$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&DATE(YEAR(D$1),MONTH(D$1)+1,1),Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1)))",
+     "reason": "March's Other formula started its date window at next month instead of this month, so it matched nothing; now it matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "dropped_month/s103_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.2,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Supabase is a software tool, so the 'Tools' category now counts in the SaaS row.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s103_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 6.5,
+   "status": "ok",
+   "verified": 11,
+   "violations": 11
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Postman is a software subscription categorised as 'Tools', so the SaaS row should count the Tools category too.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s103_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 6.6,
+   "status": "ok",
+   "verified": 6,
+   "violations": 6
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Postman is a software tool, so the 'Tools' category now counts in the SaaS line.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s103_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 6.5,
+   "status": "ok",
+   "verified": 3,
+   "violations": 3
+  },
+  {
+   "attempts": 1,
+   "bug_id": "overlap_category",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B6",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$C$2:$C$2000,\"Sentry\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Sentry is a Software expense already counted in SaaS, so I removed the Sentry merchant term from Contractors.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "overlap_category/s103_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.6,
+   "status": "ok",
+   "verified": 12,
+   "violations": 12
+  },
+  {
+   "attempts": 1,
+   "bug_id": "overlap_category",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$C$2:$C$2000,\"Toptal\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Toptal is categorised as Contractors, so SaaS should only count Software and not also match Toptal by name.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "overlap_category/s103_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 7,
+   "violations": 7
+  },
+  {
+   "attempts": 1,
+   "bug_id": "overlap_category",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&B$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&B$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$C$2:$C$2000,\"Retool\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Retool is a Software expense already counted in SaaS, so remove it from Other.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "overlap_category/s103_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.5,
+   "status": "ok",
+   "verified": 5,
+   "violations": 5
+  },
+  {
+   "attempts": 1,
+   "bug_id": "sign_flip",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!E5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&E$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(E$1),MONTH(E$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&E$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(E$1),MONTH(E$1)+1,1))+2*135",
+     "reason": "April SaaS had a hardcoded +2*135 adjustment that the other months don't have; removing it matches the row's formula.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "sign_flip/s103_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.3,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "sign_flip",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!H8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&H$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1)))",
+     "old_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&H$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1)))+2*420",
+     "reason": "July's Other had a hard-coded +2*420 adjustment that no other month has, so I removed it to match the rest of the row.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "sign_flip/s103_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.5,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "sign_flip",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!K5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&K$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&K$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))+2*390",
+     "reason": "Oct SaaS had a hard-coded +2*390 adjustment that no other month has; removing it matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "sign_flip/s103_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.6,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "stale_hardcode",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!E5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&E$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(E$1),MONTH(E$1)+1,1))",
+     "old_formula": "3027",
+     "reason": "April SaaS was a typed number; it now uses the same formula as the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "stale_hardcode/s103_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.8,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "stale_hardcode",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!L6",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&L$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(L$1),MONTH(L$1)+1,1))",
+     "old_formula": "12808",
+     "reason": "Nov Contractors was a typed number; it now uses the same formula as the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "stale_hardcode/s103_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.7,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "stale_hardcode",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&B$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "14515",
+     "reason": "Jan Other was a typed number; restore the same formula the other months use.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "stale_hardcode/s103_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.7,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "broken_rollforward",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!D2",
+     "kind": "edit_formula",
+     "new_formula": "=C11",
+     "old_formula": "2106188",
+     "reason": "March Starting Cash was a typed number; it now links to February's Ending Cash like the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "broken_rollforward/s103_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "broken_rollforward",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!F2",
+     "kind": "edit_formula",
+     "new_formula": "=E11",
+     "old_formula": "1763142",
+     "reason": "May's Starting Cash was a typed number; it now links to April's Ending Cash like the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "broken_rollforward/s103_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "broken_rollforward",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!K2",
+     "kind": "edit_formula",
+     "new_formula": "=J11",
+     "old_formula": "995502",
+     "reason": "October's Starting Cash was a typed number; it now links to September's Ending Cash like the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "broken_rollforward/s103_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dup_row",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": null,
+     "kind": "delete_duplicate_row",
+     "new_formula": null,
+     "old_formula": "ramp-0009, 2026-01-11 00:00:00, Zoom, -31.98, Software, monthly subscription",
+     "reason": "The Zoom charge (ramp-0009) is listed twice in the Ramp export, so January SaaS counted it twice; removing the later copy fixes it.",
+     "row": 11,
+     "scope": "cell",
+     "sheet": "Ramp"
+    }
+   ],
+   "id": "dup_row/s104_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.5,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dup_row",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": null,
+     "kind": "delete_duplicate_row",
+     "new_formula": null,
+     "old_formula": "ramp-0189, 2026-09-10 00:00:00, Fiverr Pro, -5207, Contractors, bill-pay invoice",
+     "reason": "The Fiverr Pro payment (ramp-0189) appears twice in the Ramp export, so I'm removing the later copy.",
+     "row": 191,
+     "scope": "cell",
+     "sheet": "Ramp"
+    }
+   ],
+   "id": "dup_row/s104_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dup_row",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": null,
+     "kind": "delete_duplicate_row",
+     "new_formula": null,
+     "old_formula": "ramp-0109, 2026-05-22 00:00:00, Delta, -752, Travel, None",
+     "reason": "The Delta 752.00 charge (ramp-0109) is listed twice in the Ramp export, so I'm removing the later copy.",
+     "row": 111,
+     "scope": "cell",
+     "sheet": "Ramp"
+    }
+   ],
+   "id": "dup_row/s104_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.6,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dropped_month",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!F5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&F$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(F$1),MONTH(F$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(F$1),MONTH(F$1)+1,1))",
+     "reason": "May's SaaS start date was pushed to June, so the range was empty; it now matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "dropped_month/s104_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.6,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dropped_month",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!K6",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&K$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(K$1),MONTH(K$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))",
+     "reason": "October's start-date criterion was shifted a month forward, so nothing matched; it now matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "dropped_month/s104_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.8,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "dropped_month",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!C8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&C$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&C$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&C$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&C$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&C$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&C$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1)))",
+     "old_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(C$1),MONTH(C$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(C$1),MONTH(C$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(C$1),MONTH(C$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(C$1),MONTH(C$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(C$1),MONTH(C$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&DATE(YEAR(C$1),MONTH(C$1)+1,1),Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(C$1),MONTH(C$1)+1,1)))",
+     "reason": "Feb's Other formula started its date window at next month, so it counted nothing; it now matches the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "dropped_month/s104_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.5,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Webflow is a software tool; the SaaS row now also counts Ramp spend categorized as Tools.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s104_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 6.7,
+   "status": "ok",
+   "verified": 10,
+   "violations": 10
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Airtable is a software tool billed under category 'Tools', so it belongs in the SaaS line.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s104_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 6.7,
+   "status": "ok",
+   "verified": 6,
+   "violations": 6
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Supabase is a software tool tagged 'Tools' in Ramp, so it belongs in the SaaS row.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s104_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 6.6,
+   "status": "ok",
+   "verified": 2,
+   "violations": 2
+  },
+  {
+   "attempts": 1,
+   "bug_id": "overlap_category",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B6",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$C$2:$C$2000,\"Linear\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Linear is a Software expense already counted in SaaS, so the Contractors row should only count the Contractors category.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "overlap_category/s104_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.6,
+   "status": "ok",
+   "verified": 12,
+   "violations": 12
+  },
+  {
+   "attempts": 1,
+   "bug_id": "overlap_category",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$C$2:$C$2000,\"Fiverr Pro\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Fiverr Pro is categorised as Contractors, so SaaS should only count Software and not also match it by merchant name.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "overlap_category/s104_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.6,
+   "status": "ok",
+   "verified": 9,
+   "violations": 9
+  },
+  {
+   "attempts": 1,
+   "bug_id": "overlap_category",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&B$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&B$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$C$2:$C$2000,\"Loom\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Loom is a Software expense already counted in SaaS, so the extra Loom term is removed from Other.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "overlap_category/s104_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.6,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "sign_flip",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!E5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&E$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(E$1),MONTH(E$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&E$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(E$1),MONTH(E$1)+1,1))+2*135",
+     "reason": "April SaaS had a hardcoded +2*135 added that the other months don't have; removing it matches the rest of the row.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "sign_flip/s104_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "sign_flip",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!H8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&H$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1)))",
+     "old_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&H$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1)))+2*420",
+     "reason": "July's Other had a stray hand-typed +2*420 added that the other months don't have; removing it matches the rest of the row.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "sign_flip/s104_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.2,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "sign_flip",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!K5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&K$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&K$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(K$1),MONTH(K$1)+1,1))+2*390",
+     "reason": "October SaaS had a hardcoded +2*390 adjustment that the other months don't have; removing it matches the rest of the row.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "sign_flip/s104_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "stale_hardcode",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!H5",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&H$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(H$1),MONTH(H$1)+1,1))",
+     "old_formula": "3104",
+     "reason": "July SaaS was a typed number; it now uses the same formula as the other months so it matches the Software transactions.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "stale_hardcode/s104_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "stale_hardcode",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!I6",
+     "kind": "edit_formula",
+     "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Contractors\",Ramp!$B$2:$B$2000,\">=\"&I$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(I$1),MONTH(I$1)+1,1))",
+     "old_formula": "19061",
+     "reason": "August Contractors was a typed number; it now uses the same formula as the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "stale_hardcode/s104_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.4,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "stale_hardcode",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!D8",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Travel\",Ramp!$B$2:$B$2000,\">=\"&D$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Meals\",Ramp!$B$2:$B$2000,\">=\"&D$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Office\",Ramp!$B$2:$B$2000,\">=\"&D$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Marketing\",Ramp!$B$2:$B$2000,\">=\"&D$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Legal\",Ramp!$B$2:$B$2000,\">=\"&D$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1))+SUMIFS(Bank!$D$2:$D$2000,Bank!$C$2:$C$2000,\"Bank fee*\",Bank!$B$2:$B$2000,\">=\"&D$1,Bank!$B$2:$B$2000,\"<\"&DATE(YEAR(D$1),MONTH(D$1)+1,1)))",
+     "old_formula": "19968",
+     "reason": "March Other was a typed number; it now uses the same formula as the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "stale_hardcode/s104_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.6,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "broken_rollforward",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!E2",
+     "kind": "edit_formula",
+     "new_formula": "=D11",
+     "old_formula": "1911437",
+     "reason": "April's Starting Cash was a typed number; it now links to March's Ending Cash like the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "broken_rollforward/s104_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.7,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "broken_rollforward",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!F2",
+     "kind": "edit_formula",
+     "new_formula": "=E11",
+     "old_formula": "1750198",
+     "reason": "May's Starting Cash was a typed number; it now links to April's Ending Cash like the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "broken_rollforward/s104_p1",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.8,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "attempts": 1,
+   "bug_id": "broken_rollforward",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!M2",
+     "kind": "edit_formula",
+     "new_formula": "=L11",
+     "old_formula": "595162",
+     "reason": "Dec Starting Cash was a typed number; it should link to Nov's Ending Cash like the other months.",
+     "row": null,
+     "scope": "cell",
+     "sheet": null
+    }
+   ],
+   "id": "broken_rollforward/s104_p2",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": true,
+   "seconds": 6.9,
+   "status": "ok",
+   "verified": 1,
+   "violations": 1
+  },
+  {
+   "bug_id": "dup_row",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmiD37Nv6GFk8r5VsA5'}",
+   "id": "dup_row/s105_p0",
+   "seconds": 4.9,
+   "status": "error"
+  },
+  {
+   "bug_id": "dup_row",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmiJ7SnWRU9rZXfEyoy'}",
+   "id": "dup_row/s105_p1",
+   "seconds": 4.4,
+   "status": "error"
+  },
+  {
+   "bug_id": "dup_row",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmiLVpak1fiVrdN8jpb'}",
+   "id": "dup_row/s105_p2",
+   "seconds": 4.3,
+   "status": "error"
+  },
+  {
+   "bug_id": "dropped_month",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmiMzrLrU1MWmdqHcca'}",
+   "id": "dropped_month/s105_p0",
+   "seconds": 4.3,
+   "status": "error"
+  },
+  {
+   "bug_id": "dropped_month",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmiUFtTyH7NA45osdgM'}",
+   "id": "dropped_month/s105_p1",
+   "seconds": 3.5,
+   "status": "error"
+  },
+  {
+   "bug_id": "dropped_month",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmiZj4WtusvTWvHSXsx'}",
+   "id": "dropped_month/s105_p2",
+   "seconds": 3.7,
+   "status": "error"
+  },
+  {
+   "attempts": 1,
+   "bug_id": "missing_vendor",
+   "first_try": true,
+   "fixed": true,
+   "fixes": [
+    {
+     "cell_ref": "Runway!B5",
+     "kind": "edit_formula",
+     "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+     "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+     "reason": "Webflow is a software tool, so the 'Tools' category now counts in the SaaS row.",
+     "row": null,
+     "scope": "row",
+     "sheet": null
+    }
+   ],
+   "id": "missing_vendor/s105_p0",
+   "llm_calls": 0,
+   "needs_human": 0,
+   "restored_clean": null,
+   "seconds": 6.8,
+   "status": "ok",
+   "verified": 11,
+   "violations": 11
+  },
+  {
+   "bug_id": "missing_vendor",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cgtmid9gNQsecy5NVMPmc'}",
+   "id": "missing_vendor/s105_p1",
+   "seconds": 4.5,
+   "status": "error"
+  },
+  {
+   "bug_id": "missing_vendor",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmiifoyXv26iQMxLSHN'}",
+   "id": "missing_vendor/s105_p2",
+   "seconds": 3.5,
+   "status": "error"
+  },
+  {
+   "bug_id": "overlap_category",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmirPuD6w7Z8vguFceX'}",
+   "id": "overlap_category/s105_p0",
+   "seconds": 3.9,
+   "status": "error"
+  },
+  {
+   "bug_id": "overlap_category",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cgtmj1EU3xsq3SNZpANYL'}",
+   "id": "overlap_category/s105_p1",
+   "seconds": 5.2,
+   "status": "error"
+  },
+  {
+   "bug_id": "overlap_category",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cgtmj4oH9Wx7BT3dmfv83'}",
+   "id": "overlap_category/s105_p2",
+   "seconds": 5.5,
+   "status": "error"
+  },
+  {
+   "bug_id": "sign_flip",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cgtmj9Mcqxo4RibtnxuQa'}",
+   "id": "sign_flip/s105_p0",
+   "seconds": 4.2,
+   "status": "error"
+  },
+  {
+   "bug_id": "sign_flip",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmjANu1oEnukuvxJ8aC'}",
+   "id": "sign_flip/s105_p1",
+   "seconds": 4.1,
+   "status": "error"
+  },
+  {
+   "bug_id": "sign_flip",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmjMLCXqE9orqmNrTqw'}",
+   "id": "sign_flip/s105_p2",
+   "seconds": 3.7,
+   "status": "error"
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmjS7SgGBCJpED3QiWz'}",
+   "id": "stale_hardcode/s105_p0",
+   "seconds": 4.0,
+   "status": "error"
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmjSxnAvamyyPVW1Ntp'}",
+   "id": "stale_hardcode/s105_p1",
+   "seconds": 4.1,
+   "status": "error"
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmjTJ82nnc6uDghQYtS'}",
+   "id": "stale_hardcode/s105_p2",
+   "seconds": 3.9,
+   "status": "error"
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmjcrrMq12Kf47fHP6x'}",
+   "id": "broken_rollforward/s105_p0",
+   "seconds": 3.7,
+   "status": "error"
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cgtmjg2qabk91dYFq62yq'}",
+   "id": "broken_rollforward/s105_p1",
+   "seconds": 3.3,
+   "status": "error"
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "error": "no proposal: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgtmjgkkU9thzarQnRkPT'}",
+   "id": "broken_rollforward/s105_p2",
+   "seconds": 3.3,
+   "status": "error"
+  }
+ ]
+}

@@ -1,7 +1,7 @@
 {
  "meta": {
   "agent_model": "claude-sonnet-5-5",
-  "agent_status": "skipped",
+  "agent_status": "ran",
   "confidence_min": 0.8,
   "lean": true,
   "suite": {
@@ -48,7 +48,209 @@
  },
  "metrics": {
   "agent": {
-   "status": "skipped"
+   "errors": 0,
+   "lean": {
+    "by_bug": {
+     "broken_rollforward": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "dropped_month": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "dup_row": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "missing_vendor": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "overlap_category": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 0.9333,
+      "localized": 14,
+      "n": 15
+     },
+     "sign_flip": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "stale_hardcode": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     }
+    },
+    "clean": {
+     "errors": 0,
+     "false_positive_rate": 0.0,
+     "flagged": 0,
+     "n": 20,
+     "violations": 0
+    },
+    "off_target_violations_on_buggy": 12,
+    "overall": {
+     "correct_invariant": 105,
+     "correct_invariant_rate": 1.0,
+     "detected": 105,
+     "detection_rate": 1.0,
+     "errors": 0,
+     "localization_rate": 0.9905,
+     "localized": 104,
+     "n": 105
+    }
+   },
+   "python": {
+    "by_bug": {
+     "broken_rollforward": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "dropped_month": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "dup_row": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "missing_vendor": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "overlap_category": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 0.9333,
+      "localized": 14,
+      "n": 15
+     },
+     "sign_flip": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "stale_hardcode": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     }
+    },
+    "clean": {
+     "errors": 0,
+     "false_positive_rate": 0.0,
+     "flagged": 0,
+     "n": 20,
+     "violations": 0
+    },
+    "off_target_violations_on_buggy": 12,
+    "overall": {
+     "correct_invariant": 105,
+     "correct_invariant_rate": 1.0,
+     "detected": 105,
+     "detection_rate": 1.0,
+     "errors": 0,
+     "localization_rate": 0.9905,
+     "localized": 104,
+     "n": 105
+    }
+   },
+   "python_vs_lean": {
+    "agree": 125,
+    "n": 125,
+    "rate": 1.0
+   },
+   "runtime_s": {
+    "check_median": 0.0272,
+    "spec_median": 5.249
+   },
+   "spec_accuracy": {
+    "assignment_equal": 124,
+    "assignment_equal_rate": 0.992,
+    "mean_line_accuracy": 0.9992,
+    "n": 125,
+    "wrong_specs": 1,
+    "wrong_specs_with_flagged_lines": 1
+   },
+   "status": "ok"
   },
   "rules": {
    "errors": 0,
@@ -242,7 +444,7 @@
     "rate": 1.0
    },
    "runtime_s": {
-    "check_median": 0.0293,
+    "check_median": 0.0284,
     "spec_median": 0.004
    },
    "status": "ok"
@@ -258,12 +460,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0606,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.265,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.3144,
+     "check_s": 0.3666,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -285,7 +516,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0108,
+     "spec_s": 0.0198,
      "status": "ok"
     }
    }
@@ -299,12 +530,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0317,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.347,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0281,
+     "check_s": 0.0331,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -326,7 +586,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -340,12 +600,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0255,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.494,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0258,
+     "check_s": 0.0286,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -381,51 +670,6 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.028,
-     "error": null,
-     "lean": {
-      "correct_invariant": true,
-      "detected": true,
-      "invariants": [
-       "traceability"
-      ],
-      "localized": true,
-      "n_violations": 1,
-      "off_target": 0
-     },
-     "python": {
-      "correct_invariant": true,
-      "detected": true,
-      "invariants": [
-       "traceability"
-      ],
-      "localized": true,
-      "n_violations": 1,
-      "off_target": 0
-     },
-     "spec_s": 0.0041,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": "dropped_month",
-   "id": "dropped_month/s101_p1",
-   "kind": "buggy",
-   "load_error": null,
-   "placement": 1,
-   "seed": 101,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
      "agree": true,
      "check_s": 0.0278,
      "error": null,
@@ -439,6 +683,7 @@
       "n_violations": 1,
       "off_target": 0
      },
+     "needs_review": [],
      "python": {
       "correct_invariant": true,
       "detected": true,
@@ -449,7 +694,109 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.024,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0303,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s101_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0251,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.024,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.026,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -463,12 +810,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0255,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.024,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0316,
+     "check_s": 0.0304,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -490,7 +866,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -504,12 +880,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0292,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.974,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0264,
+     "check_s": 0.0303,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -531,7 +936,7 @@
       "n_violations": 11,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -545,12 +950,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0254,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 7,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 7,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.897,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0263,
+     "check_s": 0.0275,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -572,7 +1006,7 @@
       "n_violations": 7,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -586,12 +1020,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0258,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.892,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0267,
+     "check_s": 0.0263,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -613,7 +1076,7 @@
       "n_violations": 2,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.0045,
      "status": "ok"
     }
    }
@@ -627,12 +1090,43 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0323,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "needs_review": [
+      "contractors"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.215,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0264,
+     "check_s": 0.0278,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -654,7 +1148,7 @@
       "n_violations": 12,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.0046,
      "status": "ok"
     }
    }
@@ -668,12 +1162,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0276,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 5,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 5,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.201,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.026,
+     "check_s": 0.0302,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -695,7 +1218,7 @@
       "n_violations": 5,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.0045,
      "status": "ok"
     }
    }
@@ -709,12 +1232,43 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0331,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "needs_review": [
+      "other"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 8.896,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.034,
+     "check_s": 0.0283,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -750,12 +1304,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0272,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.498,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.04,
+     "check_s": 0.0309,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -777,7 +1360,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -791,12 +1374,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0277,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.283,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0319,
+     "check_s": 0.027,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -832,12 +1444,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0296,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.279,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0286,
+     "check_s": 0.0271,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -873,12 +1514,43 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0294,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [
+      "saas"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.781,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.029,
+     "check_s": 0.0272,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -914,12 +1586,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0261,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.006,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0293,
+     "check_s": 0.0277,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -941,7 +1642,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.005,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -955,12 +1656,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0263,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.821,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0454,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -982,7 +1712,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0049,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -996,12 +1726,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0273,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.167,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0352,
+     "check_s": 0.0303,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1023,7 +1782,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0057,
+     "spec_s": 0.0041,
      "status": "ok"
     }
    }
@@ -1037,12 +1796,44 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.029,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [
+      "start",
+      "total_outflows"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.832,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0387,
+     "check_s": 0.0287,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1064,7 +1855,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0046,
+     "spec_s": 0.0041,
      "status": "ok"
     }
    }
@@ -1078,12 +1869,41 @@
    "seed": 101,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.1215,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.76,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0357,
+     "check_s": 0.0379,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1119,12 +1939,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0289,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.333,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.032,
+     "check_s": 0.0341,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1146,7 +1995,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -1160,12 +2009,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0378,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.713,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.029,
+     "check_s": 0.0342,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1187,7 +2065,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0046,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -1201,12 +2079,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.029,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.138,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0267,
+     "check_s": 0.0311,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1228,7 +2135,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0046,
+     "spec_s": 0.0041,
      "status": "ok"
     }
    }
@@ -1242,12 +2149,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0317,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.007,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0263,
+     "check_s": 0.0348,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1283,12 +2219,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0293,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.108,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0274,
+     "check_s": 0.0294,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1310,7 +2275,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -1324,12 +2289,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0281,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.137,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0263,
+     "check_s": 0.0322,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1351,7 +2345,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -1365,12 +2359,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0275,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.998,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0269,
+     "check_s": 0.0302,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1392,7 +2415,7 @@
       "n_violations": 11,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -1406,12 +2429,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0324,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 6,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 6,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.024,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0265,
+     "check_s": 0.0307,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1447,12 +2499,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0267,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.223,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.026,
+     "check_s": 0.0316,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1474,7 +2555,7 @@
       "n_violations": 2,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -1488,12 +2569,44 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.029,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "needs_review": [
+      "contractors",
+      "total_outflows"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 8.334,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0266,
+     "check_s": 0.0297,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1515,7 +2628,7 @@
       "n_violations": 12,
       "off_target": 0
      },
-     "spec_s": 0.0057,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -1529,12 +2642,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.028,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 4,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 4,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 8.1,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0271,
+     "check_s": 0.0312,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1556,7 +2698,7 @@
       "n_violations": 4,
       "off_target": 0
      },
-     "spec_s": 0.0054,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -1570,12 +2712,44 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0306,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "needs_review": [
+      "other",
+      "total_outflows"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 8.191,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.027,
+     "check_s": 0.0286,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1597,7 +2771,7 @@
       "n_violations": 12,
       "off_target": 0
      },
-     "spec_s": 0.0049,
+     "spec_s": 0.0044,
      "status": "ok"
     }
    }
@@ -1611,12 +2785,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0269,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 8.122,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0262,
+     "check_s": 0.0358,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1652,12 +2855,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.026,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.947,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0255,
+     "check_s": 0.0276,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1679,7 +2911,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0041,
      "status": "ok"
     }
    }
@@ -1693,12 +2925,43 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0266,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [
+      "total_outflows"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.353,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0262,
+     "check_s": 0.0276,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1720,7 +2983,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0047,
      "status": "ok"
     }
    }
@@ -1734,12 +2997,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0276,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.167,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0262,
+     "check_s": 0.027,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1775,12 +3067,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0255,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.107,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0249,
+     "check_s": 0.0301,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1802,7 +3123,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0045,
+     "spec_s": 0.0041,
      "status": "ok"
     }
    }
@@ -1816,12 +3137,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0263,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.99,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0268,
+     "check_s": 0.0275,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1843,7 +3193,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0039,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -1857,12 +3207,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0273,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.218,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0269,
+     "check_s": 0.028,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1884,7 +3263,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -1898,12 +3277,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0271,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.207,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0253,
+     "check_s": 0.0272,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1925,7 +3333,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -1939,12 +3347,41 @@
    "seed": 102,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0355,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.962,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0255,
+     "check_s": 0.0309,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -1966,7 +3403,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0047,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -1980,12 +3417,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0266,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.898,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.2079,
+     "check_s": 0.034,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2007,7 +3473,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -2021,12 +3487,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.026,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.882,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0287,
+     "check_s": 0.2248,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2048,7 +3543,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -2062,12 +3557,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0299,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.009,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0273,
+     "check_s": 0.0257,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2089,7 +3613,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0045,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -2103,12 +3627,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0265,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.076,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0265,
+     "check_s": 0.0277,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2130,7 +3683,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.005,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -2144,12 +3697,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0261,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.218,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0263,
+     "check_s": 0.0281,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2185,12 +3767,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0254,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.067,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0272,
+     "check_s": 0.0264,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2226,12 +3837,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0263,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.612,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0279,
+     "check_s": 0.0257,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2253,7 +3893,7 @@
       "n_violations": 11,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -2267,12 +3907,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0272,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 6,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 6,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.106,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0301,
+     "check_s": 0.0295,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2294,7 +3963,7 @@
       "n_violations": 6,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -2308,12 +3977,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0257,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 3,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 3,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.892,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.03,
+     "check_s": 0.0266,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2349,12 +4047,43 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0259,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "needs_review": [
+      "total_outflows"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.859,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0339,
+     "check_s": 0.0269,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2376,7 +4105,7 @@
       "n_violations": 12,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.0046,
      "status": "ok"
     }
    }
@@ -2390,12 +4119,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0267,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 7,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 7,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.144,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0275,
+     "check_s": 0.0266,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2417,7 +4175,7 @@
       "n_violations": 7,
       "off_target": 0
      },
-     "spec_s": 0.0047,
+     "spec_s": 0.0044,
      "status": "ok"
     }
    }
@@ -2431,12 +4189,43 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0276,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 5,
+      "off_target": 0
+     },
+     "needs_review": [
+      "other"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 5,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 9.22,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0269,
+     "check_s": 0.0299,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2458,7 +4247,7 @@
       "n_violations": 5,
       "off_target": 0
      },
-     "spec_s": 0.0045,
+     "spec_s": 0.0053,
      "status": "ok"
     }
    }
@@ -2472,12 +4261,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0275,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 8.281,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0269,
+     "check_s": 0.0338,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2499,7 +4317,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0046,
      "status": "ok"
     }
    }
@@ -2513,12 +4331,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.03,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.601,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0262,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2540,7 +4387,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0047,
      "status": "ok"
     }
    }
@@ -2554,12 +4401,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0318,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.107,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0249,
+     "check_s": 0.0277,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2581,7 +4457,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0048,
      "status": "ok"
     }
    }
@@ -2595,12 +4471,43 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0267,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [
+      "saas"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.259,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.026,
+     "check_s": 0.0284,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2622,7 +4529,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0046,
      "status": "ok"
     }
    }
@@ -2636,12 +4543,111 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0265,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.082,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0254,
+     "check_s": 0.0294,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s103_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.03,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.85,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0273,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2669,47 +4675,6 @@
    }
   },
   {
-   "bug_id": "stale_hardcode",
-   "id": "stale_hardcode/s103_p2",
-   "kind": "buggy",
-   "load_error": null,
-   "placement": 2,
-   "seed": 103,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0253,
-     "error": null,
-     "lean": {
-      "correct_invariant": true,
-      "detected": true,
-      "invariants": [
-       "traceability"
-      ],
-      "localized": true,
-      "n_violations": 1,
-      "off_target": 0
-     },
-     "python": {
-      "correct_invariant": true,
-      "detected": true,
-      "invariants": [
-       "traceability"
-      ],
-      "localized": true,
-      "n_violations": 1,
-      "off_target": 0
-     },
-     "spec_s": 0.0039,
-     "status": "ok"
-    }
-   }
-  },
-  {
    "bug_id": "broken_rollforward",
    "id": "broken_rollforward/s103_p0",
    "kind": "buggy",
@@ -2718,12 +4683,41 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0276,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.501,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0265,
+     "check_s": 0.0292,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2759,12 +4753,8 @@
    "seed": 103,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
      "agree": true,
-     "check_s": 0.031,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2776,6 +4766,7 @@
       "n_violations": 1,
       "off_target": 0
      },
+     "needs_review": [],
      "python": {
       "correct_invariant": true,
       "detected": true,
@@ -2786,26 +4777,17 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.267,
      "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": "broken_rollforward",
-   "id": "broken_rollforward/s103_p2",
-   "kind": "buggy",
-   "load_error": null,
-   "placement": 2,
-   "seed": 103,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0393,
+     "check_s": 0.0299,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2833,6 +4815,76 @@
    }
   },
   {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s103_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0318,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.367,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0272,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
    "bug_id": "dup_row",
    "id": "dup_row/s104_p0",
    "kind": "buggy",
@@ -2841,12 +4893,43 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0276,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [
+      "total_outflows"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.059,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.029,
+     "check_s": 0.0274,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2868,7 +4951,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0045,
+     "spec_s": 0.0041,
      "status": "ok"
     }
    }
@@ -2882,12 +4965,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0302,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.809,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0282,
+     "check_s": 0.0309,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2923,12 +5035,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0346,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.957,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0307,
+     "check_s": 0.0309,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2950,7 +5091,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -2964,12 +5105,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0262,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.469,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.173,
+     "check_s": 0.0279,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -2991,7 +5161,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0041,
      "status": "ok"
     }
    }
@@ -3005,12 +5175,8 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
      "agree": true,
-     "check_s": 0.051,
+     "check_s": 0.0269,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3022,6 +5188,7 @@
       "n_violations": 1,
       "off_target": 0
      },
+     "needs_review": [],
      "python": {
       "correct_invariant": true,
       "detected": true,
@@ -3032,26 +5199,17 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.147,
      "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": "dropped_month",
-   "id": "dropped_month/s104_p2",
-   "kind": "buggy",
-   "load_error": null,
-   "placement": 2,
-   "seed": 104,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0522,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3079,6 +5237,76 @@
    }
   },
   {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s104_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0257,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.038,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0262,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0057,
+     "status": "ok"
+    }
+   }
+  },
+  {
    "bug_id": "missing_vendor",
    "id": "missing_vendor/s104_p0",
    "kind": "buggy",
@@ -3087,12 +5315,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0637,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 10,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 10,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.976,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0368,
+     "check_s": 0.0298,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3114,7 +5371,7 @@
       "n_violations": 10,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -3128,12 +5385,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0309,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 6,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 6,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.893,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.05,
+     "check_s": 0.0323,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3155,7 +5441,7 @@
       "n_violations": 6,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -3169,12 +5455,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0326,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.998,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0311,
+     "check_s": 0.0466,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3196,7 +5511,7 @@
       "n_violations": 2,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -3210,12 +5525,43 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.033,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "needs_review": [
+      "total_outflows"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.538,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0313,
+     "check_s": 0.0354,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3237,7 +5583,7 @@
       "n_violations": 12,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0044,
      "status": "ok"
     }
    }
@@ -3251,12 +5597,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0364,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 9,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 9,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.243,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0312,
+     "check_s": 0.0295,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3292,12 +5667,43 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0284,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [
+      "other"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.811,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0349,
+     "check_s": 0.0379,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3333,12 +5739,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.034,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.686,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0293,
+     "check_s": 0.0317,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3360,7 +5795,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -3374,12 +5809,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0372,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.985,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0289,
+     "check_s": 0.0385,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3401,7 +5865,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -3415,12 +5879,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0528,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.517,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0304,
+     "check_s": 0.0323,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3442,7 +5935,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -3456,12 +5949,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0312,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.531,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0299,
+     "check_s": 0.0351,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3483,7 +6005,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -3497,12 +6019,43 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0271,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [
+      "contractors"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.162,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0311,
+     "check_s": 0.0304,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3538,12 +6091,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0291,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.0,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0378,
+     "check_s": 0.0269,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3565,7 +6147,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -3579,12 +6161,41 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0336,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.452,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0329,
+     "check_s": 0.0349,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3606,7 +6217,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0045,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -3620,12 +6231,8 @@
    "seed": 104,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
      "agree": true,
-     "check_s": 0.0289,
+     "check_s": 0.0261,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3637,6 +6244,7 @@
       "n_violations": 1,
       "off_target": 0
      },
+     "needs_review": [],
      "python": {
       "correct_invariant": true,
       "detected": true,
@@ -3647,26 +6255,17 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.103,
      "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": "broken_rollforward",
-   "id": "broken_rollforward/s104_p2",
-   "kind": "buggy",
-   "load_error": null,
-   "placement": 2,
-   "seed": 104,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0293,
+     "check_s": 0.0291,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3694,6 +6293,76 @@
    }
   },
   {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s104_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.026,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.219,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0289,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
    "bug_id": "dup_row",
    "id": "dup_row/s105_p0",
    "kind": "buggy",
@@ -3702,12 +6371,8 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
      "agree": true,
-     "check_s": 0.0314,
+     "check_s": 0.0266,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3719,6 +6384,7 @@
       "n_violations": 1,
       "off_target": 0
      },
+     "needs_review": [],
      "python": {
       "correct_invariant": true,
       "detected": true,
@@ -3729,26 +6395,17 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.926,
      "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": "dup_row",
-   "id": "dup_row/s105_p1",
-   "kind": "buggy",
-   "load_error": null,
-   "placement": 1,
-   "seed": 105,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0329,
+     "check_s": 0.027,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3777,6 +6434,78 @@
   },
   {
    "bug_id": "dup_row",
+   "id": "dup_row/s105_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0267,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [
+      "total_outflows"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.719,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0301,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
    "id": "dup_row/s105_p2",
    "kind": "buggy",
    "load_error": null,
@@ -3784,12 +6513,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0252,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.859,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0317,
+     "check_s": 0.0269,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3825,12 +6583,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.027,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.425,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0299,
+     "check_s": 0.0303,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3852,7 +6639,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -3866,12 +6653,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0255,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.756,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0293,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3893,7 +6709,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -3907,12 +6723,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0269,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.174,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0301,
+     "check_s": 0.0326,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3934,7 +6779,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -3948,12 +6793,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0256,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.346,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0305,
+     "check_s": 0.0261,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -3975,7 +6849,7 @@
       "n_violations": 11,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -3989,12 +6863,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0259,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 7,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 7,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.924,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0471,
+     "check_s": 0.0263,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4016,7 +6919,7 @@
       "n_violations": 7,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -4030,12 +6933,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0344,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.919,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0423,
+     "check_s": 0.026,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4071,12 +7003,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0255,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.038,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0777,
+     "check_s": 0.0276,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4098,7 +7059,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -4112,12 +7073,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0269,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 8,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 8,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.958,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0664,
+     "check_s": 0.03,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4139,7 +7129,7 @@
       "n_violations": 8,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -4153,12 +7143,45 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0265,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": false,
+      "n_violations": 12,
+      "off_target": 12
+     },
+     "needs_review": [
+      "other"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": false,
+      "n_violations": 12,
+      "off_target": 12
+     },
+     "spec_accuracy": {
+      "accuracy": 0.9,
+      "assignment_equal": false,
+      "wrong_lines": [
+       "other"
+      ]
+     },
+     "spec_s": 4.923,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0354,
+     "check_s": 0.0287,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4180,7 +7203,7 @@
       "n_violations": 12,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -4194,12 +7217,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0251,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.245,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0317,
+     "check_s": 0.0269,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4221,7 +7273,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4235,12 +7287,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0258,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.126,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0293,
+     "check_s": 0.027,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4276,12 +7357,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0272,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.084,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0294,
+     "check_s": 0.0265,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4317,12 +7427,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0283,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.952,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0328,
+     "check_s": 0.0303,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4344,7 +7483,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4358,12 +7497,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0268,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.063,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0294,
+     "check_s": 0.0278,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4385,7 +7553,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4399,12 +7567,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0349,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.008,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0343,
+     "check_s": 0.0369,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4426,7 +7623,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0109,
+     "spec_s": 0.0038,
      "status": "ok"
     }
    }
@@ -4440,12 +7637,43 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0286,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [
+      "start"
+     ],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.291,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0516,
+     "check_s": 0.0285,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4467,7 +7695,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4481,12 +7709,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0292,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.716,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0695,
+     "check_s": 0.03,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4508,7 +7765,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0046,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -4522,12 +7779,41 @@
    "seed": 105,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.031,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "needs_review": [],
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 8.258,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0655,
+     "check_s": 0.0336,
      "error": null,
      "lean": {
       "correct_invariant": true,
@@ -4549,7 +7835,7 @@
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4563,12 +7849,31 @@
    "seed": 201,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.029,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.638,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.037,
+     "check_s": 0.031,
      "error": null,
      "lean": {
       "detected": false,
@@ -4580,7 +7885,7 @@
       "invariants": [],
       "n_violations": 0
      },
-     "spec_s": 0.0059,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -4594,12 +7899,31 @@
    "seed": 202,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0272,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 7.527,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.04,
+     "check_s": 0.0273,
      "error": null,
      "lean": {
       "detected": false,
@@ -4611,7 +7935,7 @@
       "invariants": [],
       "n_violations": 0
      },
-     "spec_s": 0.0049,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4625,12 +7949,31 @@
    "seed": 203,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0256,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 8.203,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0539,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
       "detected": false,
@@ -4642,7 +7985,7 @@
       "invariants": [],
       "n_violations": 0
      },
-     "spec_s": 0.005,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -4656,473 +7999,27 @@
    "seed": 204,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
      "agree": true,
-     "check_s": 0.0435,
+     "check_s": 0.0255,
      "error": null,
      "lean": {
       "detected": false,
       "invariants": [],
       "n_violations": 0
      },
+     "needs_review": [],
      "python": {
       "detected": false,
       "invariants": [],
       "n_violations": 0
      },
-     "spec_s": 0.0046,
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.091,
      "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s205",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 205,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0482,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0059,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s206",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 206,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0884,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0052,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s207",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 207,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0324,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0045,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s208",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 208,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0307,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0044,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s209",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 209,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0329,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0044,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s210",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 210,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.028,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0045,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s211",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 211,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0336,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0043,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s212",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 212,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0302,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0041,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s213",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 213,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0283,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0042,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s214",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 214,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0275,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0042,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s215",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 215,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0276,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0044,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s216",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 216,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0281,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0067,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s217",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 217,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0274,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0049,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s218",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 218,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.026,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0042,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s219",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 219,
-   "sources": {
-    "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
     },
     "rules": {
      "agree": true,
@@ -5138,6 +8035,56 @@
       "invariants": [],
       "n_violations": 0
      },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s205",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 205,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0251,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.099,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0252,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
      "spec_s": 0.004,
      "status": "ok"
     }
@@ -5145,15 +8092,486 @@
   },
   {
    "bug_id": null,
-   "id": "clean/s220",
+   "id": "clean/s206",
    "kind": "clean",
    "load_error": null,
    "placement": null,
-   "seed": 220,
+   "seed": 206,
    "sources": {
     "agent": {
-     "error": "--no-agent",
-     "status": "skipped"
+     "agree": true,
+     "check_s": 0.0257,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.012,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0261,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s207",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 207,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0256,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.988,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0281,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s208",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 208,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0255,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 6.054,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0265,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s209",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 209,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0257,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.298,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0272,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s210",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 210,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0253,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 4.945,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0267,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s211",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 211,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0249,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [
+      "total_outflows"
+     ],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.727,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0254,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s212",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 212,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0283,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.319,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0287,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s213",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 213,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0257,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.249,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0272,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s214",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 214,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.025,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.34,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0266,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s215",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 215,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0249,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.207,
+     "status": "ok"
     },
     "rules": {
      "agree": true,
@@ -5169,7 +8587,259 @@
       "invariants": [],
       "n_violations": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s216",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 216,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0261,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.337,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0256,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s217",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 217,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0253,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.395,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0261,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s218",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 218,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0292,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [
+      "total_outflows"
+     ],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.238,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0274,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s219",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 219,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.026,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.104,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0256,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s220",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 220,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.029,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 5.048,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0265,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
