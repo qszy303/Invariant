@@ -9,7 +9,7 @@ lean:
 	cd lean && lake env lean AxiomsCheck.lean
 
 eval:
-	@echo "eval: not implemented yet (A6)"
+	uv run python -m eval.run
 
 demo:
 	@echo "demo: not implemented yet (A8)"

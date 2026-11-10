@@ -5,3 +5,6 @@ __pycache__/
 .DS_Store
 lean/.lake/
 data/
+eval/suite/**/*.xlsx
+eval/.cache/
+.proof_cache/

@@ -1,0 +1,5178 @@
+{
+ "meta": {
+  "agent_model": "claude-sonnet-5-5",
+  "agent_status": "skipped",
+  "confidence_min": 0.8,
+  "lean": true,
+  "suite": {
+   "bug_ids": [
+    "dup_row",
+    "dropped_month",
+    "missing_vendor",
+    "overlap_category",
+    "sign_flip",
+    "stale_hardcode",
+    "broken_rollforward"
+   ],
+   "bug_seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+   ],
+   "clean_seeds": [
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220
+   ],
+   "placements": 3
+  }
+ },
+ "metrics": {
+  "agent": {
+   "status": "skipped"
+  },
+  "rules": {
+   "errors": 0,
+   "lean": {
+    "by_bug": {
+     "broken_rollforward": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "dropped_month": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "dup_row": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "missing_vendor": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "overlap_category": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "sign_flip": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "stale_hardcode": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     }
+    },
+    "clean": {
+     "errors": 0,
+     "false_positive_rate": 0.0,
+     "flagged": 0,
+     "n": 20,
+     "violations": 0
+    },
+    "off_target_violations_on_buggy": 0,
+    "overall": {
+     "correct_invariant": 105,
+     "correct_invariant_rate": 1.0,
+     "detected": 105,
+     "detection_rate": 1.0,
+     "errors": 0,
+     "localization_rate": 1.0,
+     "localized": 105,
+     "n": 105
+    }
+   },
+   "python": {
+    "by_bug": {
+     "broken_rollforward": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "dropped_month": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "dup_row": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "missing_vendor": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "overlap_category": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "sign_flip": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     },
+     "stale_hardcode": {
+      "correct_invariant": 15,
+      "correct_invariant_rate": 1.0,
+      "detected": 15,
+      "detection_rate": 1.0,
+      "errors": 0,
+      "localization_rate": 1.0,
+      "localized": 15,
+      "n": 15
+     }
+    },
+    "clean": {
+     "errors": 0,
+     "false_positive_rate": 0.0,
+     "flagged": 0,
+     "n": 20,
+     "violations": 0
+    },
+    "off_target_violations_on_buggy": 0,
+    "overall": {
+     "correct_invariant": 105,
+     "correct_invariant_rate": 1.0,
+     "detected": 105,
+     "detection_rate": 1.0,
+     "errors": 0,
+     "localization_rate": 1.0,
+     "localized": 105,
+     "n": 105
+    }
+   },
+   "python_vs_lean": {
+    "agree": 125,
+    "n": 125,
+    "rate": 1.0
+   },
+   "runtime_s": {
+    "check_median": 0.0293,
+    "spec_median": 0.004
+   },
+   "status": "ok"
+  }
+ },
+ "models": [
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s101_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.3144,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0108,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s101_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0281,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s101_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0258,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s101_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.028,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s101_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0278,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s101_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0316,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s101_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0264,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s101_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0263,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 7,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 7,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s101_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0267,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s101_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0264,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s101_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.026,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 5,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 5,
+      "off_target": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s101_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.034,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s101_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.04,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s101_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0319,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s101_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0286,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s101_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.029,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s101_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0293,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.005,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s101_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0454,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0049,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s101_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0352,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0057,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s101_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0387,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0046,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s101_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 101,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0357,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s102_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.032,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s102_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.029,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0046,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s102_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0267,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0046,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s102_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0263,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s102_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0274,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s102_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0263,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s102_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0269,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s102_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0265,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 6,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 6,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s102_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.026,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s102_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0266,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_s": 0.0057,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s102_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0271,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 4,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 4,
+      "off_target": 0
+     },
+     "spec_s": 0.0054,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s102_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.027,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_s": 0.0049,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s102_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0262,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0046,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s102_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0255,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s102_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0262,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s102_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0262,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s102_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0249,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0045,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s102_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0268,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s102_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0269,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s102_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0253,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s102_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 102,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0255,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0047,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s103_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.2079,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s103_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0287,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s103_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0273,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0045,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s103_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0265,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.005,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s103_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0263,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s103_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0272,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s103_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0279,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s103_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0301,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 6,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 6,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s103_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.03,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 3,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 3,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s103_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0339,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s103_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0275,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 7,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 7,
+      "off_target": 0
+     },
+     "spec_s": 0.0047,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s103_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0269,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 5,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 5,
+      "off_target": 0
+     },
+     "spec_s": 0.0045,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s103_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0269,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s103_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0262,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s103_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0249,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s103_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.026,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s103_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0254,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s103_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0253,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s103_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0265,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s103_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.031,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s103_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 103,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0393,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s104_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.029,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0045,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s104_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0282,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s104_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0307,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s104_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.173,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s104_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.051,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s104_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0522,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s104_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0368,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 10,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 10,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s104_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.05,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 6,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 6,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s104_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0311,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s104_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0313,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s104_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0312,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 9,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 9,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s104_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0349,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s104_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0293,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s104_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0289,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s104_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0304,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s104_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0299,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s104_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0311,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s104_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0378,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s104_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0329,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0045,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s104_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0289,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s104_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 104,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0293,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s105_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0314,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s105_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0329,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dup_row",
+   "id": "dup_row/s105_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0317,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s105_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0299,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s105_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0293,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "dropped_month",
+   "id": "dropped_month/s105_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0301,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s105_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0305,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 11,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s105_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0471,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 7,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 7,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "missing_vendor",
+   "id": "missing_vendor/s105_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0423,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "coverage"
+      ],
+      "localized": true,
+      "n_violations": 2,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s105_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0777,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s105_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0664,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 8,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 8,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "overlap_category",
+   "id": "overlap_category/s105_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0354,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "no_double_count"
+      ],
+      "localized": true,
+      "n_violations": 12,
+      "off_target": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s105_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0317,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s105_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0293,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "sign_flip",
+   "id": "sign_flip/s105_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0294,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s105_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0328,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s105_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0294,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "stale_hardcode",
+   "id": "stale_hardcode/s105_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0343,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "traceability"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0109,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s105_p0",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 0,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0516,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s105_p1",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 1,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0695,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0046,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": "broken_rollforward",
+   "id": "broken_rollforward/s105_p2",
+   "kind": "buggy",
+   "load_error": null,
+   "placement": 2,
+   "seed": 105,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0655,
+     "error": null,
+     "lean": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "python": {
+      "correct_invariant": true,
+      "detected": true,
+      "invariants": [
+       "roll_forward"
+      ],
+      "localized": true,
+      "n_violations": 1,
+      "off_target": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s201",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 201,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.037,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0059,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s202",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 202,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.04,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0049,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s203",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 203,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0539,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.005,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s204",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 204,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0435,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0046,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s205",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 205,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0482,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0059,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s206",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 206,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0884,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0052,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s207",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 207,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0324,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0045,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s208",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 208,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0307,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s209",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 209,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0329,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s210",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 210,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.028,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0045,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s211",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 211,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0336,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0043,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s212",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 212,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0302,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s213",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 213,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0283,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s214",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 214,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0275,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s215",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 215,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0276,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0044,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s216",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 216,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0281,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0067,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s217",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 217,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0274,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0049,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s218",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 218,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.026,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0042,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s219",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 219,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0262,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s220",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 220,
+   "sources": {
+    "agent": {
+     "error": "--no-agent",
+     "status": "skipped"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0255,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  }
+ ]
+}

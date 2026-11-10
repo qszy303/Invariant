@@ -1,0 +1,2839 @@
+{
+ "bug_ids": [
+  "dup_row",
+  "dropped_month",
+  "missing_vendor",
+  "overlap_category",
+  "sign_flip",
+  "stale_hardcode",
+  "broken_rollforward"
+ ],
+ "bug_seeds": [
+  101,
+  102,
+  103,
+  104,
+  105
+ ],
+ "clean_seeds": [
+  201,
+  202,
+  203,
+  204,
+  205,
+  206,
+  207,
+  208,
+  209,
+  210,
+  211,
+  212,
+  213,
+  214,
+  215,
+  216,
+  217,
+  218,
+  219,
+  220
+ ],
+ "placements": 3,
+ "models": [
+  {
+   "id": "dup_row/s101_p0",
+   "path": "dup_row/s101_p0.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 0,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A48:F48"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!D5"
+    ],
+    "txn_ids": [
+     "ramp-0046"
+    ],
+    "note": "ramp-0046 (Figma) pasted twice; SaaS counts it twice"
+   }
+  },
+  {
+   "id": "dup_row/s101_p1",
+   "path": "dup_row/s101_p1.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 1,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A191:F191"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!J6"
+    ],
+    "txn_ids": [
+     "ramp-0189"
+    ],
+    "note": "ramp-0189 (Fiverr Pro) pasted twice; Contractors counts it twice"
+   }
+  },
+  {
+   "id": "dup_row/s101_p2",
+   "path": "dup_row/s101_p2.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 2,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A155:F155"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!H8"
+    ],
+    "txn_ids": [
+     "ramp-0153"
+    ],
+    "note": "ramp-0153 (Delta) pasted twice; Other counts it twice"
+   }
+  },
+  {
+   "id": "dropped_month/s101_p0",
+   "path": "dropped_month/s101_p0.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 0,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!B5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!B5"
+    ],
+    "txn_ids": [],
+    "note": "SaaS B5: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "dropped_month/s101_p1",
+   "path": "dropped_month/s101_p1.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 1,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!G6"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!G6"
+    ],
+    "txn_ids": [],
+    "note": "Contractors G6: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "dropped_month/s101_p2",
+   "path": "dropped_month/s101_p2.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 2,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!F8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!F8"
+    ],
+    "txn_ids": [],
+    "note": "Other F8: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "missing_vendor/s101_p0",
+   "path": "missing_vendor/s101_p0.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 0,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A272:F282"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x0000",
+     "ramp-x0001",
+     "ramp-x0002",
+     "ramp-x0003",
+     "ramp-x0004",
+     "ramp-x0005",
+     "ramp-x0006",
+     "ramp-x0007",
+     "ramp-x0008",
+     "ramp-x0009",
+     "ramp-x0010"
+    ],
+    "note": "Supabase charged monthly from 02/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "missing_vendor/s101_p1",
+   "path": "missing_vendor/s101_p1.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 1,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A272:F278"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x1000",
+     "ramp-x1001",
+     "ramp-x1002",
+     "ramp-x1003",
+     "ramp-x1004",
+     "ramp-x1005",
+     "ramp-x1006"
+    ],
+    "note": "Postman charged monthly from 06/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "missing_vendor/s101_p2",
+   "path": "missing_vendor/s101_p2.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 2,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A272:F273"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x2000",
+     "ramp-x2001"
+    ],
+    "note": "Postman charged monthly from 11/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "overlap_category/s101_p0",
+   "path": "overlap_category/s101_p0.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 0,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B6",
+     "Runway!C6",
+     "Runway!D6",
+     "Runway!E6",
+     "Runway!F6",
+     "Runway!G6",
+     "Runway!H6",
+     "Runway!I6",
+     "Runway!J6",
+     "Runway!K6",
+     "Runway!L6",
+     "Runway!M6"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0004",
+     "ramp-0026",
+     "ramp-0049",
+     "ramp-0071",
+     "ramp-0094",
+     "ramp-0116",
+     "ramp-0138",
+     "ramp-0160",
+     "ramp-0182",
+     "ramp-0205",
+     "ramp-0229",
+     "ramp-0251"
+    ],
+    "note": "Contractors row also sums AWS (Software) by merchant, so AWS lands in two lines"
+   }
+  },
+  {
+   "id": "overlap_category/s101_p1",
+   "path": "overlap_category/s101_p1.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 1,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B5",
+     "Runway!C5",
+     "Runway!D5",
+     "Runway!E5",
+     "Runway!F5",
+     "Runway!G5",
+     "Runway!H5",
+     "Runway!I5",
+     "Runway!J5",
+     "Runway!K5",
+     "Runway!L5",
+     "Runway!M5"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0010",
+     "ramp-0039",
+     "ramp-0189",
+     "ramp-0239",
+     "ramp-0269"
+    ],
+    "note": "SaaS row also sums Fiverr Pro (Contractors) by merchant, so Fiverr Pro lands in two lines"
+   }
+  },
+  {
+   "id": "overlap_category/s101_p2",
+   "path": "overlap_category/s101_p2.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 2,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B8",
+     "Runway!C8",
+     "Runway!D8",
+     "Runway!E8",
+     "Runway!F8",
+     "Runway!G8",
+     "Runway!H8",
+     "Runway!I8",
+     "Runway!J8",
+     "Runway!K8",
+     "Runway!L8",
+     "Runway!M8"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0009",
+     "ramp-0033",
+     "ramp-0054",
+     "ramp-0078",
+     "ramp-0101",
+     "ramp-0123",
+     "ramp-0144",
+     "ramp-0165",
+     "ramp-0188",
+     "ramp-0212",
+     "ramp-0234",
+     "ramp-0256"
+    ],
+    "note": "Other row also sums Zoom (Software) by merchant, so Zoom lands in two lines"
+   }
+  },
+  {
+   "id": "sign_flip/s101_p0",
+   "path": "sign_flip/s101_p0.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 0,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!E5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!E5"
+    ],
+    "txn_ids": [
+     "ramp-0083"
+    ],
+    "note": "SaaS E5: refund ramp-0083 (Figma, 135) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "sign_flip/s101_p1",
+   "path": "sign_flip/s101_p1.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 1,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!H8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!H8"
+    ],
+    "txn_ids": [
+     "ramp-0151"
+    ],
+    "note": "Other H8: refund ramp-0151 (Delta, 420) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "sign_flip/s101_p2",
+   "path": "sign_flip/s101_p2.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 2,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!K5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!K5"
+    ],
+    "txn_ids": [
+     "ramp-0207"
+    ],
+    "note": "SaaS K5: refund ramp-0207 (Intercom, 390) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "stale_hardcode/s101_p0",
+   "path": "stale_hardcode/s101_p0.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 0,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!E5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!E5"
+    ],
+    "txn_ids": [],
+    "note": "SaaS E5: formula replaced by typed 2963 (live value 3,127.52)"
+   }
+  },
+  {
+   "id": "stale_hardcode/s101_p1",
+   "path": "stale_hardcode/s101_p1.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 1,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!E6"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!E6"
+    ],
+    "txn_ids": [],
+    "note": "Contractors E6: formula replaced by typed 8987 (live value 9,660.00)"
+   }
+  },
+  {
+   "id": "stale_hardcode/s101_p2",
+   "path": "stale_hardcode/s101_p2.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 2,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!M8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!M8"
+    ],
+    "txn_ids": [],
+    "note": "Other M8: formula replaced by typed 18683 (live value 19,825.00)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s101_p0",
+   "path": "broken_rollforward/s101_p0.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 0,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!E2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!E2"
+    ],
+    "txn_ids": [],
+    "note": "E2: Starting Cash typed as 1906762 instead of linking to prior Ending Cash (+4839 off)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s101_p1",
+   "path": "broken_rollforward/s101_p1.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 1,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!I2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!I2"
+    ],
+    "txn_ids": [],
+    "note": "I2: Starting Cash typed as 1274557 instead of linking to prior Ending Cash (+14469 off)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s101_p2",
+   "path": "broken_rollforward/s101_p2.xlsx",
+   "kind": "buggy",
+   "seed": 101,
+   "placement": 2,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!M2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!M2"
+    ],
+    "txn_ids": [],
+    "note": "M2: Starting Cash typed as 639163 instead of linking to prior Ending Cash (-2670 off)"
+   }
+  },
+  {
+   "id": "dup_row/s102_p0",
+   "path": "dup_row/s102_p0.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 0,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A225:F225"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!K5"
+    ],
+    "txn_ids": [
+     "ramp-0223"
+    ],
+    "note": "ramp-0223 (Segment) pasted twice; SaaS counts it twice"
+   }
+  },
+  {
+   "id": "dup_row/s102_p1",
+   "path": "dup_row/s102_p1.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 1,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A77:F77"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!E6"
+    ],
+    "txn_ids": [
+     "ramp-0075"
+    ],
+    "note": "ramp-0075 (Fiverr Pro) pasted twice; Contractors counts it twice"
+   }
+  },
+  {
+   "id": "dup_row/s102_p2",
+   "path": "dup_row/s102_p2.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 2,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A130:F130"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!G8"
+    ],
+    "txn_ids": [
+     "ramp-0128"
+    ],
+    "note": "ramp-0128 (Delta) pasted twice; Other counts it twice"
+   }
+  },
+  {
+   "id": "dropped_month/s102_p0",
+   "path": "dropped_month/s102_p0.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 0,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!G5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!G5"
+    ],
+    "txn_ids": [],
+    "note": "SaaS G5: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "dropped_month/s102_p1",
+   "path": "dropped_month/s102_p1.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 1,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!D6"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!D6"
+    ],
+    "txn_ids": [],
+    "note": "Contractors D6: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "dropped_month/s102_p2",
+   "path": "dropped_month/s102_p2.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 2,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!J8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!J8"
+    ],
+    "txn_ids": [],
+    "note": "Other J8: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "missing_vendor/s102_p0",
+   "path": "missing_vendor/s102_p0.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 0,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A269:F279"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x0000",
+     "ramp-x0001",
+     "ramp-x0002",
+     "ramp-x0003",
+     "ramp-x0004",
+     "ramp-x0005",
+     "ramp-x0006",
+     "ramp-x0007",
+     "ramp-x0008",
+     "ramp-x0009",
+     "ramp-x0010"
+    ],
+    "note": "Postman charged monthly from 02/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "missing_vendor/s102_p1",
+   "path": "missing_vendor/s102_p1.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 1,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A269:F274"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x1000",
+     "ramp-x1001",
+     "ramp-x1002",
+     "ramp-x1003",
+     "ramp-x1004",
+     "ramp-x1005"
+    ],
+    "note": "Webflow charged monthly from 07/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "missing_vendor/s102_p2",
+   "path": "missing_vendor/s102_p2.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 2,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A269:F270"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x2000",
+     "ramp-x2001"
+    ],
+    "note": "Postman charged monthly from 11/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "overlap_category/s102_p0",
+   "path": "overlap_category/s102_p0.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 0,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B6",
+     "Runway!C6",
+     "Runway!D6",
+     "Runway!E6",
+     "Runway!F6",
+     "Runway!G6",
+     "Runway!H6",
+     "Runway!I6",
+     "Runway!J6",
+     "Runway!K6",
+     "Runway!L6",
+     "Runway!M6"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0004",
+     "ramp-0025",
+     "ramp-0047",
+     "ramp-0068",
+     "ramp-0091",
+     "ramp-0113",
+     "ramp-0136",
+     "ramp-0157",
+     "ramp-0180",
+     "ramp-0205",
+     "ramp-0229",
+     "ramp-0250"
+    ],
+    "note": "Contractors row also sums AWS (Software) by merchant, so AWS lands in two lines"
+   }
+  },
+  {
+   "id": "overlap_category/s102_p1",
+   "path": "overlap_category/s102_p1.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 1,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B5",
+     "Runway!C5",
+     "Runway!D5",
+     "Runway!E5",
+     "Runway!F5",
+     "Runway!G5",
+     "Runway!H5",
+     "Runway!I5",
+     "Runway!J5",
+     "Runway!K5",
+     "Runway!L5",
+     "Runway!M5"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0021",
+     "ramp-0060",
+     "ramp-0094",
+     "ramp-0195"
+    ],
+    "note": "SaaS row also sums Toptal (Contractors) by merchant, so Toptal lands in two lines"
+   }
+  },
+  {
+   "id": "overlap_category/s102_p2",
+   "path": "overlap_category/s102_p2.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 2,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B8",
+     "Runway!C8",
+     "Runway!D8",
+     "Runway!E8",
+     "Runway!F8",
+     "Runway!G8",
+     "Runway!H8",
+     "Runway!I8",
+     "Runway!J8",
+     "Runway!K8",
+     "Runway!L8",
+     "Runway!M8"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0002",
+     "ramp-0023",
+     "ramp-0045",
+     "ramp-0066",
+     "ramp-0089",
+     "ramp-0111",
+     "ramp-0134",
+     "ramp-0155",
+     "ramp-0178",
+     "ramp-0203",
+     "ramp-0227",
+     "ramp-0248"
+    ],
+    "note": "Other row also sums 1Password (Software) by merchant, so 1Password lands in two lines"
+   }
+  },
+  {
+   "id": "sign_flip/s102_p0",
+   "path": "sign_flip/s102_p0.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 0,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!E5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!E5"
+    ],
+    "txn_ids": [
+     "ramp-0080"
+    ],
+    "note": "SaaS E5: refund ramp-0080 (Figma, 135) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "sign_flip/s102_p1",
+   "path": "sign_flip/s102_p1.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 1,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!H8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!H8"
+    ],
+    "txn_ids": [
+     "ramp-0149"
+    ],
+    "note": "Other H8: refund ramp-0149 (Delta, 420) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "sign_flip/s102_p2",
+   "path": "sign_flip/s102_p2.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 2,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!K5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!K5"
+    ],
+    "txn_ids": [
+     "ramp-0207"
+    ],
+    "note": "SaaS K5: refund ramp-0207 (Intercom, 390) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "stale_hardcode/s102_p0",
+   "path": "stale_hardcode/s102_p0.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 0,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!F5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!F5"
+    ],
+    "txn_ids": [],
+    "note": "SaaS F5: formula replaced by typed 2984 (live value 3,140.49)"
+   }
+  },
+  {
+   "id": "stale_hardcode/s102_p1",
+   "path": "stale_hardcode/s102_p1.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 1,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!F6"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!F6"
+    ],
+    "txn_ids": [],
+    "note": "Contractors F6: formula replaced by typed 23055 (live value 24,738.00)"
+   }
+  },
+  {
+   "id": "stale_hardcode/s102_p2",
+   "path": "stale_hardcode/s102_p2.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 2,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!H8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!H8"
+    ],
+    "txn_ids": [],
+    "note": "Other H8: formula replaced by typed 17170 (live value 18,485.00)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s102_p0",
+   "path": "broken_rollforward/s102_p0.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 0,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!C2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!C2"
+    ],
+    "txn_ids": [],
+    "note": "C2: Starting Cash typed as 2228824 instead of linking to prior Ending Cash (+2038 off)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s102_p1",
+   "path": "broken_rollforward/s102_p1.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 1,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!H2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!H2"
+    ],
+    "txn_ids": [],
+    "note": "H2: Starting Cash typed as 1407470 instead of linking to prior Ending Cash (+13714 off)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s102_p2",
+   "path": "broken_rollforward/s102_p2.xlsx",
+   "kind": "buggy",
+   "seed": 102,
+   "placement": 2,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!M2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!M2"
+    ],
+    "txn_ids": [],
+    "note": "M2: Starting Cash typed as 587670 instead of linking to prior Ending Cash (-12274 off)"
+   }
+  },
+  {
+   "id": "dup_row/s103_p0",
+   "path": "dup_row/s103_p0.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 0,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A8:F8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!B5"
+    ],
+    "txn_ids": [
+     "ramp-0006"
+    ],
+    "note": "ramp-0006 (Slack) pasted twice; SaaS counts it twice"
+   }
+  },
+  {
+   "id": "dup_row/s103_p1",
+   "path": "dup_row/s103_p1.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 1,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A204:F204"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!J6"
+    ],
+    "txn_ids": [
+     "ramp-0202"
+    ],
+    "note": "ramp-0202 (Toptal) pasted twice; Contractors counts it twice"
+   }
+  },
+  {
+   "id": "dup_row/s103_p2",
+   "path": "dup_row/s103_p2.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 2,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A194:F194"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!J8"
+    ],
+    "txn_ids": [
+     "ramp-0192"
+    ],
+    "note": "ramp-0192 (Google Ads) pasted twice; Other counts it twice"
+   }
+  },
+  {
+   "id": "dropped_month/s103_p0",
+   "path": "dropped_month/s103_p0.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 0,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!K5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!K5"
+    ],
+    "txn_ids": [],
+    "note": "SaaS K5: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "dropped_month/s103_p1",
+   "path": "dropped_month/s103_p1.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 1,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!C6"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!C6"
+    ],
+    "txn_ids": [],
+    "note": "Contractors C6: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "dropped_month/s103_p2",
+   "path": "dropped_month/s103_p2.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 2,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!D8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!D8"
+    ],
+    "txn_ids": [],
+    "note": "Other D8: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "missing_vendor/s103_p0",
+   "path": "missing_vendor/s103_p0.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 0,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A274:F284"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x0000",
+     "ramp-x0001",
+     "ramp-x0002",
+     "ramp-x0003",
+     "ramp-x0004",
+     "ramp-x0005",
+     "ramp-x0006",
+     "ramp-x0007",
+     "ramp-x0008",
+     "ramp-x0009",
+     "ramp-x0010"
+    ],
+    "note": "Supabase charged monthly from 02/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "missing_vendor/s103_p1",
+   "path": "missing_vendor/s103_p1.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 1,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A274:F279"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x1000",
+     "ramp-x1001",
+     "ramp-x1002",
+     "ramp-x1003",
+     "ramp-x1004",
+     "ramp-x1005"
+    ],
+    "note": "Postman charged monthly from 07/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "missing_vendor/s103_p2",
+   "path": "missing_vendor/s103_p2.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 2,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A274:F276"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x2000",
+     "ramp-x2001",
+     "ramp-x2002"
+    ],
+    "note": "Postman charged monthly from 10/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "overlap_category/s103_p0",
+   "path": "overlap_category/s103_p0.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 0,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B6",
+     "Runway!C6",
+     "Runway!D6",
+     "Runway!E6",
+     "Runway!F6",
+     "Runway!G6",
+     "Runway!H6",
+     "Runway!I6",
+     "Runway!J6",
+     "Runway!K6",
+     "Runway!L6",
+     "Runway!M6"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0013",
+     "ramp-0038",
+     "ramp-0058",
+     "ramp-0082",
+     "ramp-0106",
+     "ramp-0127",
+     "ramp-0148",
+     "ramp-0171",
+     "ramp-0194",
+     "ramp-0219",
+     "ramp-0242",
+     "ramp-0263"
+    ],
+    "note": "Contractors row also sums Sentry (Software) by merchant, so Sentry lands in two lines"
+   }
+  },
+  {
+   "id": "overlap_category/s103_p1",
+   "path": "overlap_category/s103_p1.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 1,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B5",
+     "Runway!C5",
+     "Runway!D5",
+     "Runway!E5",
+     "Runway!F5",
+     "Runway!G5",
+     "Runway!H5",
+     "Runway!I5",
+     "Runway!J5",
+     "Runway!K5",
+     "Runway!L5",
+     "Runway!M5"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0027",
+     "ramp-0079",
+     "ramp-0102",
+     "ramp-0157",
+     "ramp-0202",
+     "ramp-0218",
+     "ramp-0264"
+    ],
+    "note": "SaaS row also sums Toptal (Contractors) by merchant, so Toptal lands in two lines"
+   }
+  },
+  {
+   "id": "overlap_category/s103_p2",
+   "path": "overlap_category/s103_p2.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 2,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B8",
+     "Runway!C8",
+     "Runway!D8",
+     "Runway!E8",
+     "Runway!F8",
+     "Runway!G8",
+     "Runway!H8",
+     "Runway!I8",
+     "Runway!J8",
+     "Runway!K8",
+     "Runway!L8",
+     "Runway!M8"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0167",
+     "ramp-0190",
+     "ramp-0214",
+     "ramp-0237",
+     "ramp-0259"
+    ],
+    "note": "Other row also sums Retool (Software) by merchant, so Retool lands in two lines"
+   }
+  },
+  {
+   "id": "sign_flip/s103_p0",
+   "path": "sign_flip/s103_p0.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 0,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!E5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!E5"
+    ],
+    "txn_ids": [
+     "ramp-0083"
+    ],
+    "note": "SaaS E5: refund ramp-0083 (Figma, 135) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "sign_flip/s103_p1",
+   "path": "sign_flip/s103_p1.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 1,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!H8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!H8"
+    ],
+    "txn_ids": [
+     "ramp-0151"
+    ],
+    "note": "Other H8: refund ramp-0151 (Delta, 420) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "sign_flip/s103_p2",
+   "path": "sign_flip/s103_p2.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 2,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!K5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!K5"
+    ],
+    "txn_ids": [
+     "ramp-0209"
+    ],
+    "note": "SaaS K5: refund ramp-0209 (Intercom, 390) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "stale_hardcode/s103_p0",
+   "path": "stale_hardcode/s103_p0.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 0,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!E5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!E5"
+    ],
+    "txn_ids": [],
+    "note": "SaaS E5: formula replaced by typed 3027 (live value 3,157.19)"
+   }
+  },
+  {
+   "id": "stale_hardcode/s103_p1",
+   "path": "stale_hardcode/s103_p1.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 1,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!L6"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!L6"
+    ],
+    "txn_ids": [],
+    "note": "Contractors L6: formula replaced by typed 12808 (live value 13,783.00)"
+   }
+  },
+  {
+   "id": "stale_hardcode/s103_p2",
+   "path": "stale_hardcode/s103_p2.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 2,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!B8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!B8"
+    ],
+    "txn_ids": [],
+    "note": "Other B8: formula replaced by typed 14515 (live value 15,472.00)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s103_p0",
+   "path": "broken_rollforward/s103_p0.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 0,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!D2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!D2"
+    ],
+    "txn_ids": [],
+    "note": "D2: Starting Cash typed as 2106188 instead of linking to prior Ending Cash (+19377 off)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s103_p1",
+   "path": "broken_rollforward/s103_p1.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 1,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!F2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!F2"
+    ],
+    "txn_ids": [],
+    "note": "F2: Starting Cash typed as 1763142 instead of linking to prior Ending Cash (-11158 off)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s103_p2",
+   "path": "broken_rollforward/s103_p2.xlsx",
+   "kind": "buggy",
+   "seed": 103,
+   "placement": 2,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!K2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!K2"
+    ],
+    "txn_ids": [],
+    "note": "K2: Starting Cash typed as 995502 instead of linking to prior Ending Cash (-12283 off)"
+   }
+  },
+  {
+   "id": "dup_row/s104_p0",
+   "path": "dup_row/s104_p0.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 0,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A11:F11"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!B5"
+    ],
+    "txn_ids": [
+     "ramp-0009"
+    ],
+    "note": "ramp-0009 (Zoom) pasted twice; SaaS counts it twice"
+   }
+  },
+  {
+   "id": "dup_row/s104_p1",
+   "path": "dup_row/s104_p1.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 1,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A191:F191"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!J6"
+    ],
+    "txn_ids": [
+     "ramp-0189"
+    ],
+    "note": "ramp-0189 (Fiverr Pro) pasted twice; Contractors counts it twice"
+   }
+  },
+  {
+   "id": "dup_row/s104_p2",
+   "path": "dup_row/s104_p2.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 2,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A111:F111"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!F8"
+    ],
+    "txn_ids": [
+     "ramp-0109"
+    ],
+    "note": "ramp-0109 (Delta) pasted twice; Other counts it twice"
+   }
+  },
+  {
+   "id": "dropped_month/s104_p0",
+   "path": "dropped_month/s104_p0.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 0,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!F5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!F5"
+    ],
+    "txn_ids": [],
+    "note": "SaaS F5: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "dropped_month/s104_p1",
+   "path": "dropped_month/s104_p1.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 1,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!K6"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!K6"
+    ],
+    "txn_ids": [],
+    "note": "Contractors K6: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "dropped_month/s104_p2",
+   "path": "dropped_month/s104_p2.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 2,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!C8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!C8"
+    ],
+    "txn_ids": [],
+    "note": "Other C8: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "missing_vendor/s104_p0",
+   "path": "missing_vendor/s104_p0.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 0,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A275:F284"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x0000",
+     "ramp-x0001",
+     "ramp-x0002",
+     "ramp-x0003",
+     "ramp-x0004",
+     "ramp-x0005",
+     "ramp-x0006",
+     "ramp-x0007",
+     "ramp-x0008",
+     "ramp-x0009"
+    ],
+    "note": "Webflow charged monthly from 03/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "missing_vendor/s104_p1",
+   "path": "missing_vendor/s104_p1.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 1,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A275:F280"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x1000",
+     "ramp-x1001",
+     "ramp-x1002",
+     "ramp-x1003",
+     "ramp-x1004",
+     "ramp-x1005"
+    ],
+    "note": "Airtable charged monthly from 07/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "missing_vendor/s104_p2",
+   "path": "missing_vendor/s104_p2.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 2,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A275:F276"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x2000",
+     "ramp-x2001"
+    ],
+    "note": "Supabase charged monthly from 11/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "overlap_category/s104_p0",
+   "path": "overlap_category/s104_p0.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 0,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B6",
+     "Runway!C6",
+     "Runway!D6",
+     "Runway!E6",
+     "Runway!F6",
+     "Runway!G6",
+     "Runway!H6",
+     "Runway!I6",
+     "Runway!J6",
+     "Runway!K6",
+     "Runway!L6",
+     "Runway!M6"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0007",
+     "ramp-0029",
+     "ramp-0051",
+     "ramp-0074",
+     "ramp-0097",
+     "ramp-0121",
+     "ramp-0142",
+     "ramp-0165",
+     "ramp-0187",
+     "ramp-0211",
+     "ramp-0235",
+     "ramp-0259"
+    ],
+    "note": "Contractors row also sums Linear (Software) by merchant, so Linear lands in two lines"
+   }
+  },
+  {
+   "id": "overlap_category/s104_p1",
+   "path": "overlap_category/s104_p1.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 1,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B5",
+     "Runway!C5",
+     "Runway!D5",
+     "Runway!E5",
+     "Runway!F5",
+     "Runway!G5",
+     "Runway!H5",
+     "Runway!I5",
+     "Runway!J5",
+     "Runway!K5",
+     "Runway!L5",
+     "Runway!M5"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0013",
+     "ramp-0049",
+     "ramp-0090",
+     "ramp-0104",
+     "ramp-0120",
+     "ramp-0174",
+     "ramp-0189",
+     "ramp-0215",
+     "ramp-0240"
+    ],
+    "note": "SaaS row also sums Fiverr Pro (Contractors) by merchant, so Fiverr Pro lands in two lines"
+   }
+  },
+  {
+   "id": "overlap_category/s104_p2",
+   "path": "overlap_category/s104_p2.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 2,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B8",
+     "Runway!C8",
+     "Runway!D8",
+     "Runway!E8",
+     "Runway!F8",
+     "Runway!G8",
+     "Runway!H8",
+     "Runway!I8",
+     "Runway!J8",
+     "Runway!K8",
+     "Runway!L8",
+     "Runway!M8"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0030"
+    ],
+    "note": "Other row also sums Loom (Software) by merchant, so Loom lands in two lines"
+   }
+  },
+  {
+   "id": "sign_flip/s104_p0",
+   "path": "sign_flip/s104_p0.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 0,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!E5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!E5"
+    ],
+    "txn_ids": [
+     "ramp-0082"
+    ],
+    "note": "SaaS E5: refund ramp-0082 (Figma, 135) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "sign_flip/s104_p1",
+   "path": "sign_flip/s104_p1.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 1,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!H8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!H8"
+    ],
+    "txn_ids": [
+     "ramp-0151"
+    ],
+    "note": "Other H8: refund ramp-0151 (Delta, 420) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "sign_flip/s104_p2",
+   "path": "sign_flip/s104_p2.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 2,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!K5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!K5"
+    ],
+    "txn_ids": [
+     "ramp-0208"
+    ],
+    "note": "SaaS K5: refund ramp-0208 (Intercom, 390) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "stale_hardcode/s104_p0",
+   "path": "stale_hardcode/s104_p0.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 0,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!H5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!H5"
+    ],
+    "txn_ids": [],
+    "note": "SaaS H5: formula replaced by typed 3104 (live value 3,196.43)"
+   }
+  },
+  {
+   "id": "stale_hardcode/s104_p1",
+   "path": "stale_hardcode/s104_p1.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 1,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!I6"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!I6"
+    ],
+    "txn_ids": [],
+    "note": "Contractors I6: formula replaced by typed 19061 (live value 19,570.00)"
+   }
+  },
+  {
+   "id": "stale_hardcode/s104_p2",
+   "path": "stale_hardcode/s104_p2.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 2,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!D8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!D8"
+    ],
+    "txn_ids": [],
+    "note": "Other D8: formula replaced by typed 19968 (live value 20,743.00)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s104_p0",
+   "path": "broken_rollforward/s104_p0.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 0,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!E2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!E2"
+    ],
+    "txn_ids": [],
+    "note": "E2: Starting Cash typed as 1911437 instead of linking to prior Ending Cash (-3615 off)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s104_p1",
+   "path": "broken_rollforward/s104_p1.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 1,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!F2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!F2"
+    ],
+    "txn_ids": [],
+    "note": "F2: Starting Cash typed as 1750198 instead of linking to prior Ending Cash (-2449 off)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s104_p2",
+   "path": "broken_rollforward/s104_p2.xlsx",
+   "kind": "buggy",
+   "seed": 104,
+   "placement": 2,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!M2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!M2"
+    ],
+    "txn_ids": [],
+    "note": "M2: Starting Cash typed as 595162 instead of linking to prior Ending Cash (-9798 off)"
+   }
+  },
+  {
+   "id": "dup_row/s105_p0",
+   "path": "dup_row/s105_p0.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 0,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A24:F24"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!B5"
+    ],
+    "txn_ids": [
+     "ramp-0022"
+    ],
+    "note": "ramp-0022 (OpenAI) pasted twice; SaaS counts it twice"
+   }
+  },
+  {
+   "id": "dup_row/s105_p1",
+   "path": "dup_row/s105_p1.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 1,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A111:F111"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!F6"
+    ],
+    "txn_ids": [
+     "ramp-0109"
+    ],
+    "note": "ramp-0109 (Upwork) pasted twice; Contractors counts it twice"
+   }
+  },
+  {
+   "id": "dup_row/s105_p2",
+   "path": "dup_row/s105_p2.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 2,
+   "truth": {
+    "bug_id": "dup_row",
+    "cells_affected": [
+     "Ramp!A41:F41"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!C8"
+    ],
+    "txn_ids": [
+     "ramp-0039"
+    ],
+    "note": "ramp-0039 (DoorDash) pasted twice; Other counts it twice"
+   }
+  },
+  {
+   "id": "dropped_month/s105_p0",
+   "path": "dropped_month/s105_p0.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 0,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!J5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!J5"
+    ],
+    "txn_ids": [],
+    "note": "SaaS J5: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "dropped_month/s105_p1",
+   "path": "dropped_month/s105_p1.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 1,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!C6"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!C6"
+    ],
+    "txn_ids": [],
+    "note": "Contractors C6: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "dropped_month/s105_p2",
+   "path": "dropped_month/s105_p2.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 2,
+   "truth": {
+    "bug_id": "dropped_month",
+    "cells_affected": [
+     "Runway!K8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!K8"
+    ],
+    "txn_ids": [],
+    "note": "Other K8: date range starts at the next month, so the month sums to 0"
+   }
+  },
+  {
+   "id": "missing_vendor/s105_p0",
+   "path": "missing_vendor/s105_p0.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 0,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A270:F280"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x0000",
+     "ramp-x0001",
+     "ramp-x0002",
+     "ramp-x0003",
+     "ramp-x0004",
+     "ramp-x0005",
+     "ramp-x0006",
+     "ramp-x0007",
+     "ramp-x0008",
+     "ramp-x0009",
+     "ramp-x0010"
+    ],
+    "note": "Webflow charged monthly from 02/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "missing_vendor/s105_p1",
+   "path": "missing_vendor/s105_p1.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 1,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A270:F276"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x1000",
+     "ramp-x1001",
+     "ramp-x1002",
+     "ramp-x1003",
+     "ramp-x1004",
+     "ramp-x1005",
+     "ramp-x1006"
+    ],
+    "note": "Tailscale charged monthly from 06/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "missing_vendor/s105_p2",
+   "path": "missing_vendor/s105_p2.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 2,
+   "truth": {
+    "bug_id": "missing_vendor",
+    "cells_affected": [
+     "Ramp!A270:F271"
+    ],
+    "expected_invariants": [
+     "coverage"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-x2000",
+     "ramp-x2001"
+    ],
+    "note": "Supabase charged monthly from 11/2026 as category 'Tools', which no Runway row sums"
+   }
+  },
+  {
+   "id": "overlap_category/s105_p0",
+   "path": "overlap_category/s105_p0.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 0,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B6",
+     "Runway!C6",
+     "Runway!D6",
+     "Runway!E6",
+     "Runway!F6",
+     "Runway!G6",
+     "Runway!H6",
+     "Runway!I6",
+     "Runway!J6",
+     "Runway!K6",
+     "Runway!L6",
+     "Runway!M6"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0030"
+    ],
+    "note": "Contractors row also sums Loom (Software) by merchant, so Loom lands in two lines"
+   }
+  },
+  {
+   "id": "overlap_category/s105_p1",
+   "path": "overlap_category/s105_p1.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 1,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B5",
+     "Runway!C5",
+     "Runway!D5",
+     "Runway!E5",
+     "Runway!F5",
+     "Runway!G5",
+     "Runway!H5",
+     "Runway!I5",
+     "Runway!J5",
+     "Runway!K5",
+     "Runway!L5",
+     "Runway!M5"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0014",
+     "ramp-0044",
+     "ramp-0067",
+     "ramp-0087",
+     "ramp-0118",
+     "ramp-0151",
+     "ramp-0215",
+     "ramp-0267"
+    ],
+    "note": "SaaS row also sums Fiverr Pro (Contractors) by merchant, so Fiverr Pro lands in two lines"
+   }
+  },
+  {
+   "id": "overlap_category/s105_p2",
+   "path": "overlap_category/s105_p2.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 2,
+   "truth": {
+    "bug_id": "overlap_category",
+    "cells_affected": [
+     "Runway!B8",
+     "Runway!C8",
+     "Runway!D8",
+     "Runway!E8",
+     "Runway!F8",
+     "Runway!G8",
+     "Runway!H8",
+     "Runway!I8",
+     "Runway!J8",
+     "Runway!K8",
+     "Runway!L8",
+     "Runway!M8"
+    ],
+    "expected_invariants": [
+     "no_double_count",
+     "traceability"
+    ],
+    "runway_cells": [],
+    "txn_ids": [
+     "ramp-0021",
+     "ramp-0043",
+     "ramp-0064",
+     "ramp-0088",
+     "ramp-0107",
+     "ramp-0130",
+     "ramp-0152",
+     "ramp-0174",
+     "ramp-0197",
+     "ramp-0220",
+     "ramp-0243",
+     "ramp-0266"
+    ],
+    "note": "Other row also sums Segment (Software) by merchant, so Segment lands in two lines"
+   }
+  },
+  {
+   "id": "sign_flip/s105_p0",
+   "path": "sign_flip/s105_p0.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 0,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!E5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!E5"
+    ],
+    "txn_ids": [
+     "ramp-0082"
+    ],
+    "note": "SaaS E5: refund ramp-0082 (Figma, 135) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "sign_flip/s105_p1",
+   "path": "sign_flip/s105_p1.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 1,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!H8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!H8"
+    ],
+    "txn_ids": [
+     "ramp-0148"
+    ],
+    "note": "Other H8: refund ramp-0148 (Delta, 420) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "sign_flip/s105_p2",
+   "path": "sign_flip/s105_p2.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 2,
+   "truth": {
+    "bug_id": "sign_flip",
+    "cells_affected": [
+     "Runway!K5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!K5"
+    ],
+    "txn_ids": [
+     "ramp-0204"
+    ],
+    "note": "SaaS K5: refund ramp-0204 (Intercom, 390) is added as spend instead of netted out"
+   }
+  },
+  {
+   "id": "stale_hardcode/s105_p0",
+   "path": "stale_hardcode/s105_p0.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 0,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!B5"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!B5"
+    ],
+    "txn_ids": [],
+    "note": "SaaS B5: formula replaced by typed 2975 (live value 3,117.99)"
+   }
+  },
+  {
+   "id": "stale_hardcode/s105_p1",
+   "path": "stale_hardcode/s105_p1.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 1,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!C6"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!C6"
+    ],
+    "txn_ids": [],
+    "note": "Contractors C6: formula replaced by typed 16734 (live value 18,054.00)"
+   }
+  },
+  {
+   "id": "stale_hardcode/s105_p2",
+   "path": "stale_hardcode/s105_p2.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 2,
+   "truth": {
+    "bug_id": "stale_hardcode",
+    "cells_affected": [
+     "Runway!F8"
+    ],
+    "expected_invariants": [
+     "traceability"
+    ],
+    "runway_cells": [
+     "Runway!F8"
+    ],
+    "txn_ids": [],
+    "note": "Other F8: formula replaced by typed 19810 (live value 20,528.00)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s105_p0",
+   "path": "broken_rollforward/s105_p0.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 0,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!D2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!D2"
+    ],
+    "txn_ids": [],
+    "note": "D2: Starting Cash typed as 2075629 instead of linking to prior Ending Cash (-3516 off)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s105_p1",
+   "path": "broken_rollforward/s105_p1.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 1,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!I2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!I2"
+    ],
+    "txn_ids": [],
+    "note": "I2: Starting Cash typed as 1268480 instead of linking to prior Ending Cash (-10805 off)"
+   }
+  },
+  {
+   "id": "broken_rollforward/s105_p2",
+   "path": "broken_rollforward/s105_p2.xlsx",
+   "kind": "buggy",
+   "seed": 105,
+   "placement": 2,
+   "truth": {
+    "bug_id": "broken_rollforward",
+    "cells_affected": [
+     "Runway!J2"
+    ],
+    "expected_invariants": [
+     "roll_forward"
+    ],
+    "runway_cells": [
+     "Runway!J2"
+    ],
+    "txn_ids": [],
+    "note": "J2: Starting Cash typed as 1141468 instead of linking to prior Ending Cash (+9933 off)"
+   }
+  },
+  {
+   "id": "clean/s201",
+   "path": "clean/s201.xlsx",
+   "kind": "clean",
+   "seed": 201,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s202",
+   "path": "clean/s202.xlsx",
+   "kind": "clean",
+   "seed": 202,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s203",
+   "path": "clean/s203.xlsx",
+   "kind": "clean",
+   "seed": 203,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s204",
+   "path": "clean/s204.xlsx",
+   "kind": "clean",
+   "seed": 204,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s205",
+   "path": "clean/s205.xlsx",
+   "kind": "clean",
+   "seed": 205,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s206",
+   "path": "clean/s206.xlsx",
+   "kind": "clean",
+   "seed": 206,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s207",
+   "path": "clean/s207.xlsx",
+   "kind": "clean",
+   "seed": 207,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s208",
+   "path": "clean/s208.xlsx",
+   "kind": "clean",
+   "seed": 208,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s209",
+   "path": "clean/s209.xlsx",
+   "kind": "clean",
+   "seed": 209,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s210",
+   "path": "clean/s210.xlsx",
+   "kind": "clean",
+   "seed": 210,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s211",
+   "path": "clean/s211.xlsx",
+   "kind": "clean",
+   "seed": 211,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s212",
+   "path": "clean/s212.xlsx",
+   "kind": "clean",
+   "seed": 212,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s213",
+   "path": "clean/s213.xlsx",
+   "kind": "clean",
+   "seed": 213,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s214",
+   "path": "clean/s214.xlsx",
+   "kind": "clean",
+   "seed": 214,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s215",
+   "path": "clean/s215.xlsx",
+   "kind": "clean",
+   "seed": 215,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s216",
+   "path": "clean/s216.xlsx",
+   "kind": "clean",
+   "seed": 216,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s217",
+   "path": "clean/s217.xlsx",
+   "kind": "clean",
+   "seed": 217,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s218",
+   "path": "clean/s218.xlsx",
+   "kind": "clean",
+   "seed": 218,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s219",
+   "path": "clean/s219.xlsx",
+   "kind": "clean",
+   "seed": 219,
+   "placement": null,
+   "truth": null
+  },
+  {
+   "id": "clean/s220",
+   "path": "clean/s220.xlsx",
+   "kind": "clean",
+   "seed": 220,
+   "placement": null,
+   "truth": null
+  }
+ ]
+}
