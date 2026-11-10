@@ -44,7 +44,7 @@ def main() -> int:
         out = precomputed_path(path)
         out.parent.mkdir(parents=True, exist_ok=True)
         # the fixed copy lived in a temp dir; the app re-derives it by applying the fix
-        out.write_text(run.model_copy(update={"fixed_path": None}).model_dump_json(indent=1))
+        out.write_text(run.model_copy(update={"fixed_path": None, "source": f"samples/{name}"}).model_dump_json(indent=1))
         print(f"{name}: {len(run.reports)} violation(s), verified fix stored -> {out.name}")
     print(f"sample bundle in {SAMPLES_DIR} ({len(SAMPLE_FILES)} workbooks)")
     return 0

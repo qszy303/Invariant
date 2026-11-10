@@ -1,5 +1,5 @@
 {
- "source": "/Users/qingyangzhang/Downloads/Invariant/demo/slope_missing_vendor.xlsx",
+ "source": "samples/slope_missing_vendor.xlsx",
  "initial_ok": false,
  "final_ok": true,
  "fixed_path": null,

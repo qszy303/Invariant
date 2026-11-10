@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invariant</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="preload" href="/fonts/dm-sans-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/jetbrains-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="wordmark"><span>Invariant</span></div>
+  <nav class="nav" aria-label="Primary">
+    <a href="#/check" data-page="check" class="active">Check</a>
+    <a href="#/eval" data-page="eval">Eval</a>
+    <a href="#/proven" data-page="proven">What&rsquo;s proven</a>
+  </nav>
+</aside>
+
+<main class="main" id="main">
+  <!-- CHECK -->
+  <section class="page" id="page-check">
+    <header class="topbar">
+      <div class="file">
+        <h1 id="file-name">No file yet</h1>
+        <p id="file-sub" class="muted">Pick a demo file or upload a workbook, then run the check.</p>
+      </div>
+      <div class="controls">
+        <label class="sr" for="demo-select">Demo file</label>
+        <select id="demo-select" class="select"></select>
+        <input type="file" id="upload-input" accept=".xlsx" hidden>
+        <button class="btn btn-outline" id="upload-btn" type="button">Upload</button>
+        <button class="btn btn-primary" id="run-btn" type="button"><span class="spin" hidden></span><span class="btn-label">Run check</span></button>
+        <span class="badge" id="checker-badge" hidden></span>
+      </div>
+    </header>
+
+    <div class="kpis" id="kpis" hidden>
+      <div class="card kpi"><div class="kpi-label">Checks run</div><div class="kpi-num" id="kpi-checks">0</div></div>
+      <div class="card kpi"><div class="kpi-label">Violations</div><div class="kpi-num" id="kpi-viol">0</div></div>
+      <div class="card kpi"><div class="kpi-label">Needs review</div><div class="kpi-num" id="kpi-review">0</div></div>
+      <div class="card kpi kpi-wide">
+        <div class="kpi-label">Ending cash, Dec: claimed &rarr; verified</div>
+        <div class="cash" id="kpi-cash"></div>
+        <div class="kpi-foot" id="kpi-cash-foot"></div>
+      </div>
+    </div>
+
+    <div class="card empty" id="empty">
+      <h2>Check a model against the transactions behind it.</h2>
+      <p class="muted">Choose a demo file above and press <strong>Run check</strong>. Every number on the Runway sheet is re-derived from the Ramp, Bank and Payroll exports.</p>
+    </div>
+
+    <div class="card gridcard" id="gridcard" hidden>
+      <div class="gridhead">
+        <h2>Runway</h2>
+        <div class="legend">
+          <span><i class="sw sw-bad"></i>Violation</span>
+          <span><i class="sw sw-warn"></i>Needs review</span>
+          <span class="muted">Hover a cell for its formula</span>
+        </div>
+      </div>
+      <div class="gridscroll"><table class="grid" id="grid"></table></div>
+      <div class="loose" id="loose" hidden></div>
+    </div>
+  </section>
+
+  <!-- EVAL -->
+  <section class="page" id="page-eval" hidden>
+    <header class="topbar"><div class="file"><h1>Eval</h1><p class="muted" id="eval-sub">Loading&hellip;</p></div></header>
+    <div class="evalgrid">
+      <div class="card chartcard">
+        <h2>Detection rate by bug type</h2>
+        <div id="eval-chart"></div>
+      </div>
+      <div class="evalside">
+        <div class="card kpi"><div class="kpi-label">False-positive rate</div><div class="kpi-num" id="ev-fp">&ndash;</div><div class="kpi-foot" id="ev-fp-foot"></div></div>
+        <div class="card kpi"><div class="kpi-label">Lean / Python agreement</div><div class="kpi-num" id="ev-agree">&ndash;</div><div class="kpi-foot" id="ev-agree-foot"></div></div>
+      </div>
+    </div>
+    <div class="card misses">
+      <h2>Known misses</h2>
+      <div id="eval-misses"></div>
+    </div>
+  </section>
+
+  <!-- PROVEN -->
+  <section class="page" id="page-proven" hidden>
+    <header class="topbar"><div class="file"><h1>What&rsquo;s proven</h1><p class="muted">Statements checked by the Lean 4 kernel, and what the proof does not cover.</p></div></header>
+    <div class="card codecard"><h2>Theorem statements</h2><pre class="code" id="proven-code">Loading&hellip;</pre></div>
+    <div class="twocol">
+      <div class="card"><h2>Proven in Lean</h2><ul class="plist ok" id="proven-list"></ul></div>
+      <div class="card"><h2>Not verified <span class="h2sub">(LLM spec step, xlsx parser, JSON I/O)</span></h2><ul class="plist no" id="notproven-list"></ul></div>
+    </div>
+  </section>
+</main>
+
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Violation detail"></aside>
+<div class="tip" id="tip" hidden></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="/app.js"></script>
+</body>
+</html>

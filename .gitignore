@@ -8,3 +8,8 @@ data/
 eval/suite/**/*.xlsx
 eval/.cache/
 .proof_cache/
+.env
+.env.*
+*.key
+.hypothesis/
+Invariant/
