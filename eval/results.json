@@ -1,7 +1,7 @@
 {
  "meta": {
   "agent_model": "claude-sonnet-5-5",
-  "agent_status": "ran",
+  "agent_status": "ran (from cache only)",
   "confidence_min": 0.8,
   "lean": true,
   "suite": {
@@ -52,73 +52,94 @@
    "lean": {
     "by_bug": {
      "broken_rollforward": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "dropped_month": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "dup_row": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "missing_vendor": {
+      "cell_gt_n": 0,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": null,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 0,
       "n": 15
      },
      "overlap_category": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 0.0667,
       "localization_rate": 0.9333,
       "localized": 14,
+      "localized_cell": 1,
       "n": 15
      },
      "sign_flip": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "stale_hardcode": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      }
     },
@@ -131,86 +152,110 @@
     },
     "off_target_violations_on_buggy": 12,
     "overall": {
+     "cell_gt_n": 90,
      "correct_invariant": 105,
      "correct_invariant_rate": 1.0,
      "detected": 105,
      "detection_rate": 1.0,
      "errors": 0,
+     "localization_accuracy": 0.8444,
      "localization_rate": 0.9905,
      "localized": 104,
+     "localized_cell": 76,
      "n": 105
     }
    },
    "python": {
     "by_bug": {
      "broken_rollforward": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "dropped_month": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "dup_row": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "missing_vendor": {
+      "cell_gt_n": 0,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": null,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 0,
       "n": 15
      },
      "overlap_category": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 0.0667,
       "localization_rate": 0.9333,
       "localized": 14,
+      "localized_cell": 1,
       "n": 15
      },
      "sign_flip": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "stale_hardcode": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      }
     },
@@ -223,13 +268,16 @@
     },
     "off_target_violations_on_buggy": 12,
     "overall": {
+     "cell_gt_n": 90,
      "correct_invariant": 105,
      "correct_invariant_rate": 1.0,
      "detected": 105,
      "detection_rate": 1.0,
      "errors": 0,
+     "localization_accuracy": 0.8444,
      "localization_rate": 0.9905,
      "localized": 104,
+     "localized_cell": 76,
      "n": 105
     }
    },
@@ -239,8 +287,8 @@
     "rate": 1.0
    },
    "runtime_s": {
-    "check_median": 0.0272,
-    "spec_median": 5.249
+    "check_median": 0.0312,
+    "spec_median": 0.245
    },
    "spec_accuracy": {
     "assignment_equal": 124,
@@ -257,73 +305,94 @@
    "lean": {
     "by_bug": {
      "broken_rollforward": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "dropped_month": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "dup_row": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "missing_vendor": {
+      "cell_gt_n": 0,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": null,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 0,
       "n": 15
      },
      "overlap_category": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 0.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 0,
       "n": 15
      },
      "sign_flip": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "stale_hardcode": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      }
     },
@@ -336,86 +405,110 @@
     },
     "off_target_violations_on_buggy": 0,
     "overall": {
+     "cell_gt_n": 90,
      "correct_invariant": 105,
      "correct_invariant_rate": 1.0,
      "detected": 105,
      "detection_rate": 1.0,
      "errors": 0,
+     "localization_accuracy": 0.8333,
      "localization_rate": 1.0,
      "localized": 105,
+     "localized_cell": 75,
      "n": 105
     }
    },
    "python": {
     "by_bug": {
      "broken_rollforward": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "dropped_month": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "dup_row": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "missing_vendor": {
+      "cell_gt_n": 0,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": null,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 0,
       "n": 15
      },
      "overlap_category": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 0.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 0,
       "n": 15
      },
      "sign_flip": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      },
      "stale_hardcode": {
+      "cell_gt_n": 15,
       "correct_invariant": 15,
       "correct_invariant_rate": 1.0,
       "detected": 15,
       "detection_rate": 1.0,
       "errors": 0,
+      "localization_accuracy": 1.0,
       "localization_rate": 1.0,
       "localized": 15,
+      "localized_cell": 15,
       "n": 15
      }
     },
@@ -428,13 +521,16 @@
     },
     "off_target_violations_on_buggy": 0,
     "overall": {
+     "cell_gt_n": 90,
      "correct_invariant": 105,
      "correct_invariant_rate": 1.0,
      "detected": 105,
      "detection_rate": 1.0,
      "errors": 0,
+     "localization_accuracy": 0.8333,
      "localization_rate": 1.0,
      "localized": 105,
+     "localized_cell": 75,
      "n": 105
     }
    },
@@ -444,7 +540,7 @@
     "rate": 1.0
    },
    "runtime_s": {
-    "check_median": 0.0284,
+    "check_median": 0.0335,
     "spec_median": 0.004
    },
    "status": "ok"
@@ -461,26 +557,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0606,
+     "check_s": 0.0333,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -489,34 +589,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.265,
+     "spec_s": 0.167,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.3666,
+     "check_s": 0.2976,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0198,
+     "spec_s": 0.0074,
      "status": "ok"
     }
    }
@@ -531,26 +635,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0317,
+     "check_s": 0.0297,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -559,34 +667,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.347,
+     "spec_s": 0.166,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0331,
+     "check_s": 0.0299,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -601,26 +713,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0255,
+     "check_s": 0.027,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -629,34 +745,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.494,
+     "spec_s": 0.166,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0286,
+     "check_s": 0.0283,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -671,26 +791,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0278,
+     "check_s": 0.0258,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -699,34 +823,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.024,
+     "spec_s": 0.166,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0303,
+     "check_s": 0.0318,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -741,26 +869,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0251,
+     "check_s": 0.027,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -769,34 +901,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.024,
+     "spec_s": 0.166,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.026,
+     "check_s": 0.0255,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -811,26 +947,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0255,
+     "check_s": 0.0251,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -839,34 +979,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.024,
+     "spec_s": 0.166,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0304,
+     "check_s": 0.0258,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -881,26 +1025,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0292,
+     "check_s": 0.0273,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
@@ -909,34 +1057,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.974,
+     "spec_s": 0.25,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0303,
+     "check_s": 0.0253,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -951,26 +1103,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0254,
+     "check_s": 0.0287,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 7,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 7,
       "off_target": 0
      },
@@ -979,34 +1135,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.897,
+     "spec_s": 0.255,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0275,
+     "check_s": 0.0253,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 7,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 7,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -1021,26 +1181,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0258,
+     "check_s": 0.0442,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
@@ -1049,34 +1213,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.892,
+     "spec_s": 0.251,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0263,
+     "check_s": 0.0348,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
-     "spec_s": 0.0045,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -1091,15 +1259,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0323,
+     "check_s": 0.0298,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -1107,12 +1277,14 @@
       "contractors"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -1121,34 +1293,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.215,
+     "spec_s": 0.261,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0278,
+     "check_s": 0.0274,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
-     "spec_s": 0.0046,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -1163,26 +1339,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0276,
+     "check_s": 0.0528,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 5,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 5,
       "off_target": 0
      },
@@ -1191,34 +1371,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.201,
+     "spec_s": 0.257,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0302,
+     "check_s": 0.0471,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 5,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 5,
       "off_target": 0
      },
-     "spec_s": 0.0045,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -1233,15 +1417,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0331,
+     "check_s": 0.0443,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -1249,12 +1435,14 @@
       "other"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -1263,34 +1451,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 8.896,
+     "spec_s": 0.258,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0283,
+     "check_s": 0.0835,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -1305,26 +1497,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0272,
+     "check_s": 0.0548,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1333,34 +1529,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.498,
+     "spec_s": 0.17,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0309,
+     "check_s": 0.0543,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -1375,26 +1575,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0277,
+     "check_s": 0.0482,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1403,34 +1607,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.283,
+     "spec_s": 0.193,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.027,
+     "check_s": 0.0462,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -1445,26 +1653,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0296,
+     "check_s": 0.0388,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1473,34 +1685,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.279,
+     "spec_s": 0.183,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0271,
+     "check_s": 0.0498,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -1515,15 +1731,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0294,
+     "check_s": 0.1622,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1531,12 +1749,14 @@
       "saas"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1545,34 +1765,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.781,
+     "spec_s": 0.172,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0272,
+     "check_s": 0.029,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -1587,26 +1811,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0261,
+     "check_s": 0.0301,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1615,30 +1843,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.006,
+     "spec_s": 0.167,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0277,
+     "check_s": 0.0429,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1657,26 +1889,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0263,
+     "check_s": 0.033,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1685,34 +1921,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.821,
+     "spec_s": 0.161,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0267,
+     "check_s": 0.0412,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0039,
+     "spec_s": 0.0038,
      "status": "ok"
     }
    }
@@ -1727,26 +1967,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0273,
+     "check_s": 0.0475,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1755,34 +1999,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.167,
+     "spec_s": 0.273,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0303,
+     "check_s": 0.0342,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -1797,15 +2045,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.029,
+     "check_s": 0.0364,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1814,12 +2064,14 @@
       "total_outflows"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1828,34 +2080,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.832,
+     "spec_s": 0.304,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0287,
+     "check_s": 0.0415,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -1870,26 +2126,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.1215,
+     "check_s": 0.0311,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1898,34 +2158,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.76,
+     "spec_s": 0.28,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0379,
+     "check_s": 0.0314,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -1940,26 +2204,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0289,
+     "check_s": 0.0354,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -1968,34 +2236,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.333,
+     "spec_s": 0.268,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0341,
+     "check_s": 0.0397,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -2010,26 +2282,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0378,
+     "check_s": 0.0373,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -2038,34 +2314,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.713,
+     "spec_s": 0.281,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0342,
+     "check_s": 0.0356,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -2080,26 +2360,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.029,
+     "check_s": 0.0432,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -2108,30 +2392,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.138,
+     "spec_s": 0.288,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0311,
+     "check_s": 0.0492,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -2150,26 +2438,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0317,
+     "check_s": 0.063,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -2178,34 +2470,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.007,
+     "spec_s": 0.175,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0348,
+     "check_s": 0.0621,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -2220,26 +2516,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0293,
+     "check_s": 0.0435,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -2248,30 +2548,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.108,
+     "spec_s": 0.179,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0294,
+     "check_s": 0.0522,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -2290,26 +2594,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0281,
+     "check_s": 0.0428,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -2318,30 +2626,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.137,
+     "spec_s": 0.201,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0322,
+     "check_s": 0.0437,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -2360,26 +2672,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0275,
+     "check_s": 0.0294,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
@@ -2388,30 +2704,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.998,
+     "spec_s": 0.197,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0302,
+     "check_s": 0.0491,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
@@ -2430,26 +2750,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0324,
+     "check_s": 0.0634,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 6,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 6,
       "off_target": 0
      },
@@ -2458,30 +2782,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.024,
+     "spec_s": 0.177,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0307,
+     "check_s": 0.036,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 6,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 6,
       "off_target": 0
      },
@@ -2500,26 +2828,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0267,
+     "check_s": 0.0508,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
@@ -2528,34 +2860,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.223,
+     "spec_s": 0.166,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0316,
+     "check_s": 0.0527,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -2570,15 +2906,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.029,
+     "check_s": 0.0352,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -2587,12 +2925,14 @@
       "total_outflows"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -2601,34 +2941,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 8.334,
+     "spec_s": 0.178,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0297,
+     "check_s": 0.0428,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0045,
      "status": "ok"
     }
    }
@@ -2643,26 +2987,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.028,
+     "check_s": 0.0441,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 4,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 4,
       "off_target": 0
      },
@@ -2671,34 +3019,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 8.1,
+     "spec_s": 0.135,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0312,
+     "check_s": 0.2718,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 4,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 4,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0044,
      "status": "ok"
     }
    }
@@ -2713,15 +3065,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0306,
+     "check_s": 0.0346,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -2730,12 +3084,14 @@
       "total_outflows"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -2744,34 +3100,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 8.191,
+     "spec_s": 0.15,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0286,
+     "check_s": 0.0597,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.0051,
      "status": "ok"
     }
    }
@@ -2786,26 +3146,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0269,
+     "check_s": 0.0505,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -2814,34 +3178,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 8.122,
+     "spec_s": 0.169,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0358,
+     "check_s": 0.034,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0046,
+     "spec_s": 0.0048,
      "status": "ok"
     }
    }
@@ -2856,26 +3224,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.026,
+     "check_s": 0.0359,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -2884,34 +3256,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.947,
+     "spec_s": 0.165,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0276,
+     "check_s": 0.0352,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -2926,15 +3302,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0266,
+     "check_s": 0.0561,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -2942,12 +3320,14 @@
       "total_outflows"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -2956,34 +3336,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.353,
+     "spec_s": 0.163,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0276,
+     "check_s": 0.06,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0047,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -2998,26 +3382,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0276,
+     "check_s": 0.0673,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3026,34 +3414,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.167,
+     "spec_s": 0.247,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.027,
+     "check_s": 0.0425,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.0067,
      "status": "ok"
     }
    }
@@ -3068,26 +3460,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0255,
+     "check_s": 0.0557,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3096,34 +3492,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.107,
+     "spec_s": 0.273,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0301,
+     "check_s": 0.0368,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0044,
      "status": "ok"
     }
    }
@@ -3138,26 +3538,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0263,
+     "check_s": 0.0416,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3166,34 +3570,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.99,
+     "spec_s": 0.289,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0275,
+     "check_s": 0.0798,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -3208,26 +3616,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0273,
+     "check_s": 0.0544,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3236,30 +3648,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.218,
+     "spec_s": 0.262,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.028,
+     "check_s": 0.0486,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3278,26 +3694,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0271,
+     "check_s": 0.0569,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3306,34 +3726,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.207,
+     "spec_s": 0.258,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0272,
+     "check_s": 0.0293,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -3348,26 +3772,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0355,
+     "check_s": 0.07,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3376,34 +3804,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.962,
+     "spec_s": 0.27,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0309,
+     "check_s": 0.078,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0041,
      "status": "ok"
     }
    }
@@ -3418,26 +3850,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0266,
+     "check_s": 0.0495,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3446,30 +3882,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.898,
+     "spec_s": 0.199,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.034,
+     "check_s": 0.0622,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3488,26 +3928,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.026,
+     "check_s": 0.0309,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3516,34 +3960,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.882,
+     "spec_s": 0.196,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.2248,
+     "check_s": 0.0353,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -3558,26 +4006,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0299,
+     "check_s": 0.0279,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3586,30 +4038,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.009,
+     "spec_s": 0.167,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0257,
+     "check_s": 0.0396,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3628,26 +4084,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0265,
+     "check_s": 0.0358,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3656,34 +4116,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.076,
+     "spec_s": 0.168,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0277,
+     "check_s": 0.0307,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0041,
      "status": "ok"
     }
    }
@@ -3698,26 +4162,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0261,
+     "check_s": 0.026,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3726,34 +4194,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.218,
+     "spec_s": 0.168,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0281,
+     "check_s": 0.0278,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -3768,26 +4240,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0254,
+     "check_s": 0.0294,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -3796,7 +4272,7 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.067,
+     "spec_s": 0.158,
      "status": "ok"
     },
     "rules": {
@@ -3804,26 +4280,30 @@
      "check_s": 0.0264,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0041,
      "status": "ok"
     }
    }
@@ -3838,26 +4318,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0263,
+     "check_s": 0.0264,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
@@ -3866,34 +4350,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.612,
+     "spec_s": 0.162,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0257,
+     "check_s": 0.0307,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -3908,26 +4396,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0272,
+     "check_s": 0.026,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 6,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 6,
       "off_target": 0
      },
@@ -3936,34 +4428,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.106,
+     "spec_s": 0.162,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0295,
+     "check_s": 0.0254,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 6,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 6,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -3978,26 +4474,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0257,
+     "check_s": 0.0586,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 3,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 3,
       "off_target": 0
      },
@@ -4006,34 +4506,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.892,
+     "spec_s": 0.161,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0266,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 3,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 3,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4048,15 +4552,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0259,
+     "check_s": 0.0403,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -4064,12 +4570,14 @@
       "total_outflows"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -4078,34 +4586,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.859,
+     "spec_s": 0.16,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0269,
+     "check_s": 0.0761,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
-     "spec_s": 0.0046,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -4120,26 +4632,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0267,
+     "check_s": 0.0377,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 7,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 7,
       "off_target": 0
      },
@@ -4148,34 +4664,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.144,
+     "spec_s": 0.288,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0266,
+     "check_s": 0.0321,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 7,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 7,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.0045,
      "status": "ok"
     }
    }
@@ -4190,15 +4710,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0276,
+     "check_s": 0.0322,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 5,
       "off_target": 0
      },
@@ -4206,12 +4728,14 @@
       "other"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 5,
       "off_target": 0
      },
@@ -4220,34 +4744,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 9.22,
+     "spec_s": 0.287,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0299,
+     "check_s": 0.0334,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 5,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 5,
       "off_target": 0
      },
-     "spec_s": 0.0053,
+     "spec_s": 0.0044,
      "status": "ok"
     }
    }
@@ -4262,26 +4790,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0275,
+     "check_s": 0.034,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -4290,34 +4822,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 8.281,
+     "spec_s": 0.272,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0338,
+     "check_s": 0.0518,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0046,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -4335,23 +4871,27 @@
      "check_s": 0.03,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -4360,34 +4900,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.601,
+     "spec_s": 0.291,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0267,
+     "check_s": 0.0281,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0047,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4402,26 +4946,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0318,
+     "check_s": 0.0418,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -4430,34 +4978,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.107,
+     "spec_s": 0.267,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0277,
+     "check_s": 0.0407,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0048,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -4472,15 +5024,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0267,
+     "check_s": 0.0276,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -4488,12 +5042,14 @@
       "saas"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -4502,34 +5058,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.259,
+     "spec_s": 0.279,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0284,
+     "check_s": 0.0296,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0046,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4544,26 +5104,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0265,
+     "check_s": 0.0282,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -4572,34 +5136,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.082,
+     "spec_s": 0.162,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0294,
+     "check_s": 0.0332,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4614,26 +5182,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.03,
+     "check_s": 0.0252,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -4642,34 +5214,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.85,
+     "spec_s": 0.165,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0273,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0037,
      "status": "ok"
     }
    }
@@ -4684,26 +5260,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0276,
+     "check_s": 0.026,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -4712,34 +5292,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.501,
+     "spec_s": 0.232,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0292,
+     "check_s": 0.0259,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4754,26 +5338,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0267,
+     "check_s": 0.0255,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -4782,34 +5370,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.267,
+     "spec_s": 0.29,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0299,
+     "check_s": 0.0266,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4824,26 +5416,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0318,
+     "check_s": 0.0328,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -4852,34 +5448,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.367,
+     "spec_s": 0.33,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0272,
+     "check_s": 0.0841,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -4894,28 +5494,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0276,
+     "check_s": 0.0332,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "needs_review": [
-      "total_outflows"
-     ],
+     "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -4924,34 +5526,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.059,
+     "spec_s": 0.306,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0274,
+     "check_s": 0.0464,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -4966,26 +5572,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0302,
+     "check_s": 0.1109,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -4994,30 +5604,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.809,
+     "spec_s": 0.276,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0309,
+     "check_s": 0.1204,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5036,26 +5650,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0346,
+     "check_s": 0.0579,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5064,34 +5682,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.957,
+     "spec_s": 0.341,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0309,
+     "check_s": 0.0719,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -5106,26 +5728,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0262,
+     "check_s": 0.0509,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5134,34 +5760,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.469,
+     "spec_s": 0.498,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0279,
+     "check_s": 0.0465,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -5176,26 +5806,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0269,
+     "check_s": 0.0629,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5204,34 +5838,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.147,
+     "spec_s": 0.436,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0267,
+     "check_s": 0.0484,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -5246,26 +5884,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0257,
+     "check_s": 0.0458,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5274,34 +5916,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.038,
+     "spec_s": 0.48,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0262,
+     "check_s": 0.0454,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0057,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -5316,26 +5962,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0637,
+     "check_s": 0.046,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 10,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 10,
       "off_target": 0
      },
@@ -5344,34 +5994,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.976,
+     "spec_s": 0.448,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0298,
+     "check_s": 0.0438,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 10,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 10,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -5386,26 +6040,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0309,
+     "check_s": 0.0303,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 6,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 6,
       "off_target": 0
      },
@@ -5414,34 +6072,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.893,
+     "spec_s": 0.446,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0323,
+     "check_s": 0.0379,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 6,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 6,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -5456,26 +6118,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0326,
+     "check_s": 0.0302,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
@@ -5484,30 +6150,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.998,
+     "spec_s": 0.409,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0466,
+     "check_s": 0.0391,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
@@ -5526,15 +6196,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.033,
+     "check_s": 0.1434,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -5542,12 +6214,14 @@
       "total_outflows"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -5556,34 +6230,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.538,
+     "spec_s": 0.202,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0354,
+     "check_s": 0.0986,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
-     "spec_s": 0.0044,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -5598,26 +6276,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0364,
+     "check_s": 0.0807,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 9,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 9,
       "off_target": 0
      },
@@ -5626,34 +6308,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.243,
+     "spec_s": 0.176,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0295,
+     "check_s": 0.0795,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 9,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 9,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -5668,15 +6354,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0284,
+     "check_s": 0.0645,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5684,12 +6372,14 @@
       "other"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5698,34 +6388,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.811,
+     "spec_s": 0.208,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0379,
+     "check_s": 0.0575,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0042,
      "status": "ok"
     }
    }
@@ -5740,26 +6434,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.034,
+     "check_s": 0.0329,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5768,30 +6466,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.686,
+     "spec_s": 0.209,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0317,
+     "check_s": 0.0666,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5810,26 +6512,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0372,
+     "check_s": 0.0312,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5838,30 +6544,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.985,
+     "spec_s": 0.223,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0385,
+     "check_s": 0.0349,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5880,26 +6590,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0528,
+     "check_s": 0.0288,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5908,34 +6622,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.517,
+     "spec_s": 0.231,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0323,
+     "check_s": 0.0362,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0039,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -5950,26 +6668,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0312,
+     "check_s": 0.0344,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -5978,30 +6700,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.531,
+     "spec_s": 0.208,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0351,
+     "check_s": 0.0305,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6020,15 +6746,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0271,
+     "check_s": 0.0285,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6036,12 +6764,14 @@
       "contractors"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6050,30 +6780,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.162,
+     "spec_s": 0.204,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0304,
+     "check_s": 0.032,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6092,26 +6826,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0291,
+     "check_s": 0.0317,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6120,30 +6858,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.0,
+     "spec_s": 0.195,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0269,
+     "check_s": 0.0271,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6162,26 +6904,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0336,
+     "check_s": 0.0258,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6190,30 +6936,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.452,
+     "spec_s": 0.199,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0349,
+     "check_s": 0.0285,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6232,26 +6982,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0261,
+     "check_s": 0.0303,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6260,34 +7014,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.103,
+     "spec_s": 0.188,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0291,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0041,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -6302,26 +7060,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.026,
+     "check_s": 0.0254,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6330,30 +7092,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.219,
+     "spec_s": 0.343,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0289,
+     "check_s": 0.0303,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6372,26 +7138,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0266,
+     "check_s": 0.03,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6400,34 +7170,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.926,
+     "spec_s": 0.316,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.027,
+     "check_s": 0.0264,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0043,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -6442,28 +7216,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0267,
+     "check_s": 0.0282,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "needs_review": [
-      "total_outflows"
-     ],
+     "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6472,34 +7248,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.719,
+     "spec_s": 0.325,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0301,
+     "check_s": 0.029,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -6514,26 +7294,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0252,
+     "check_s": 0.0254,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6542,30 +7326,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.859,
+     "spec_s": 0.35,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0269,
+     "check_s": 0.0258,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6584,26 +7372,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.027,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6612,34 +7404,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.425,
+     "spec_s": 0.344,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0303,
+     "check_s": 0.0281,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0039,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -6654,26 +7450,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0255,
+     "check_s": 0.037,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6682,34 +7482,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.756,
+     "spec_s": 0.337,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0267,
+     "check_s": 0.0394,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0039,
+     "spec_s": 0.0041,
      "status": "ok"
     }
    }
@@ -6724,26 +7528,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0269,
+     "check_s": 0.0265,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -6752,34 +7560,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.174,
+     "spec_s": 0.224,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0326,
+     "check_s": 0.0314,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0039,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -6794,26 +7606,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0256,
+     "check_s": 0.0277,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
@@ -6822,30 +7638,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.346,
+     "spec_s": 0.298,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0261,
+     "check_s": 0.0266,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 11,
       "off_target": 0
      },
@@ -6864,26 +7684,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0259,
+     "check_s": 0.0257,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 7,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 7,
       "off_target": 0
      },
@@ -6892,34 +7716,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.924,
+     "spec_s": 0.28,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0263,
+     "check_s": 0.0258,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 7,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 7,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -6934,26 +7762,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0344,
+     "check_s": 0.0278,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
@@ -6962,34 +7794,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.919,
+     "spec_s": 0.334,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.026,
+     "check_s": 0.0281,
      "error": null,
      "lean": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
      "python": {
+      "cell_gt": false,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "coverage"
       ],
       "localized": true,
+      "localized_cell": null,
       "n_violations": 2,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -7004,26 +7840,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0255,
+     "check_s": 0.0285,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7032,30 +7872,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.038,
+     "spec_s": 0.329,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0276,
+     "check_s": 0.0334,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7074,26 +7918,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0269,
+     "check_s": 0.0307,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 8,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 8,
       "off_target": 0
      },
@@ -7102,34 +7950,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.958,
+     "spec_s": 0.322,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.03,
+     "check_s": 0.0282,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 8,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 8,
       "off_target": 0
      },
-     "spec_s": 0.0042,
+     "spec_s": 0.0043,
      "status": "ok"
     }
    }
@@ -7144,15 +7996,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0265,
+     "check_s": 0.0316,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": false,
+      "localized_cell": true,
       "n_violations": 12,
       "off_target": 12
      },
@@ -7160,12 +8014,14 @@
       "other"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": false,
+      "localized_cell": true,
       "n_violations": 12,
       "off_target": 12
      },
@@ -7176,30 +8032,34 @@
        "other"
       ]
      },
-     "spec_s": 4.923,
+     "spec_s": 0.296,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0287,
+     "check_s": 0.0335,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "no_double_count"
       ],
       "localized": true,
+      "localized_cell": false,
       "n_violations": 12,
       "off_target": 0
      },
@@ -7218,26 +8078,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0251,
+     "check_s": 0.0349,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7246,30 +8110,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.245,
+     "spec_s": 0.634,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0269,
+     "check_s": 0.0341,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7288,26 +8156,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0258,
+     "check_s": 0.0306,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7316,30 +8188,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.126,
+     "spec_s": 0.587,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.027,
+     "check_s": 0.049,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7358,26 +8234,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0272,
+     "check_s": 0.0321,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7386,30 +8266,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.084,
+     "spec_s": 0.529,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0265,
+     "check_s": 0.029,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7428,26 +8312,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0283,
+     "check_s": 0.0274,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7456,34 +8344,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.952,
+     "spec_s": 0.513,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0303,
+     "check_s": 0.0436,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0039,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -7498,26 +8390,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0268,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7526,30 +8422,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.063,
+     "spec_s": 0.502,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0278,
+     "check_s": 0.0273,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7568,26 +8468,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0349,
+     "check_s": 0.0285,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7596,34 +8500,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.008,
+     "spec_s": 0.483,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0369,
+     "check_s": 0.0288,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "traceability"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0038,
+     "spec_s": 0.0037,
      "status": "ok"
     }
    }
@@ -7638,15 +8546,17 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0286,
+     "check_s": 0.0256,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7654,12 +8564,14 @@
       "start"
      ],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7668,30 +8580,34 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.291,
+     "spec_s": 0.183,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0285,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7710,26 +8626,30 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0292,
+     "check_s": 0.0335,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7738,34 +8658,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.716,
+     "spec_s": 0.185,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.03,
+     "check_s": 0.0261,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -7783,23 +8707,27 @@
      "check_s": 0.031,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "needs_review": [],
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
@@ -7808,34 +8736,38 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 8.258,
+     "spec_s": 0.214,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0336,
+     "check_s": 0.0297,
      "error": null,
      "lean": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
      "python": {
+      "cell_gt": true,
       "correct_invariant": true,
       "detected": true,
       "invariants": [
        "roll_forward"
       ],
       "localized": true,
+      "localized_cell": true,
       "n_violations": 1,
       "off_target": 0
      },
-     "spec_s": 0.0039,
+     "spec_s": 0.0041,
      "status": "ok"
     }
    }
@@ -7850,7 +8782,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.029,
+     "check_s": 0.0255,
      "error": null,
      "lean": {
       "detected": false,
@@ -7868,12 +8800,12 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.638,
+     "spec_s": 0.181,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.031,
+     "check_s": 0.0283,
      "error": null,
      "lean": {
       "detected": false,
@@ -7885,7 +8817,7 @@
       "invariants": [],
       "n_violations": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
@@ -7900,7 +8832,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0272,
+     "check_s": 0.0256,
      "error": null,
      "lean": {
       "detected": false,
@@ -7918,12 +8850,12 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 7.527,
+     "spec_s": 0.176,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0273,
+     "check_s": 0.0252,
      "error": null,
      "lean": {
       "detected": false,
@@ -7950,7 +8882,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0256,
+     "check_s": 0.025,
      "error": null,
      "lean": {
       "detected": false,
@@ -7968,107 +8900,7 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 8.203,
-     "status": "ok"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0267,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.004,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s204",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 204,
-   "sources": {
-    "agent": {
-     "agree": true,
-     "check_s": 0.0255,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "needs_review": [],
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_accuracy": {
-      "accuracy": 1.0,
-      "assignment_equal": true,
-      "wrong_lines": []
-     },
-     "spec_s": 5.091,
-     "status": "ok"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0262,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.0042,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s205",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 205,
-   "sources": {
-    "agent": {
-     "agree": true,
-     "check_s": 0.0251,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "needs_review": [],
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_accuracy": {
-      "accuracy": 1.0,
-      "assignment_equal": true,
-      "wrong_lines": []
-     },
-     "spec_s": 5.099,
+     "spec_s": 0.212,
      "status": "ok"
     },
     "rules": {
@@ -8085,22 +8917,22 @@
       "invariants": [],
       "n_violations": 0
      },
-     "spec_s": 0.004,
+     "spec_s": 0.0039,
      "status": "ok"
     }
    }
   },
   {
    "bug_id": null,
-   "id": "clean/s206",
+   "id": "clean/s204",
    "kind": "clean",
    "load_error": null,
    "placement": null,
-   "seed": 206,
+   "seed": 204,
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0257,
+     "check_s": 0.0267,
      "error": null,
      "lean": {
       "detected": false,
@@ -8118,12 +8950,112 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.012,
+     "spec_s": 0.173,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0261,
+     "check_s": 0.0279,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s205",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 205,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0286,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 0.165,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0295,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0039,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s206",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 206,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0258,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 0.269,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0271,
      "error": null,
      "lean": {
       "detected": false,
@@ -8150,7 +9082,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0256,
+     "check_s": 0.025,
      "error": null,
      "lean": {
       "detected": false,
@@ -8168,12 +9100,12 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.988,
+     "spec_s": 0.247,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0281,
+     "check_s": 0.0257,
      "error": null,
      "lean": {
       "detected": false,
@@ -8200,7 +9132,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0255,
+     "check_s": 0.0251,
      "error": null,
      "lean": {
       "detected": false,
@@ -8218,62 +9150,12 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 6.054,
+     "spec_s": 0.242,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0265,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.004,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
-   "id": "clean/s209",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 209,
-   "sources": {
-    "agent": {
-     "agree": true,
-     "check_s": 0.0257,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "needs_review": [],
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_accuracy": {
-      "accuracy": 1.0,
-      "assignment_equal": true,
-      "wrong_lines": []
-     },
-     "spec_s": 5.298,
-     "status": "ok"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0272,
+     "check_s": 0.0252,
      "error": null,
      "lean": {
       "detected": false,
@@ -8292,15 +9174,15 @@
   },
   {
    "bug_id": null,
-   "id": "clean/s210",
+   "id": "clean/s209",
    "kind": "clean",
    "load_error": null,
    "placement": null,
-   "seed": 210,
+   "seed": 209,
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0253,
+     "check_s": 0.0252,
      "error": null,
      "lean": {
       "detected": false,
@@ -8318,12 +9200,62 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 4.945,
+     "spec_s": 0.364,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0267,
+     "check_s": 0.0254,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.004,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s210",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 210,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.025,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 0.449,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0259,
      "error": null,
      "lean": {
       "detected": false,
@@ -8350,7 +9282,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0249,
+     "check_s": 0.0254,
      "error": null,
      "lean": {
       "detected": false,
@@ -8370,12 +9302,62 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.727,
+     "spec_s": 0.443,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0254,
+     "check_s": 0.0251,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_s": 0.0041,
+     "status": "ok"
+    }
+   }
+  },
+  {
+   "bug_id": null,
+   "id": "clean/s212",
+   "kind": "clean",
+   "load_error": null,
+   "placement": null,
+   "seed": 212,
+   "sources": {
+    "agent": {
+     "agree": true,
+     "check_s": 0.0249,
+     "error": null,
+     "lean": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "needs_review": [],
+     "python": {
+      "detected": false,
+      "invariants": [],
+      "n_violations": 0
+     },
+     "spec_accuracy": {
+      "accuracy": 1.0,
+      "assignment_equal": true,
+      "wrong_lines": []
+     },
+     "spec_s": 0.487,
+     "status": "ok"
+    },
+    "rules": {
+     "agree": true,
+     "check_s": 0.0258,
      "error": null,
      "lean": {
       "detected": false,
@@ -8394,56 +9376,6 @@
   },
   {
    "bug_id": null,
-   "id": "clean/s212",
-   "kind": "clean",
-   "load_error": null,
-   "placement": null,
-   "seed": 212,
-   "sources": {
-    "agent": {
-     "agree": true,
-     "check_s": 0.0283,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "needs_review": [],
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_accuracy": {
-      "accuracy": 1.0,
-      "assignment_equal": true,
-      "wrong_lines": []
-     },
-     "spec_s": 5.319,
-     "status": "ok"
-    },
-    "rules": {
-     "agree": true,
-     "check_s": 0.0287,
-     "error": null,
-     "lean": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "python": {
-      "detected": false,
-      "invariants": [],
-      "n_violations": 0
-     },
-     "spec_s": 0.004,
-     "status": "ok"
-    }
-   }
-  },
-  {
-   "bug_id": null,
    "id": "clean/s213",
    "kind": "clean",
    "load_error": null,
@@ -8452,7 +9384,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0257,
+     "check_s": 0.2093,
      "error": null,
      "lean": {
       "detected": false,
@@ -8470,12 +9402,12 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.249,
+     "spec_s": 0.463,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0272,
+     "check_s": 0.0459,
      "error": null,
      "lean": {
       "detected": false,
@@ -8502,7 +9434,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.025,
+     "check_s": 0.0274,
      "error": null,
      "lean": {
       "detected": false,
@@ -8520,12 +9452,12 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.34,
+     "spec_s": 0.443,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0266,
+     "check_s": 0.036,
      "error": null,
      "lean": {
       "detected": false,
@@ -8552,7 +9484,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0249,
+     "check_s": 0.0485,
      "error": null,
      "lean": {
       "detected": false,
@@ -8570,12 +9502,12 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.207,
+     "spec_s": 0.454,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0255,
+     "check_s": 0.0274,
      "error": null,
      "lean": {
       "detected": false,
@@ -8587,7 +9519,7 @@
       "invariants": [],
       "n_violations": 0
      },
-     "spec_s": 0.0039,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -8602,7 +9534,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0261,
+     "check_s": 0.0274,
      "error": null,
      "lean": {
       "detected": false,
@@ -8620,12 +9552,12 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.337,
+     "spec_s": 0.207,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0256,
+     "check_s": 0.0351,
      "error": null,
      "lean": {
       "detected": false,
@@ -8652,7 +9584,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0253,
+     "check_s": 0.027,
      "error": null,
      "lean": {
       "detected": false,
@@ -8670,12 +9602,12 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.395,
+     "spec_s": 0.245,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0261,
+     "check_s": 0.0263,
      "error": null,
      "lean": {
       "detected": false,
@@ -8702,7 +9634,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.0292,
+     "check_s": 0.0466,
      "error": null,
      "lean": {
       "detected": false,
@@ -8722,12 +9654,12 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.238,
+     "spec_s": 0.199,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0274,
+     "check_s": 0.0268,
      "error": null,
      "lean": {
       "detected": false,
@@ -8754,7 +9686,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.026,
+     "check_s": 0.0283,
      "error": null,
      "lean": {
       "detected": false,
@@ -8772,12 +9704,12 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.104,
+     "spec_s": 0.18,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0256,
+     "check_s": 0.0341,
      "error": null,
      "lean": {
       "detected": false,
@@ -8789,7 +9721,7 @@
       "invariants": [],
       "n_violations": 0
      },
-     "spec_s": 0.0039,
+     "spec_s": 0.004,
      "status": "ok"
     }
    }
@@ -8804,7 +9736,7 @@
    "sources": {
     "agent": {
      "agree": true,
-     "check_s": 0.029,
+     "check_s": 0.0321,
      "error": null,
      "lean": {
       "detected": false,
@@ -8822,12 +9754,12 @@
       "assignment_equal": true,
       "wrong_lines": []
      },
-     "spec_s": 5.048,
+     "spec_s": 0.161,
      "status": "ok"
     },
     "rules": {
      "agree": true,
-     "check_s": 0.0265,
+     "check_s": 0.0357,
      "error": null,
      "lean": {
       "detected": false,
@@ -8844,5 +9776,53 @@
     }
    }
   }
- ]
+ ],
+ "robustness": {
+  "model": "gpt-4.1",
+  "threshold": 0.8,
+  "variants": {
+   "hardcoded_row": {
+    "accuracy": 1.0,
+    "flagged": true,
+    "flagged_lines": [
+     "rent"
+    ],
+    "matches_gold": true,
+    "status": "ok",
+    "wrong_and_confident": false,
+    "wrong_lines": []
+   },
+   "merged_categories": {
+    "accuracy": 1.0,
+    "flagged": false,
+    "flagged_lines": [],
+    "matches_gold": true,
+    "status": "ok",
+    "wrong_and_confident": false,
+    "wrong_lines": []
+   },
+   "renamed_rows": {
+    "accuracy": 1.0,
+    "flagged": false,
+    "flagged_lines": [],
+    "matches_gold": true,
+    "status": "ok",
+    "wrong_and_confident": false,
+    "wrong_lines": []
+   },
+   "reordered_columns": {
+    "accuracy": 1.0,
+    "flagged": true,
+    "flagged_lines": [
+     "contractors",
+     "other",
+     "saas"
+    ],
+    "matches_gold": true,
+    "status": "ok",
+    "wrong_and_confident": false,
+    "wrong_lines": []
+   }
+  }
+ }
 }

@@ -1,0 +1,125 @@
+{
+ "rows": [
+  {
+   "confidence": 1.0,
+   "kind": "start",
+   "rationale": "Hardcoded for Jan, then each month picks up the prior month's 'Ending Cash'.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "inflow",
+   "rationale": "Formula only includes Bank source with 'Stripe*' in description; matches ledger and notes.",
+   "row_label": "Revenue",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula sums all payroll rows for the month with no employee/category filtering; matches notes and sample data.",
+   "row_label": "Payroll",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [],
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula strictly pulls Ramp transactions with category 'Software'; matches notes and ledger.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula strictly pulls Ramp transactions with category 'Contractors'; this is explicit in both formula and label/note.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula matches Bank tab with description 'Rent*'; matches label and samples.",
+   "row_label": "Rent",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula and note: sums these Ramp categories plus Bank 'Bank fee*'; matches explicit formula.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp",
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "subtotal",
+   "rationale": "Formula adds Payroll, SaaS, Contractors, Rent, and Other rows.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "net",
+   "rationale": "Explicit formula: Revenue less Total Outflows.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "end",
+   "rationale": "Formula adds Starting Cash and Net Cash Flow for the month.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

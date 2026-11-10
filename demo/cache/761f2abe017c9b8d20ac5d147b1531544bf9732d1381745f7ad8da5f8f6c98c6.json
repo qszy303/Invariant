@@ -1,0 +1,121 @@
+{
+ "rows": [
+  {
+   "confidence": 1,
+   "kind": "start",
+   "rationale": "The starting cash is a hardcoded input for January, then references the prior month's ending cash; it does not sum or filter ledger items.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "inflow",
+   "rationale": "Formula matches all Bank source transactions whose 'description' matches 'Stripe*', as stated in both formula and model notes.",
+   "row_label": "Revenue",
+   "rule": {
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula pulls gross plus employer taxes from payroll tab for all employees; rule is all payroll source transaction amounts in the current month.",
+   "row_label": "Payroll",
+   "rule": {
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula pulls all Ramp transactions where category = 'Software'; note and sample confirm interpretation.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula pulls all Ramp transactions where category = 'Contractors'; note and sample confirm meaning.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula pulls all Bank transactions whose 'description' matches 'Rent*', fitting both formula and sample ledger.",
+   "row_label": "Rent",
+   "rule": {
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula sums Ramp outflows for categories Travel, Meals, Office, Marketing, Legal plus Bank outflows for 'Bank fee'; note and sample agree.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "counterparty_in": [
+     "Bank fee"
+    ],
+    "sources": [
+     "ramp",
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "subtotal",
+   "rationale": "Formula sums all individual outflow rows; subtotal, not a rule.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "net",
+   "rationale": "Formula is inflows minus total outflows, so this is the period's net.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "end",
+   "rationale": "Ending cash equals starting cash plus net cash flow; end-of-period balance, so no rule.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

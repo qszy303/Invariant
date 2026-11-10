@@ -1,0 +1,8 @@
+{
+ "cell_ref": "Runway!B5",
+ "kind": "edit_formula",
+ "new_formula": "=-(SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))+SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Tools\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1)))",
+ "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&B$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(B$1),MONTH(B$1)+1,1))",
+ "reason": "Add the missing 'Tools' category to the 'SaaS' row, as 'Tools' is a software cost charged to Ramp and fits this line's note and category logic.",
+ "scope": "row"
+}

@@ -1,0 +1,117 @@
+{
+ "rows": [
+  {
+   "confidence": 1.0,
+   "kind": "start",
+   "rationale": "Hardcoded for Jan and otherwise always links to previous month ending cash; purely a schedule input, not derived from transactions.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "inflow",
+   "rationale": "Formula and note specify: pulls bank inflows whose description starts with 'Stripe'.",
+   "row_label": "Revenue",
+   "rule": {
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula specifies all payroll gross and employer taxes from payroll tab, without additional filters.",
+   "row_label": "Payroll",
+   "rule": {
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula and note: all ramp outflows where category is Software.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula and note: all ramp outflows where category is Contractors.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula and note: bank outflows where description starts with 'Rent'.",
+   "row_label": "Rent",
+   "rule": {
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula explicitly sums those five Ramp categories as defined.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "subtotal",
+   "rationale": "Subtotal row; sums specific outflow rows above, not transactions themselves.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "net",
+   "rationale": "Net row; difference between inflow and subtotal outflows, not a direct transaction sum.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "end",
+   "rationale": "Closing cash; just adds starting and net, not a transaction sum.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

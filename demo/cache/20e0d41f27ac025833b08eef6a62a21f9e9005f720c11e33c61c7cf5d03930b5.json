@@ -1,0 +1,121 @@
+{
+ "rows": [
+  {
+   "confidence": 1,
+   "kind": "start",
+   "rationale": "This row is the opening cash balance for the period, hardcoded for the first month and linking to prior ending cash for later months.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "inflow",
+   "rationale": "Formula and notes specify Stripe payouts from the Bank tab; criteria match only these counterparties.",
+   "row_label": "Revenue",
+   "rule": {
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula sums gross and employer taxes from Payroll tab for the period, matching all payroll entries.",
+   "row_label": "Payroll",
+   "rule": {
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula and notes specify only Ramp transactions with category Software; filters are precise.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula and notes specify only Ramp transactions with category Contractors; filters are precise.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula and notes specify Bank transactions with counterparty Rent- Landlord LLC (Rent* pattern), which matches the formula.",
+   "row_label": "Rent",
+   "rule": {
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula is explicit: sum Ramp transactions with specific categories and Bank transactions with counterparty 'Bank fee*'.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "counterparty_in": [
+     "Bank fee*"
+    ],
+    "sources": [
+     "ramp",
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "subtotal",
+   "rationale": "Subtotal row that sums all individual outflow rows above; does not originate own rule.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "net",
+   "rationale": "Net row computes inflow minus outflows per formula and label; not a transaction rule.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "end",
+   "rationale": "Ending cash is simply starting cash plus net cash flow, by both formula and description.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

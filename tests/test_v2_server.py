@@ -18,7 +18,10 @@ def demo_env():
     mp = pytest.MonkeyPatch()
     mp.setenv("PROOF_DEMO", "1")
     mp.setenv("PROOF_OFFLINE", "1")
-    mp.setenv("PROOF_CACHE_DIR", str(core.SAMPLES_DIR / "cache"))
+    from app.v2.server import DEMO_CACHE
+    mp.setenv("PROOF_CACHE_DIR", str(DEMO_CACHE))
+    for k in ("ANTHROPIC_API_KEY", "OPENAI_API_KEY", "OPEN_AI_API_KEY", "PROOF_SPEC"):
+        mp.delenv(k, raising=False)
     yield
     mp.undo()
 
@@ -46,8 +49,21 @@ def test_apply_verified_fix_clears_the_cell_with_no_new_violations():
     assert out["kpi"]["claimed_end_cents"] == out["kpi"]["verified_end_cents"]
 
 
-def test_one_fix_clears_all_sibling_violations():
+def test_demo_uses_cached_llm_spec_offline():
+    d = check("slope_dup_row.xlsx")
+    assert d["spec"] == "llm" and d["spec_model"] and d["spec_note"] is None
+
+
+def test_hardcoded_rent_is_flagged_for_review_by_the_model():
+    d = check("slope_hardcoded_rent.xlsx")
+    assert d["spec"] == "llm" and d["needs_review"] == ["rent"]
+
+
+def test_one_fix_clears_all_sibling_violations(monkeypatch):
+    monkeypatch.setenv("PROOF_SPEC", "rules")  # the precomputed fixes are for the rules reading
+    monkeypatch.setenv("PROOF_CACHE_DIR", str(core.SAMPLES_DIR / "cache"))
     d = check("slope_missing_vendor.xlsx")
+    assert d["spec"] == "rules"
     assert d["kpi"]["violations"] == 5
     out = client.post("/api/fix/apply",
                       json={"violation_key": d["result"]["violations"][0]["key"]}).json()
@@ -66,3 +82,47 @@ def test_eval_and_proven():
     assert "metrics" in e and "known_misses" in e
     p = client.get("/api/proven").json()
     assert p["theorems"] and p["proven"] and p["not_proven"]
+
+
+def test_openai_proposer_maps_function_call_and_caches(tmp_path):
+    import json
+    from types import SimpleNamespace as NS
+
+    from app.v2.openai_proposer import OpenAIProposer
+
+    args = {"kind": "edit_formula", "cell_ref": "Runway!C2", "new_formula": "=B11", "reason": "link"}
+    calls = []
+
+    def create(**kw):
+        calls.append(kw)
+        fn = NS(name="propose_fix", arguments=json.dumps(args))
+        return NS(choices=[NS(message=NS(tool_calls=[NS(function=fn)]))])
+
+    client = NS(chat=NS(completions=NS(create=create)))
+    p = OpenAIProposer(client=client, model="m", cache_dir=tmp_path)
+    assert p({"x": 1}) == args and p({"x": 1}) == args
+    assert len(calls) == 1 and p.calls == 1  # second call served from cache
+    assert calls[0]["tool_choice"]["function"]["name"] == "propose_fix"
+    assert calls[0]["tools"][0]["function"]["parameters"]["required"] == ["kind", "reason"]
+
+
+def test_no_apply_on_rows_flagged_for_review():
+    # In the cached demo the LLM spec misreads Other (flagged for review); every fix that
+    # touches Other is blocked, in the payload and at the endpoint.
+    d = check("slope_missing_vendor.xlsx")
+    assert "other" in d["needs_review"]
+    blocked = {k: f for k, f in d["fixes"].items() if f and f.get("blocked")}
+    assert blocked, "expected fixes on the review row to be blocked"
+    for f in blocked.values():
+        assert f["blocked_reason"] == "Confirm what this row should contain before fixing."
+    on_other = [v["key"] for v in d["result"]["violations"] if v["line_id"] == "other"]
+    assert on_other and all(d["fixes"][k]["blocked"] for k in on_other if d["fixes"][k])
+    r = client.post("/api/fix/apply", json={"violation_key": next(iter(blocked)),
+                                            "check_id": d["check_id"]})
+    assert r.status_code == 409 and "Confirm what this row" in r.json()["error"]
+
+
+def test_fix_not_blocked_when_nothing_needs_review():
+    d = check("slope_dup_row.xlsx")
+    assert d["needs_review"] == []
+    assert not any((f or {}).get("blocked") for f in d["fixes"].values())

@@ -103,6 +103,14 @@ def score(result: CheckResult, truth: dict | None,
     def hits(v) -> bool:
         return bool(ids & set(v.txn_ids)) or violation_cell(v, label_by_line) in cells
 
+    # Strict: some flagged violation sits on a ground-truth Runway cell. Ground truth is the
+    # Runway cells in cells_affected plus runway_cells (a pasted export row lands on the
+    # Runway cell that sums it). Bugs with no Runway cell (missing_vendor: txns no row
+    # counts) cannot be cell-localized and are reported as n/a, not as misses.
+    gt = {c for c in truth.get("cells_affected", []) if c.startswith("Runway!")} | cells
+    out["cell_gt"] = bool(gt)
+    out["localized_cell"] = (any(violation_cell(v, label_by_line) in gt for v in vs)
+                             if gt else None)
     out["correct_invariant"] = any(v.invariant in expected for v in vs)
     out["localized"] = any(v.invariant in expected and hits(v) for v in vs)
     out["off_target"] = sum(1 for v in vs if v.invariant not in expected or not hits(v))
@@ -259,7 +267,7 @@ def compute_metrics(models: list[dict]) -> dict[str, Any]:
 
             by_bug: dict[str, dict[str, int]] = {}
             tot = {"n": 0, "detected": 0, "correct_invariant": 0, "localized": 0,
-                   "errors": 0}
+                   "errors": 0, "localized_cell": 0, "cell_gt_n": 0}
             for m, s in ran:
                 if m["kind"] != "buggy":
                     continue
@@ -275,6 +283,9 @@ def compute_metrics(models: list[dict]) -> dict[str, Any]:
                     t["detected"] += r["detected"]
                     t["correct_invariant"] += r["correct_invariant"]
                     t["localized"] += r["localized"]
+                    if r.get("localized_cell") is not None:
+                        t["cell_gt_n"] += 1
+                        t["localized_cell"] += r["localized_cell"]
             clean = [(m, s) for m, s in ran if m["kind"] == "clean"]
             flagged = sum(1 for _, s in clean if sc(s) and sc(s)["detected"])
             if all(sc(s) is None for _, s in ran if s["status"] == "ok"):
@@ -284,6 +295,7 @@ def compute_metrics(models: list[dict]) -> dict[str, Any]:
                 d["detection_rate"] = _rate(d["detected"], d["n"])
                 d["localization_rate"] = _rate(d["localized"], d["n"])
                 d["correct_invariant_rate"] = _rate(d["correct_invariant"], d["n"])
+                d["localization_accuracy"] = _rate(d["localized_cell"], d["cell_gt_n"])
             block[checker] = {
                 "overall": tot, "by_bug": by_bug,
                 "clean": {"n": len(clean), "flagged": flagged,
@@ -343,6 +355,34 @@ MISS_NOTES: dict[tuple[str, str], str] = {
 
 def _pct(x) -> str:
     return "n/a" if x is None else f"{100 * x:.0f}%"
+
+
+def _cellloc(b: dict) -> str:
+    if not b.get("cell_gt_n"):
+        return "n/a"
+    return f"{b['localized_cell']}/{b['cell_gt_n']} ({_pct(b['localization_accuracy'])})"
+
+
+def render_robustness(rob: dict | None) -> list[str]:
+    L = ["## Messy spreadsheets (LLM spec robustness)", ""]
+    if not rob:
+        return L + ["Not run.", ""]
+    L += [f"Four hand-made variants of the clean workbook that the rules baseline cannot read, "
+          f"read by the LLM spec (`{rob['model']}`). Gold is the baseline reading of the clean "
+          f"workbook. Low-confidence threshold {rob['threshold']}.", "",
+          "| variant | matches gold | flagged for review | wrong and confident |",
+          "|---|---|---|---|"]
+    for name, r in rob["variants"].items():
+        if r["status"] != "ok":
+            L.append(f"| `{name}` | not run | not run | not run |")
+            continue
+        yn = lambda x: "yes" if x else "no"  # noqa: E731
+        L.append(f"| `{name}` | {yn(r['matches_gold'])} | {yn(r['flagged'])}"
+                 f"{' (' + ', '.join(r['flagged_lines']) + ')' if r['flagged_lines'] else ''} "
+                 f"| {yn(r['wrong_and_confident'])} |")
+    if rob.get("note"):
+        L += ["", rob["note"]]
+    return L + [""]
 
 
 def render_fix_section(fix: dict, manifest: dict) -> list[str]:
@@ -410,16 +450,22 @@ def render_markdown(results: dict, manifest: dict, fix: dict | None = None) -> s
             if not c or c.get("status") == "unavailable":
                 continue
             L += [f"### {checker.capitalize()} checker", "",
-                  "| bug | n | detected | right invariant | localized | pipeline errors |",
-                  "|---|---|---|---|---|---|"]
+                  "| bug | n | detected | right invariant | localized | on the right cell | pipeline errors |",
+                  "|---|---|---|---|---|---|---|"]
             for bug in manifest["bug_ids"]:
                 b = c["by_bug"].get(bug)
                 if b:
                     L.append(f"| `{bug}` | {b['n']} | {b['detected']} ({_pct(b['detection_rate'])}) "
-                             f"| {b['correct_invariant']} | {b['localized']} | {b['errors']} |")
+                             f"| {b['correct_invariant']} | {b['localized']} | {_cellloc(b)} "
+                             f"| {b['errors']} |")
             o = c["overall"]
             L += [f"| **all** | {o['n']} | **{o['detected']} ({_pct(o['detection_rate'])})** "
-                  f"| {o['correct_invariant']} | {o['localized']} | {o['errors']} |", ""]
+                  f"| {o['correct_invariant']} | {o['localized']} | {_cellloc(o)} "
+                  f"| {o['errors']} |", "",
+                  "*Localized* counts a violation that names the right cell or the injected "
+                  "transaction. *On the right cell* is stricter: a flagged violation's "
+                  "(line, month) is a ground-truth Runway cell; n/a where the bug has no "
+                  "Runway cell (`missing_vendor`).", ""]
             cl = c["clean"]
             L += [f"False positives on clean models: **{cl['flagged']} of {cl['n']}** "
                   f"({_pct(cl['false_positive_rate'])}), {cl['violations']} violations in total.",
@@ -464,6 +510,7 @@ def render_markdown(results: dict, manifest: dict, fix: dict | None = None) -> s
         L += [f"| {a} | `{b}` | `{c}` | {d} |" for a, b, c, d in misses]
     else:
         L += ["None: every injected bug was detected, with the right invariant and place."]
+    L += [""] + render_robustness(results.get("robustness"))
     if fix is not None:
         L += [""] + render_fix_section(fix, manifest)
     L += ["", "## Scope and limits", "",
@@ -492,6 +539,55 @@ def write_report(out_dir: Path, suite_dir: Path = SUITE_DIR) -> None:
     (out_dir / "RESULTS.md").write_text(render_markdown(res, manifest, fix))
 
 
+# ---- spec robustness ---------------------------------------------------------
+
+def llm_client_and_model():
+    """(client, model) for live LLM spec calls, or (None, default model) for cache only.
+
+    PROOF_PROVIDER=openai uses proof.openai_client with an OpenAI key; otherwise the
+    agent's own Anthropic client (needs ANTHROPIC_API_KEY unless cached).
+    """
+    if os.environ.get("PROOF_PROVIDER") == "openai":
+        from proof.openai_client import OpenAIAsAnthropic, default_model, openai_key
+        if openai_key():
+            return OpenAIAsAnthropic(), os.environ.get("PROOF_MODEL", default_model())
+    return None, os.environ.get("PROOF_MODEL", DEFAULT_MODEL)
+
+
+def run_robustness(workdir: Path) -> dict[str, Any]:
+    """Per variant: assignment matches gold / flagged for review / wrong and confident.
+
+    Cached responses are used; a variant that is not cached when no key is set is
+    reported as "not run" instead of failing the eval.
+    """
+    from proof.spec.robustness import VARIANTS, build_cases
+
+    client, model = llm_client_and_model()
+    gold, gold_ledger, cases = build_cases(workdir)
+    t = confidence_min()
+    out: dict[str, Any] = {"model": model, "threshold": t, "variants": {}}
+    for c in cases:
+        if c.name not in VARIANTS:
+            continue
+        try:
+            spec = build_rulespec_llm(c.graph, c.ledger, headers=export_headers(c.path),
+                                      notes=read_row_notes(c.path), client=client, model=model)
+        except AgentError as e:
+            out["variants"][c.name] = {"status": "not run", "error": str(e)}
+            continue
+        acc = spec_accuracy(spec, gold, c.ledger, gold_ledger)
+        low = sorted(ln.line_id for ln in spec.lines if ln.confidence < t)
+        wrong = [k for k, ok in acc["per_line"].items() if not ok] + acc["extra_pred_lines"]
+        conf = {ln.line_id: ln.confidence for ln in spec.lines}
+        out["variants"][c.name] = {
+            "status": "ok", "matches_gold": acc["assignment_equal"],
+            "flagged": bool(low), "flagged_lines": low,
+            "wrong_lines": wrong,
+            "wrong_and_confident": any(conf.get(w, 1.0) >= t for w in wrong),
+            "accuracy": acc["accuracy"]}
+    return out
+
+
 # ---- entry point -----------------------------------------------------------
 
 def main(argv: list[str] | None = None) -> int:
@@ -503,8 +599,19 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--limit", type=int, default=None, help="first N models (debug)")
     ap.add_argument("--out", type=Path, default=EVAL_DIR)
+    ap.add_argument("--no-robustness", action="store_true")
+    ap.add_argument("--robustness-only", action="store_true",
+                    help="re-run only the spec robustness variants into an existing results.json")
     args = ap.parse_args(argv)
 
+    if args.robustness_only:  # refresh just the robustness block of an existing results.json
+        rp = args.out / "results.json"
+        res = json.loads(rp.read_text())
+        res["robustness"] = run_robustness(Path("data/robustness"))
+        rp.write_text(json.dumps(res, indent=1, sort_keys=True))
+        write_report(args.out, args.suite)
+        print(f"updated robustness in {rp}")
+        return 0
     if args.regen or not (args.suite / "manifest.json").exists():
         print("building suite ...")
         build_suite(args.suite)
@@ -512,19 +619,27 @@ def main(argv: list[str] | None = None) -> int:
     use_lean = not args.no_lean and lean_bridge.is_available()
     print(f"{len(manifest['models'])} models; lean={'on' if use_lean else 'off'}; "
           f"agent={'off' if args.no_agent else 'on'}")
+    client, model = llm_client_and_model()
+    agent_fn = None
+    if client is not None:
+        def agent_fn(graph, ledger, path):
+            return build_rulespec_llm(graph, ledger, headers=export_headers(path),
+                                      notes=read_row_notes(path), client=client, model=model)
     res = run_suite(manifest, args.suite, agent=not args.no_agent, lean=use_lean,
-                    workers=args.workers, limit=args.limit)
+                    workers=args.workers, limit=args.limit, agent_fn=agent_fn)
     res["metrics"] = compute_metrics(res["models"])
     agent_blk = res["metrics"]["agent"]
     res["meta"] = {
-        "agent_model": os.environ.get("PROOF_MODEL", DEFAULT_MODEL),
+        "agent_model": model,
         "confidence_min": confidence_min(), "lean": use_lean,
         "agent_status": ("skipped" if agent_blk["status"] == "skipped" else
-                         "ran" + ("" if os.environ.get("ANTHROPIC_API_KEY")
+                         "ran" + ("" if client is not None or os.environ.get("ANTHROPIC_API_KEY")
                                   else " (from cache only)")),
         "suite": {k: manifest[k] for k in
                   ("bug_ids", "bug_seeds", "clean_seeds", "placements")},
     }
+    if not args.no_robustness:
+        res["robustness"] = run_robustness(Path("data/robustness"))
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "results.json").write_text(json.dumps(res, indent=1, sort_keys=True))
     write_report(args.out, args.suite)

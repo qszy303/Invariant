@@ -1,0 +1,121 @@
+{
+ "rows": [
+  {
+   "confidence": 1,
+   "kind": "start",
+   "rationale": "Initial cash is typed for Jan; later months link to prior Ending Cash, so this is always just the start balance.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "inflow",
+   "rationale": "Formula pulls in only 'Stripe*' from the Bank tab, fitting sample and notes.",
+   "row_label": "Revenue",
+   "rule": {
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula sums all payroll gross and employer taxes, source Payroll with no filters.",
+   "row_label": "Payroll",
+   "rule": {
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula and notes restrict to Ramp, category Software.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula restricts to Ramp, category Contractors only.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula matches Bank transactions with description 'Rent*', exactly as modeled.",
+   "row_label": "Rent",
+   "rule": {
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula and notes union specific Ramp categories and 'Bank fee*' from Bank tab.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "counterparty_in": [
+     "Bank fee*"
+    ],
+    "sources": [
+     "ramp",
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "subtotal",
+   "rationale": "This row totals the prior outflow rows, no additional logic.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "net",
+   "rationale": "Formula is Revenue less total outflows, clear net logic.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "end",
+   "rationale": "Formula is Starting + net change, standard closing balance.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

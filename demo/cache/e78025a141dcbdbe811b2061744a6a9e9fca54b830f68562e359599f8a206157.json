@@ -1,0 +1,126 @@
+{
+ "rows": [
+  {
+   "confidence": 1.0,
+   "kind": "start",
+   "rationale": "First month is an input, subsequent months simply reference prior month's ending cash.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "inflow",
+   "rationale": "Formula uses Bank tab, 'Stripe*' counterparty, consistent with notes and samples.",
+   "row_label": "Revenue",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula sums all payroll outflows (gross and employer taxes), all employees.",
+   "row_label": "Payroll",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [],
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula sums Ramp charges in categories 'Software' or 'Tools', matching row note and sample.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software",
+     "Tools"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula matches Ramp category 'Contractors' exactly as stated.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula and sample both target 'Rent*' in Bank tab, aligned with row note.",
+   "row_label": "Rent",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula matches Ramp outflows for these categories and Bank 'Bank fee', matching note; Bank fee is handled by criteria.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp",
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "subtotal",
+   "rationale": "Row totals all outflow rows via a sum; clear subtotal.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "net",
+   "rationale": "Row equals revenue less outflows.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "end",
+   "rationale": "Row equals start plus net for the period.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

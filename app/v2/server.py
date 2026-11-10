@@ -31,17 +31,99 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from app import core
+from app.v2.openai_proposer import OpenAIProposer
 from proof.fix.explain import content_hash, vkey
 from proof.fix.report import FixReport, FixRun
+from proof.fix.verify import fix_workbook
+from proof.openai_client import OpenAIAsAnthropic, openai_key
+from proof.openai_client import default_model as openai_model
+from proof.spec.agent import DEFAULT_MODEL, AgentError, build_rulespec_llm, export_headers, \
+    read_row_notes
+from proof.spec.rules import build_rulespec
 
 HERE = Path(__file__).resolve().parent
 STATIC = HERE / "static"
 ROOT = core.ROOT
 MAX_UPLOAD = 25 * 1024 * 1024
+DEMO_CACHE = ROOT / "demo" / "cache"     # committed: spec + fix responses + values for demo files
+DEMO_FILES = {**core.SAMPLE_FILES,
+              "slope_hardcoded_rent.xlsx": "Rent typed in from the lease (an ambiguous row)"}
 
 
 def demo_mode() -> bool:
     return os.environ.get("PROOF_DEMO") == "1"
+
+
+# ---- which model reads the spec and proposes fixes -------------------------------------
+
+class _NoNetwork:
+    """Stand-in client for PROOF_DEMO=1: a cache miss fails loudly instead of calling out."""
+
+    def __init__(self):
+        self.messages = self
+        self.chat = type("C", (), {"completions": self})()
+
+    def create(self, **_):
+        raise AgentError("PROOF_DEMO=1 and no cached LLM response for this input")
+
+
+@dataclass
+class LLM:
+    provider: str | None        # "anthropic" | "openai" | None (no key: rules only)
+    spec_client: Any
+    spec_model: str
+    proposer: Any               # fix proposer, or None
+
+
+def llm_config() -> LLM:
+    if demo_mode():
+        meta = {}
+        try:
+            meta = json.loads((DEMO_CACHE / "meta.json").read_text())
+        except (OSError, ValueError):
+            pass
+        prov = meta.get("provider", "anthropic")
+        model = meta.get("spec_model", DEFAULT_MODEL)
+        if prov == "openai":
+            prop = OpenAIProposer(client=_NoNetwork(), model=meta.get("fix_model"),
+                                  cache_dir=DEMO_CACHE)
+        else:
+            from proof.fix.propose import LLMProposer
+            prop = LLMProposer(client=_NoNetwork(), model=meta.get("fix_model"),
+                               cache_dir=DEMO_CACHE)
+        return LLM(prov, _NoNetwork(), model, prop)
+    if core.has_key():
+        from proof.fix.propose import LLMProposer
+        return LLM("anthropic", None, os.environ.get("PROOF_MODEL", DEFAULT_MODEL),
+                   LLMProposer(cache_dir=core.cache_dir()))
+    if openai_key():
+        return LLM("openai", OpenAIAsAnthropic(), openai_model(),
+                   OpenAIProposer(cache_dir=core.cache_dir()))
+    return LLM(None, None, DEFAULT_MODEL, None)
+
+
+def spec_mode() -> str:
+    """PROOF_SPEC=rules forces the deterministic baseline; default is the LLM spec agent."""
+    return "rules" if os.environ.get("PROOF_SPEC") == "rules" else "llm"
+
+
+def make_spec_fn(cfg: LLM, status: dict[str, Any]):
+    """Spec reader for analyze(): the LLM agent, falling back to rules (and saying so)."""
+    def fn(graph, ledger, path):
+        if spec_mode() == "rules":
+            status.update(spec="rules", note="rules baseline selected (PROOF_SPEC=rules)")
+            return build_rulespec(graph)
+        try:
+            spec = build_rulespec_llm(graph, ledger, headers=export_headers(path),
+                                      notes=read_row_notes(path), client=cfg.spec_client,
+                                      model=cfg.spec_model)
+            status.update(spec="llm", model=cfg.spec_model, note=None)
+            return spec
+        except Exception as e:  # noqa: BLE001 - fall back, visibly
+            status.update(spec="rules", note=f"LLM spec unavailable ({type(e).__name__}: "
+                                             f"{str(e)[:160]}); used the rules baseline")
+            return build_rulespec(graph)
+    return fn
 
 
 # ---- state (one local user; in memory) -----------------------------------------------
@@ -55,20 +137,26 @@ class Check:
     fixrun: FixRun | None
     version: int = 0
     applied: list[str] = field(default_factory=list)
+    fix_error: str | None = None
 
 
 CHECKS: dict[str, Check] = {}
 LATEST: list[str] = []
-_VIEWS: dict[str, core.View] = {}
+_VIEWS: dict[tuple[str, str], tuple[core.View, dict[str, Any]]] = {}
 _LOCK = threading.Lock()
 _TMP = Path(tempfile.mkdtemp(prefix="invariant_v2_"))
 
 
 def _view(path: Path) -> core.View:
-    key = content_hash(path)
+    return _view_status(path)[0]
+
+
+def _view_status(path: Path) -> tuple[core.View, dict[str, Any]]:
+    key = (content_hash(path), spec_mode())
     with _LOCK:
         if key not in _VIEWS:
-            _VIEWS[key] = core.check_view(path)
+            status: dict[str, Any] = {}
+            _VIEWS[key] = (core.check_view(path, make_spec_fn(llm_config(), status)), status)
         return _VIEWS[key]
 
 
@@ -99,15 +187,38 @@ def _fix_json(run: FixRun | None, v) -> dict[str, Any] | None:
     verified = bool(root.status == "verified" and root.fix is not None
                     and rc is not None and rc.target_cleared and not rc.new_violations)
     out: dict[str, Any] = {"verified": verified,
-                           "note": root.note or "; ".join(a.detail for a in root.attempts
-                                                          if a.detail)[:300]}
+                           "note": ("; ".join(a.detail for a in root.attempts if a.detail)
+                                    or root.note)[:400]}
     if root.fix is not None:
         old, new = core.fix_text(root.fix)
         out.update(kind=root.fix.kind, old=old, new=new, reason=root.fix.reason,
-                   cell_ref=root.cell_ref,
+                   cell_ref=root.cell_ref, target_ref=root.fix.cell_ref,
                    recheck={"target_cleared": bool(rc and rc.target_cleared),
                             "new_violations": len(rc.new_violations) if rc else 0})
     return out
+
+
+REVIEW_BLOCK = "Confirm what this row should contain before fixing."
+
+
+def review_block(v: core.View, viol, fix: dict[str, Any] | None) -> bool:
+    """True when the spec is not trusted for the row this violation sits on, or for a row
+    the proposed fix would edit. A fix "verified" against a low-confidence reading of a
+    row can rewrite a correct formula to match the misreading, so it is not offered."""
+    review = set(v.review_lines)
+    if not review:
+        return False
+    an = v.analysis
+    labels = {s.line_id: s.row_label for s in an.spec.lines}
+    if labels.get(viol.line_id or "") in review:
+        return True
+    ref = (fix or {}).get("cell_ref") or ""
+    by_ref = {c.ref.split("!")[-1]: c.row_label for c in an.graph.cells}
+    target = (fix or {}).get("target_ref")
+    for r in (ref, target):
+        if r and by_ref.get(r.split("!")[-1]) in review:
+            return True
+    return False
 
 
 def _ending_cash(v: core.View) -> tuple[int | None, int | None]:
@@ -126,6 +237,7 @@ def _ending_cash(v: core.View) -> tuple[int | None, int | None]:
 
 
 def check_json(c: Check, v: core.View) -> dict[str, Any]:
+    st = _view_status(c.cur)[1]
     an = v.analysis
     line_of = {s.row_label: (s.line_id, s.kind) for s in an.spec.lines}
     labels, values, marks = core.grid(v)
@@ -151,7 +263,10 @@ def check_json(c: Check, v: core.View) -> dict[str, Any]:
                 viol.invariant, "Transactions that belong in this cell"),
             "duplicate_rows": ctx.get("duplicate_rows", [])})
         explanations[key] = text
-        fixes[key] = _fix_json(c.fixrun, viol)
+        fx = _fix_json(c.fixrun, viol)
+        if fx is not None and review_block(v, viol, fx):
+            fx.update(blocked=True, blocked_reason=REVIEW_BLOCK)
+        fixes[key] = fx
     rows = []
     for li, label in enumerate(labels):
         lid, kind = line_of.get(label, (None, None))
@@ -170,6 +285,9 @@ def check_json(c: Check, v: core.View) -> dict[str, Any]:
         "cellgraph": {"months": core.MONTHS, "rows": rows},
         "result": {"ok": not v.violations, "violations": violations},
         "needs_review": review_ids, "explanations": explanations, "fixes": fixes,
+        "fix_error": c.fix_error,
+        "spec": st.get("spec", "rules"), "spec_model": st.get("model"),
+        "spec_note": st.get("note"),
         "checker": "lean" if v.checker == "Lean" else "python",
         "lean_agrees": v.lean_agrees, "seconds": v.seconds,
         "kpi": {"checks": v.n_checks, "violations": len(v.violations),
@@ -206,18 +324,20 @@ def start_check(src: Path, name: str, precomputed: bool) -> Check:
     orig, cur = work / "original.xlsx", work / "v0.xlsx"
     shutil.copyfile(src, orig)
     shutil.copyfile(src, cur)
-    run = core.load_fixrun(orig)
+    run = core.load_fixrun(orig) if spec_mode() == "rules" else None
     c = Check(cid, name, work, cur, run)
     try:
         v = _view(cur)
     except (ValueError, KeyError) as e:
         shutil.rmtree(work, ignore_errors=True)
         raise _fail(422, f"Invariant could not read this workbook: {e}") from e
-    if run is None and v.violations and core.has_key() and not (demo_mode() or core.offline()):
-        try:  # live proposals for a workbook we have no precomputed fixes for
-            c.fixrun = core.compute_fixrun(cur, work / "fix_0")
-        except Exception:  # noqa: BLE001 - checks still work without fixes
-            c.fixrun = None
+    cfg = llm_config()
+    if run is None and v.violations and cfg.proposer is not None:
+        try:  # proposals (live, or cached under PROOF_DEMO=1) verified on copies
+            c.fixrun = fix_workbook(cur, cfg.proposer, work_dir=work / "fix_0",
+                                    spec_fn=make_spec_fn(cfg, {}))
+        except Exception as e:  # noqa: BLE001 - the check still works without fixes
+            c.fix_error = f"{type(e).__name__}: {e}"
     CHECKS[cid] = c
     LATEST[:] = [cid]
     return c
@@ -225,7 +345,7 @@ def start_check(src: Path, name: str, precomputed: bool) -> Check:
 
 @app.get("/api/demo-files")
 def demo_files():
-    return [{"file": n, "label": l} for n, l in core.SAMPLE_FILES.items()
+    return [{"file": n, "label": l} for n, l in DEMO_FILES.items()
             if (core.SAMPLES_DIR / n).exists()]
 
 
@@ -255,7 +375,7 @@ async def api_check(request: Request):
         except ValueError:
             raise _fail(400, "Send JSON {\"demo_file\": name} or a multipart upload.")
         name = body.get("demo_file") if isinstance(body, dict) else None
-        if name not in core.SAMPLE_FILES or not (core.SAMPLES_DIR / name).exists():
+        if name not in DEMO_FILES or not (core.SAMPLES_DIR / name).exists():
             raise _fail(404, "Unknown demo file.")
         c = start_check(core.SAMPLES_DIR / name, name, True)
     return check_json(c, _view(c.cur))
@@ -280,6 +400,8 @@ async def api_apply(request: Request):
     root = _root_report(c.fixrun, core.report_for(c.fixrun, v.violations[idx]))
     if not fix or not fix["verified"] or root is None or root.fix is None:
         raise _fail(409, "That violation has no verified fix.")
+    if review_block(v, v.violations[idx], fix):
+        raise _fail(409, REVIEW_BLOCK)
     before = {violation_key(x) for x in v.violations}
     nxt = c.work / f"v{c.version + 1}.xlsx"
     try:
@@ -343,7 +465,34 @@ def index():
 app.mount("/", StaticFiles(directory=STATIC), name="static")
 
 
+def load_dotenv(path: Path = ROOT / ".env") -> None:
+    """Read KEY=VALUE lines from .env (git-ignored) into the environment.
+
+    Real environment variables win, and empty values are skipped.
+    """
+    try:
+        lines = path.read_text().splitlines()
+    except OSError:
+        return
+    for line in lines:
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        k, v = k.removeprefix("export ").strip(), v.strip().strip("'\"")
+        if k and v:
+            os.environ.setdefault(k, v)
+
+
 # ---- entry point ---------------------------------------------------------------------------
+
+def setup_cache() -> None:
+    if demo_mode():  # committed demo cache only; LLM clients are network-blocked stubs
+        os.environ["PROOF_OFFLINE"] = "1"
+        os.environ["PROOF_CACHE_DIR"] = str(DEMO_CACHE)
+    else:
+        core.setup_cache_env()
+
 
 def main(argv: list[str] | None = None) -> int:
     import uvicorn
@@ -353,9 +502,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--host", default="127.0.0.1")
     ap.add_argument("--open", action="store_true")
     args = ap.parse_args(argv)
-    if demo_mode():
-        os.environ["PROOF_OFFLINE"] = "1"  # cached responses only, no network
-    core.setup_cache_env()
+    load_dotenv()
+    setup_cache()
     url = f"http://{args.host}:{args.port}"
     print(f"Invariant is running at {url}"
           + ("  (PROOF_DEMO=1: cached, offline)" if demo_mode() else ""))

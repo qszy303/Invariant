@@ -1,0 +1,6 @@
+{
+ "kind": "delete_duplicate_row",
+ "reason": "The AWS charge ramp-0120 appears twice in the Ramp export, so June SaaS counted it twice; I'm removing the later copy.",
+ "row": 122,
+ "sheet": "Ramp"
+}

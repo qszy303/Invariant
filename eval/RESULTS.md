@@ -4,83 +4,91 @@
 
 - Agent model: `claude-sonnet-5-5`; low-confidence threshold 0.8
 - Lean checker: ran
-- Agent spec source: ran
+- Agent spec source: ran (from cache only)
 
 ## Baseline spec (`rules.py`)
 
 ### Python checker
 
-| bug | n | detected | right invariant | localized | pipeline errors |
-|---|---|---|---|---|---|
-| `dup_row` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `dropped_month` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `missing_vendor` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `overlap_category` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `sign_flip` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `stale_hardcode` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `broken_rollforward` | 15 | 15 (100%) | 15 | 15 | 0 |
-| **all** | 105 | **105 (100%)** | 105 | 105 | 0 |
+| bug | n | detected | right invariant | localized | on the right cell | pipeline errors |
+|---|---|---|---|---|---|---|
+| `dup_row` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `dropped_month` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `missing_vendor` | 15 | 15 (100%) | 15 | 15 | n/a | 0 |
+| `overlap_category` | 15 | 15 (100%) | 15 | 15 | 0/15 (0%) | 0 |
+| `sign_flip` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `stale_hardcode` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `broken_rollforward` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| **all** | 105 | **105 (100%)** | 105 | 105 | 75/90 (83%) | 0 |
+
+*Localized* counts a violation that names the right cell or the injected transaction. *On the right cell* is stricter: a flagged violation's (line, month) is a ground-truth Runway cell; n/a where the bug has no Runway cell (`missing_vendor`).
 
 False positives on clean models: **0 of 20** (0%), 0 violations in total.
 Violations on buggy models that were not the injected bug (wrong invariant or wrong place): 0.
 
 ### Lean checker
 
-| bug | n | detected | right invariant | localized | pipeline errors |
-|---|---|---|---|---|---|
-| `dup_row` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `dropped_month` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `missing_vendor` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `overlap_category` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `sign_flip` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `stale_hardcode` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `broken_rollforward` | 15 | 15 (100%) | 15 | 15 | 0 |
-| **all** | 105 | **105 (100%)** | 105 | 105 | 0 |
+| bug | n | detected | right invariant | localized | on the right cell | pipeline errors |
+|---|---|---|---|---|---|---|
+| `dup_row` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `dropped_month` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `missing_vendor` | 15 | 15 (100%) | 15 | 15 | n/a | 0 |
+| `overlap_category` | 15 | 15 (100%) | 15 | 15 | 0/15 (0%) | 0 |
+| `sign_flip` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `stale_hardcode` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `broken_rollforward` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| **all** | 105 | **105 (100%)** | 105 | 105 | 75/90 (83%) | 0 |
+
+*Localized* counts a violation that names the right cell or the injected transaction. *On the right cell* is stricter: a flagged violation's (line, month) is a ground-truth Runway cell; n/a where the bug has no Runway cell (`missing_vendor`).
 
 False positives on clean models: **0 of 20** (0%), 0 violations in total.
 Violations on buggy models that were not the injected bug (wrong invariant or wrong place): 0.
 
 Python vs Lean byte-identical output: 125 of 125 (100%).
 
-Median runtime per model: check 0.0284s, spec 0.004s.
+Median runtime per model: check 0.0335s, spec 0.004s.
 
 ## LLM spec agent
 
 ### Python checker
 
-| bug | n | detected | right invariant | localized | pipeline errors |
-|---|---|---|---|---|---|
-| `dup_row` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `dropped_month` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `missing_vendor` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `overlap_category` | 15 | 15 (100%) | 15 | 14 | 0 |
-| `sign_flip` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `stale_hardcode` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `broken_rollforward` | 15 | 15 (100%) | 15 | 15 | 0 |
-| **all** | 105 | **105 (100%)** | 105 | 104 | 0 |
+| bug | n | detected | right invariant | localized | on the right cell | pipeline errors |
+|---|---|---|---|---|---|---|
+| `dup_row` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `dropped_month` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `missing_vendor` | 15 | 15 (100%) | 15 | 15 | n/a | 0 |
+| `overlap_category` | 15 | 15 (100%) | 15 | 14 | 1/15 (7%) | 0 |
+| `sign_flip` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `stale_hardcode` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `broken_rollforward` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| **all** | 105 | **105 (100%)** | 105 | 104 | 76/90 (84%) | 0 |
+
+*Localized* counts a violation that names the right cell or the injected transaction. *On the right cell* is stricter: a flagged violation's (line, month) is a ground-truth Runway cell; n/a where the bug has no Runway cell (`missing_vendor`).
 
 False positives on clean models: **0 of 20** (0%), 0 violations in total.
 Violations on buggy models that were not the injected bug (wrong invariant or wrong place): 12.
 
 ### Lean checker
 
-| bug | n | detected | right invariant | localized | pipeline errors |
-|---|---|---|---|---|---|
-| `dup_row` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `dropped_month` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `missing_vendor` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `overlap_category` | 15 | 15 (100%) | 15 | 14 | 0 |
-| `sign_flip` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `stale_hardcode` | 15 | 15 (100%) | 15 | 15 | 0 |
-| `broken_rollforward` | 15 | 15 (100%) | 15 | 15 | 0 |
-| **all** | 105 | **105 (100%)** | 105 | 104 | 0 |
+| bug | n | detected | right invariant | localized | on the right cell | pipeline errors |
+|---|---|---|---|---|---|---|
+| `dup_row` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `dropped_month` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `missing_vendor` | 15 | 15 (100%) | 15 | 15 | n/a | 0 |
+| `overlap_category` | 15 | 15 (100%) | 15 | 14 | 1/15 (7%) | 0 |
+| `sign_flip` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `stale_hardcode` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| `broken_rollforward` | 15 | 15 (100%) | 15 | 15 | 15/15 (100%) | 0 |
+| **all** | 105 | **105 (100%)** | 105 | 104 | 76/90 (84%) | 0 |
+
+*Localized* counts a violation that names the right cell or the injected transaction. *On the right cell* is stricter: a flagged violation's (line, month) is a ground-truth Runway cell; n/a where the bug has no Runway cell (`missing_vendor`).
 
 False positives on clean models: **0 of 20** (0%), 0 violations in total.
 Violations on buggy models that were not the injected bug (wrong invariant or wrong place): 12.
 
 Python vs Lean byte-identical output: 125 of 125 (100%).
 
-Median runtime per model: check 0.0272s, spec 5.249s.
+Median runtime per model: check 0.0312s, spec 0.245s.
 
 Spec accuracy vs the baseline reading of the same sheet (125 models where the baseline could read it): mean line accuracy 100%, identical assignment on 124 (99%); 1 wrong specs, 1 of them had at least one line flagged for review.
 
@@ -89,6 +97,18 @@ Spec accuracy vs the baseline reading of the same sheet (125 models where the ba
 | spec | model | bug | why |
 |---|---|---|---|
 | agent | `overlap_category/s105_p2` | `overlap_category` | detected, but wrong place: the agent misread the `Other` row (the one carrying the extra merchant term); it flagged that line for review (confidence below the threshold), so the wrong spec was not confident. The sheet-vs-spec gap then showed up as traceability on `Other`, not as the double count |
+
+## Messy spreadsheets (LLM spec robustness)
+
+Four hand-made variants of the clean workbook that the rules baseline cannot read, read by the LLM spec (`gpt-4.1`). Gold is the baseline reading of the clean workbook. Low-confidence threshold 0.8.
+
+| variant | matches gold | flagged for review | wrong and confident |
+|---|---|---|---|
+| `hardcoded_row` | yes | yes (rent) | no |
+| `merged_categories` | yes | no | no |
+| `renamed_rows` | yes | no | no |
+| `reordered_columns` | yes | yes (contractors, other, saas) | no |
+
 
 ## Verified fixes (A7)
 

@@ -50,7 +50,7 @@
   // ---- top bar -----------------------------------------------------------------------
   async function loadDemoFiles() {
     const files = await api("/api/demo-files");
-    $("demo-select").innerHTML = files.map((f) =>
+    $("demo-select").innerHTML = '<option value="">Choose a demo file\u2026</option>' + files.map((f) =>
       `<option value="${esc(f.file)}" title="${esc(f.file)}">${esc(f.label)}</option>`).join("");
     const m = location.hash.match(/demo=([\w.\-]+)/);
     if (m && files.some((f) => f.file === m[1])) { $("demo-select").value = m[1]; runCheck(); }
@@ -65,6 +65,10 @@
 
   async function runCheck() {
     if (state.busy) return;
+    if (!state.pendingFile && !$("demo-select").value) {
+      toast("Upload an .xlsx workbook first (or pick a demo file).", true);
+      return;
+    }
     setBusy(true);
     try {
       let data;
@@ -76,6 +80,7 @@
           body: JSON.stringify({ demo_file: $("demo-select").value }) });
       }
       state.selKey = null; closeDrawer(); render(data);
+      if (data.fix_error) toast("Could not get fix proposals: " + data.fix_error, true);
     } catch (e) { toast(e.message, true); }
     finally { setBusy(false); }
   }
@@ -107,6 +112,12 @@
     b.innerHTML = d.checker === "lean"
       ? `<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="#111" stroke-width="2.2"/></svg>Verified in Lean 4`
       : "Python checker";
+    const sb = $("spec-badge");
+    sb.hidden = false;
+    sb.className = "badge spec";
+    sb.textContent = d.spec === "llm" ? "Spec: LLM" : "Spec: rules";
+    sb.title = d.spec === "llm" ? `Rows read by ${d.spec_model}` : (d.spec_note || "Rows read by the deterministic rules baseline");
+    if (d.spec_note && d.spec !== "llm") toast(d.spec_note, true);
     $("empty").hidden = true; $("kpis").hidden = false; $("gridcard").hidden = false;
     renderKpis(d); renderGrid(d); renderLoose(d);
   }
@@ -229,7 +240,7 @@
       state.selKey = null;
       html = head(`<span class="chip warn">Needs review</span>`, `${review.label} · ${d.cellgraph.months[review.m]}`) +
         `<div class="d-body"><p class="d-msg">The reading of this row (which transactions belong in it) has low confidence, so Invariant would not stake a verdict on it. A person should confirm the rule.</p>` +
-        `<div><div class="sec-title">Formula</div><div class="diff"><div class="new" style="background:var(--bg);color:var(--text)">${esc(c.formula || "typed value, no formula")}</div></div></div></div>`;
+        `<div><div class="sec-title">Formula</div><div class="diff"><div class="plain">${esc(c.formula || "typed value, no formula")}</div></div></div></div>`;
     }
     dr.innerHTML = html;
     dr.setAttribute("aria-hidden", "false");
@@ -266,15 +277,20 @@
 
   function fixBlock(fix) {
     if (!fix || !fix.old) {
-      return `<div><div class="sec-title">Proposed fix</div><div class="vbox no"><span>No verified fix for this one. It needs a person.</span></div></div>`;
+      return `<div><div class="sec-title">Proposed fix</div><div class="vbox no"><span>No verified fix for this one. It needs a person.${fix && fix.note ? " " + esc(fix.note) : ""}</span></div></div>`;
     }
-    const verdict = fix.verified
+    const verdict = fix.blocked
+      ? `<div class="vbox block" style="margin-top:0"><span>${esc(fix.blocked_reason)}</span><small>This row is flagged for review: the reading of what belongs in it is not confident, so a fix checked against that reading can't be trusted.</small></div>`
+      : fix.verified
       ? `<div class="vbox"><span>Verified: re-checked on a copy, violation cleared, ${fix.recheck.new_violations} new violations</span></div>`
       : `<div class="vbox no"><span>Not verified. The re-check did not pass, so this will not be applied.</span></div>`;
-    return `<div><div class="sec-title">Proposed fix</div><div class="diff"><div class="old">${esc(fix.old)}</div><div class="new">${esc(fix.new)}</div></div>${fix.reason ? `<p class="note">${esc(fix.reason)}</p>` : ""}${verdict}</div>`;
+    const diff = `<div class="diff"><div class="old">${esc(fix.old)}</div><div class="new">${esc(fix.new)}</div></div>${fix.reason ? `<p class="note">${esc(fix.reason)}</p>` : ""}`;
+    return fix.blocked
+      ? `<div><div class="sec-title">Proposed fix</div>${verdict}<div style="margin-top:12px">${diff}</div></div>`
+      : `<div><div class="sec-title">Proposed fix</div>${diff}${verdict}</div>`;
   }
 
-  const foot = (fix) => fix && fix.verified
+  const foot = (fix) => fix && fix.verified && !fix.blocked
     ? `<div class="d-foot"><button class="btn btn-primary btn-block" id="apply-btn"><span class="spin" hidden></span><span class="btn-label">Apply verified fix</span></button></div>` : "";
 
   async function applyFix(key, btn) {
@@ -303,43 +319,77 @@
 
   // ---- eval page -------------------------------------------------------------------------
   let evalLoaded = false;
+  const pct = (x) => (x == null ? "n/a" : Math.round(x * 100) + "%");
   async function loadEval() {
     if (evalLoaded) return;
     try {
       const d = await api("/api/eval");
-      const m = d.metrics.agent || d.metrics.rules;
-      const L = m.lean, nBug = L.overall.n, nClean = L.clean.n;
-      $("eval-sub").textContent = `${nBug} mutated models across ${Object.keys(L.by_bug).length} bug types, plus ${nClean} clean models. Lean checker, LLM-read spec.`;
+      const meta = d.meta || {};
+      const agentOk = d.metrics.agent && d.metrics.agent.status === "ok" && !/skipped/.test(meta.agent_status || "");
+      const src = agentOk ? "agent" : "rules";
+      const m = d.metrics[src], L = m.lean && m.lean.overall ? m.lean : m.python;
+      const checker = m.lean && m.lean.overall ? "Lean checker" : "Python checker (Lean not built)";
+      const nTypes = Object.keys(L.by_bug).length;
+      $("eval-sub").textContent = `Synthetic mutation suite: ${L.overall.n} planted bugs across ${nTypes} types, plus ${L.clean.n} clean models. ${checker}.`;
+      $("eval-spec").textContent = agentOk
+        ? `Spec: LLM agent (${meta.agent_model}${/cache/.test(meta.agent_status) ? ", from cached responses" : ""}).`
+        : "Spec: rules baseline (no LLM).";
       drawChart(L.by_bug);
       const fp = L.clean.false_positive_rate;
-      $("ev-fp").textContent = (fp * 100).toFixed(fp * 100 % 1 ? 1 : 0) + "%";
-      $("ev-fp-foot").textContent = `${L.clean.flagged} of ${nClean} clean models flagged`;
+      $("ev-fp").textContent = pct(fp);
+      $("ev-fp-foot").textContent = `${L.clean.flagged} of ${L.clean.n} clean models flagged`;
+      const o = L.overall;
+      $("ev-loc").textContent = pct(o.localization_accuracy);
+      const noCell = Object.entries(L.by_bug).filter(([, b]) => !b.cell_gt_n).map(([k]) => k);
+      $("ev-loc-foot").textContent = o.cell_gt_n
+        ? `${o.localized_cell} of ${o.cell_gt_n} flagged on a ground-truth cell` + (noCell.length ? ` (${noCell.join(", ")} has no cell)` : "")
+        : "not computed: re-run make eval";
       const a = m.python_vs_lean;
-      $("ev-agree").textContent = Math.round(a.rate * 100) + "%";
+      $("ev-agree").textContent = pct(a.rate);
       $("ev-agree-foot").textContent = `${a.agree} of ${a.n} outputs byte-identical`;
+      drawRobustness(d.robustness);
       const misses = d.known_misses || [];
       $("eval-misses").innerHTML = misses.length ? misses.map((x) =>
-        `<div class="miss"><div class="tag">${esc(x.model)}<small>${esc(x.bug)} · ${esc(x.spec)} spec</small></div><div>${esc(x.why)}</div></div>`).join("")
+        `<div class="miss"><div class="tag">${esc(x.model)}<small>${esc(x.bug)} · ${esc(x.spec)} spec</small></div><div>${inlineCode(x.why)}</div></div>`).join("")
         : '<p class="muted">None recorded.</p>';
       evalLoaded = true;
     } catch (e) { $("eval-sub").textContent = e.message; }
   }
 
+  function drawRobustness(r) {
+    if (!r) { $("rob-sub").textContent = ""; $("eval-rob").innerHTML = '<p class="muted">Not run.</p>'; return; }
+    $("rob-sub").textContent = `Hand-made variants the rules baseline can't read, read by ${r.model}. Review threshold ${r.threshold}.`;
+    const yn = (v, good) => v ? `<span class="${good ? "yes" : "no-good"}">yes</span>` : `<span class="${good ? "no-good" : "yes"}">no</span>`;
+    const rows = Object.entries(r.variants).map(([name, v]) => v.status !== "ok"
+      ? `<tr><td>${esc(name)}</td><td class="nr">not run</td><td class="nr">not run</td><td class="nr">not run</td></tr>`
+      : `<tr><td>${esc(name)}</td><td>${yn(v.matches_gold, true)}</td><td>${v.flagged ? `<span class="flag">yes</span><small>${esc(v.flagged_lines.join(", "))}</small>` : "no"}</td><td>${yn(v.wrong_and_confident, false)}</td></tr>`).join("");
+    $("eval-rob").innerHTML = `<table class="rob"><thead><tr><th>Variant</th><th>Matches gold</th><th>Flagged for review</th><th>Wrong and confident</th></tr></thead><tbody>${rows}</tbody></table>`;
+  }
+
   function drawChart(byBug) {
     const names = Object.keys(byBug);
-    const W = 1100, rowH = 52, top = 8, left = 200, right = 150, H = top + names.length * rowH + 44;
+    const W = 1100, rowH = 58, bh = 18, top = 6, left = 200, right = 150, H = top + names.length * rowH + 36;
     const plot = W - left - right, x = (p) => left + plot * p;
-    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Detection rate by bug type">`;
+    const mono = 'font-family="JetBrains Mono, ui-monospace, monospace"';
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Detection and localization rate by bug type">`;
     for (const t of [0, 0.25, 0.5, 0.75, 1]) {
-      s += `<line x1="${x(t)}" x2="${x(t)}" y1="${top}" y2="${H - 36}" stroke="#E3E3DE" stroke-width="1"/>` +
-        `<text x="${x(t)}" y="${H - 12}" text-anchor="middle" font-size="16" fill="#5F5F5A">${Math.round(t * 100)}%</text>`;
+      s += `<line x1="${x(t)}" x2="${x(t)}" y1="${top}" y2="${H - 30}" stroke="#E3E3DE"/>` +
+        `<text x="${x(t)}" y="${H - 8}" text-anchor="middle" font-size="16" fill="#5F5F5A">${Math.round(t * 100)}%</text>`;
     }
     names.forEach((n, i) => {
-      const b = byBug[n], y = top + i * rowH + 8, rate = b.detection_rate;
-      s += `<text x="${left - 16}" y="${y + 20}" text-anchor="end" font-size="16" fill="#111" font-family="JetBrains Mono, ui-monospace, monospace">${esc(n)}</text>` +
-        `<rect x="${left}" y="${y}" width="${plot}" height="28" rx="4" fill="#F4F4F1"/>` +
-        `<rect x="${left}" y="${y}" width="${Math.max(2, plot * rate)}" height="28" rx="4" fill="#F2E205" stroke="#111" stroke-width="1.5"/>` +
-        `<text x="${left + plot + 14}" y="${y + 20}" font-size="16" font-weight="600" fill="#111" font-family="JetBrains Mono, ui-monospace, monospace">${Math.round(rate * 100)}% <tspan fill="#5F5F5A" font-weight="400">${b.detected}/${b.n}</tspan></text>`;
+      const b = byBug[n], y = top + i * rowH + 6;
+      const det = b.n ? b.detected / b.n : 0;
+      s += `<text x="${left - 16}" y="${y + bh + 6}" text-anchor="end" font-size="16" fill="#111" ${mono}>${esc(n)}</text>` +
+        `<rect x="${left}" y="${y}" width="${Math.max(2, plot * det)}" height="${bh}" rx="3" fill="#F2E205" stroke="#111" stroke-width="1.5"/>` +
+        `<text x="${left + plot + 14}" y="${y + 14}" font-size="15" font-weight="600" fill="#111" ${mono}>${b.detected}/${b.n}</text>`;
+      const y2 = y + bh + 6;
+      if (b.cell_gt_n) {
+        s += `<rect x="${left}" y="${y2}" width="${Math.max(2, plot * b.localized_cell / b.cell_gt_n)}" height="${bh}" rx="3" fill="none" stroke="#111" stroke-width="1.5"/>` +
+          `<text x="${left + plot + 14}" y="${y2 + 14}" font-size="15" fill="#5F5F5A" ${mono}>${b.localized_cell}/${b.cell_gt_n}</text>`;
+      } else {
+        s += `<text x="${left + 6}" y="${y2 + 14}" font-size="15" fill="#5F5F5A">no Runway cell to localize to</text>` +
+          `<text x="${left + plot + 14}" y="${y2 + 14}" font-size="15" fill="#5F5F5A" ${mono}>n/a</text>`;
+      }
     });
     $("eval-chart").innerHTML = s + "</svg>";
   }

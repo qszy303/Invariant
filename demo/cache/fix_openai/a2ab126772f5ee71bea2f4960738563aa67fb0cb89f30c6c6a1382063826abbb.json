@@ -1,0 +1,6 @@
+{
+ "kind": "delete_duplicate_row",
+ "reason": "Remove duplicated transaction ramp-0120 (AWS, 240.02) in Ramp tab row 122, which causes SaaS to be double-counted in June.",
+ "row": 122,
+ "sheet": "Ramp"
+}

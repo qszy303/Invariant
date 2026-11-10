@@ -1,0 +1,121 @@
+{
+ "rows": [
+  {
+   "confidence": 1,
+   "kind": "start",
+   "rationale": "For Jan, this is a hardcoded input; for other months, it's the previous month's Ending Cash, so no ledger rule applies.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "inflow",
+   "rationale": "Formula is a SUMIFS on Bank tab, description 'Stripe*', matching note and ledger, with no exceptions in variants.",
+   "row_label": "Revenue",
+   "rule": {
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula sums Payroll gross + employer_taxes with only a date range; includes all payroll outflows.",
+   "row_label": "Payroll",
+   "rule": {
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula is a SUMIFS for Ramp category 'Software', as noted, with refunds netted as the category can be positive or negative.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula only filters Ramp category 'Contractors'; rule is exact match to formula and note.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula is a SUMIFS for Bank tab, description 'Rent*', which fits both formula and note.",
+   "row_label": "Rent",
+   "rule": {
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula includes Ramp categories Travel, Meals, Office, Marketing, Legal, and Bank description 'Bank fee*', matching the note exactly.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "counterparty_in": [
+     "Bank fee*"
+    ],
+    "sources": [
+     "ramp",
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "subtotal",
+   "rationale": "Row simply sums outflow rows above it; no ledger rule.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "net",
+   "rationale": "Calculates net inflow minus total outflows; no ledger rule.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "end",
+   "rationale": "Adds Starting Cash and Net Cash Flow; bookkeeping, not a ledger rule.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

@@ -42,7 +42,9 @@ def snapshot(page) -> str:
 
 def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
-    env = dict(os.environ, PROOF_DEMO="1")
+    env = {k: v for k, v in os.environ.items()
+           if k not in ("ANTHROPIC_API_KEY", "OPENAI_API_KEY", "OPEN_AI_API_KEY")}
+    env["PROOF_DEMO"] = "1"  # and no keys: proves the demo runs from demo/cache alone
     srv = subprocess.Popen([sys.executable, "-m", "app.v2.server", "--port", str(PORT)],
                            cwd=ROOT, env=env)
     blocked: list[str] = []
@@ -109,6 +111,14 @@ def main() -> int:
                     page.wait_for_timeout(400)
                     page.screenshot(path=OUT / "5_missing_vendor_drawer.png")
 
+            page.select_option("#demo-select", "slope_hardcoded_rent.xlsx")
+            page.click("#run-btn")
+            page.wait_for_selector("#grid td.review")
+            page.wait_for_timeout(300)
+            page.screenshot(path=OUT / "8_needs_review.png")
+            page.click("#grid td.review >> nth=0")
+            page.wait_for_timeout(400)
+            page.screenshot(path=OUT / "9_needs_review_drawer.png")
             page.keyboard.press("Escape")
             page.goto(URL + "/#/eval")
             page.wait_for_selector("#eval-chart svg")
