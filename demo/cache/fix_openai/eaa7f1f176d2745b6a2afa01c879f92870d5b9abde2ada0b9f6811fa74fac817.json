@@ -1,0 +1,8 @@
+{
+ "cell_ref": "Runway!I5",
+ "kind": "edit_formula",
+ "new_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&I$1,Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(I$1),MONTH(I$1)+1,1))",
+ "old_formula": "=-SUMIFS(Ramp!$D$2:$D$2000,Ramp!$E$2:$E$2000,\"Software\",Ramp!$B$2:$B$2000,\">=\"&DATE(YEAR(I$1),MONTH(I$1)+1,1),Ramp!$B$2:$B$2000,\"<\"&DATE(YEAR(I$1),MONTH(I$1)+1,1))",
+ "reason": "The August (I5) formula is wrong: it doesn't use the I$1 date as the other months do. It should match the other months in the row.",
+ "scope": "cell"
+}

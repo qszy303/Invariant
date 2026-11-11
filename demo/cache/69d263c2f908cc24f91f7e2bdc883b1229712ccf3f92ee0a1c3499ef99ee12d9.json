@@ -1,0 +1,121 @@
+{
+ "rows": [
+  {
+   "confidence": 1,
+   "kind": "start",
+   "rationale": "First month is hardcoded input, later months link to prior 'Ending Cash'; this is always the starting balance.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "inflow",
+   "rationale": "Formula and note specify Stripe payouts in Bank tab; pattern is exact.",
+   "row_label": "Revenue",
+   "rule": {
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula sums all payroll gross and employer taxes for the month; covers all payroll tab rows.",
+   "row_label": "Payroll",
+   "rule": {
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula and note specify Ramp rows with category = Software; matches exactly.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula and note specify Ramp rows with category = Contractors; matches exactly.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula and note specify Bank rows with description starting 'Rent', matching landlord payments.",
+   "row_label": "Rent",
+   "rule": {
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula combines Ramp categories (Travel, Meals, Office, Marketing, Legal) and Bank 'Bank fee*'; matches exactly.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "counterparty_in": [
+     "Bank fee*"
+    ],
+    "sources": [
+     "ramp",
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "subtotal",
+   "rationale": "Sum of all outflow rows above; always a subtotal.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "net",
+   "rationale": "Defined as inflows minus total outflows; always net.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "end",
+   "rationale": "Ending balance; always prior starting cash plus net cash flow.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

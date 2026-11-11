@@ -47,7 +47,8 @@ ROOT = core.ROOT
 MAX_UPLOAD = 25 * 1024 * 1024
 DEMO_CACHE = ROOT / "demo" / "cache"     # committed: spec + fix responses + values for demo files
 DEMO_FILES = {**core.SAMPLE_FILES,
-              "slope_hardcoded_rent.xlsx": "Rent typed in from the lease (an ambiguous row)"}
+              "slope_hardcoded_rent.xlsx": "Rent typed in from the lease (an ambiguous row)",
+              "fernway_dropped_month.xlsx": "Fernway (25 people, 1,200 card rows): a month dropped from a SUMIFS range"}
 # Loadable by deep link (#demo=...), the API and the tests, but not offered in the picker:
 # the cached GPT-4.1 spec misreads its Other row (see "Known misses" in eval/RESULTS.md).
 HIDDEN_DEMO = {"slope_missing_vendor.xlsx"}

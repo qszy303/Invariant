@@ -1,4 +1,4 @@
-"""Write the Slope runway workbook with real formulas (owner: A1)."""
+"""Write a company runway workbook (Slope by default) with real formulas (owner: A1)."""
 
 from __future__ import annotations
 
@@ -11,7 +11,6 @@ from openpyxl.utils import get_column_letter
 from synth.company import (
     MONTHS,
     OTHER_RAMP_CATEGORIES,
-    STARTING_CASH_CENTS,
     YEAR,
     Company,
 )
@@ -108,7 +107,7 @@ def build_workbook(company: Company, bug: str | None = None) -> Workbook:
                 row[ord(mc) - 65].number_format = MONEY
 
     # ---- Runway ----
-    ws["A1"] = "Slope runway"
+    ws["A1"] = f"{company.name} runway"
     for m in range(MONTHS):
         col = get_column_letter(2 + m)
         ws[f"{col}1"] = date(YEAR, m + 1, 1)
@@ -140,7 +139,7 @@ def build_workbook(company: Company, bug: str | None = None) -> Workbook:
                     f'Bank!$C$2:$C${LAST_ROW},"{pat}",{bank_dates})')
 
         if m == 0:
-            ws[f"{c}2"] = STARTING_CASH_CENTS / 100
+            ws[f"{c}2"] = company.starting_cash_cents / 100
             ws[f"{c}2"].font = INPUT_FONT
         else:
             ws[f"{c}2"] = f"={prev}11"

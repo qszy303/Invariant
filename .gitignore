@@ -13,3 +13,9 @@ eval/.cache/
 *.key
 .hypothesis/
 Invariant/
+
+# local helper, not part of the project
+scripts/export_public.py
+
+# Excel lock files
+~$*

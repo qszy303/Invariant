@@ -11,6 +11,7 @@ needed, and it behaves the same every take.
 2. Quit chat, mail and notification apps, and turn on Do Not Disturb.
 3. Keep API keys out of view: `.env` and the terminal that started the server stay off screen.
 4. Practice once. Deep links jump straight to a file and run the check; a reload resets it:
+   - `http://127.0.0.1:8502/#demo=fernway_dropped_month.xlsx` (synthetic company, SaaS Aug)
    - `http://127.0.0.1:8502/#demo=slope_clean.xlsx`
    - `http://127.0.0.1:8502/#demo=slope_dup_row.xlsx`
    - `http://127.0.0.1:8502/#demo=slope_broken_rollforward.xlsx`

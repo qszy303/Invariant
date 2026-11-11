@@ -126,3 +126,21 @@ def test_fix_not_blocked_when_nothing_needs_review():
     d = check("slope_dup_row.xlsx")
     assert d["needs_review"] == []
     assert not any((f or {}).get("blocked") for f in d["fixes"].values())
+
+
+def test_fernway_demo_flags_the_dropped_month_and_verifies_the_fix():
+    """The larger demo company: one planted dropped month, read by the cached model."""
+    d = check("fernway_dropped_month.xlsx")
+    assert d["spec"] == "llm" and d["needs_review"] == []
+    (v,) = d["result"]["violations"]
+    assert v["invariant"] == "traceability" and v["cell"] == {"row": "SaaS", "month": 7}
+    assert d["fixes"][v["key"]]["verified"] and d["lean_agrees"]
+    assert d["seconds"] < 3
+    out = client.post("/api/fix/apply", json={"violation_key": v["key"]}).json()
+    assert out["resolved"] is True and out["new_violations"] == 0
+    assert out["kpi"]["claimed_end_cents"] == out["kpi"]["verified_end_cents"]
+
+
+def test_demo_picker_lists_the_fernway_file():
+    files = {f["file"] for f in client.get("/api/demo-files").json()}
+    assert "fernway_dropped_month.xlsx" in files

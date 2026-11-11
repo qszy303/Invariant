@@ -127,6 +127,12 @@ def main() -> int:
             page.wait_for_timeout(400)
             page.screenshot(path=OUT / "9_needs_review_drawer.png")
             page.keyboard.press("Escape")
+
+            page.select_option("#demo-select", "fernway_dropped_month.xlsx")  # larger company
+            page.click("#run-btn")
+            page.wait_for_selector("#grid td.violated")
+            page.wait_for_timeout(300)
+            page.screenshot(path=OUT / "10_fernway.png")
             page.goto(URL + "/#/eval")
             page.wait_for_selector("#eval-chart svg")
             page.wait_for_timeout(300)

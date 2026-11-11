@@ -5,7 +5,7 @@ The AI decides what each line means. Lean decides whether the numbers are right.
 
 Built for the BBS × Ramp AI Hackathon (technical track).
 
-![Invariant catching a double-counted subscription](demo/screens/2_check_drawer.png)
+![Invariant catching a month dropped from a SUMIFS range](demo/screens/10_fernway.png)
 
 ---
 
@@ -32,7 +32,8 @@ Spreadsheet errors are silent. One subscription counted in two categories, one m
 ```bash
 uv sync
 PROOF_DEMO=1 make demo        # offline, cached; no API key needed
-# open http://127.0.0.1:8502
+# open http://127.0.0.1:8502 and pick samples/fernway_dropped_month.xlsx (the demo file:
+# a synthetic company with one planted bug, a month dropped from the SaaS SUMIFS range)
 
 make test                     # unit, property, and Lean-vs-Python differential tests
 cd lean && lake build         # build the verified checker
@@ -46,6 +47,8 @@ ANTHROPIC_API_KEY=sk-ant-...   # Claude, the model the eval ran on
 # or, if there is no Anthropic key:
 OPEN_AI_API_KEY=sk-...         # OpenAI (default model gpt-4.1; override with OPENAI_MODEL)
 ```
+
+The Python package is named `proof` (the project's working name); the product is Invariant.
 
 `PROOF_SPEC=rules` switches the spec step to the deterministic rules baseline (no model). `make screens` retakes the 1920x1080 screenshots in `demo/screens/`.
 
@@ -142,8 +145,6 @@ Bug types: duplicated row, dropped month in a range, new vendor missing from cri
 <!-- TODO: your words. Keep it short and specific. -->
 I designed the architecture, wrote the interface contracts and acceptance criteria for each component, and built it with Claude Code agents, one per component, each in its own branch. Every component had to pass its acceptance tests before merging, and the Lean checker had to match the Python checker byte-for-byte. I reviewed the checker and the proofs myself.
 
-The contracts, plan, and agent briefs are in [`docs/process/`](docs/process/).
-
 ## Repo layout
 
 ```
@@ -152,5 +153,4 @@ lean/         Lean 4 verified checker + proofs
 synth/        synthetic company + runway model generator
 eval/         mutation suite + metrics
 app/          FastAPI backend + UI
-docs/process/ contracts, build plan, agent briefs
 ```

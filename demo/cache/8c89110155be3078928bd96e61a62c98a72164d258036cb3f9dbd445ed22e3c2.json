@@ -1,0 +1,121 @@
+{
+ "rows": [
+  {
+   "confidence": 1.0,
+   "kind": "start",
+   "rationale": "Clearly the starting balance each month; Jan is input, other months link to prior ending cash.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "inflow",
+   "rationale": "Formula and note both specify: sum bank entries with counterparty starting 'Stripe'.",
+   "row_label": "Revenue",
+   "rule": {
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula sums all payroll rows (gross + employer taxes) with no employee/category filter.",
+   "row_label": "Payroll",
+   "rule": {
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula and note specify: sum Ramp transactions with category 'Software'.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula and note specify: sum Ramp transactions with category 'Contractors'.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula uses SUMIFS with Bank and counterparty 'Rent*', matching ledger sample and note.",
+   "row_label": "Rent",
+   "rule": {
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula pulls from several Ramp categories and Bank 'Bank fee', combining via SUMIFS.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "counterparty_in": [
+     "Bank fee"
+    ],
+    "sources": [
+     "ramp",
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "subtotal",
+   "rationale": "Row sums outflow rows below Revenue as per formula and notes.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "net",
+   "rationale": "Row is defined as Revenue less total outflows in the formula and notes.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "end",
+   "rationale": "Row is defined as starting cash plus net cash flow.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

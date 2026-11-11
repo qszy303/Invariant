@@ -1,0 +1,124 @@
+{
+ "rows": [
+  {
+   "confidence": 1,
+   "kind": "start",
+   "rationale": "Hardcoded in first month, then links to prior Ending Cash; no ledger rule.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "inflow",
+   "rationale": "Formula matches Bank tab, description begins with Stripe, for each month.",
+   "row_label": "Revenue",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula sums gross plus employer taxes for all payroll entries each month with no further filter.",
+   "row_label": "Payroll",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [],
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula selects Ramp tab, category Software, for each month.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula selects Ramp tab, category Contractors, for each month.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula matches Bank tab, description begins with Rent, for each month.",
+   "row_label": "Rent",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula matches Ramp tab, category in {Travel, Meals, Office, Marketing, Legal}.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "subtotal",
+   "rationale": "Sums outflow rows below Revenue, not from ledger.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "net",
+   "rationale": "Revenue less Total Outflows, no direct ledger link.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "end",
+   "rationale": "Starting Cash plus Net Cash Flow, no direct ledger link.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

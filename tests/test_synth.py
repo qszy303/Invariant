@@ -115,3 +115,61 @@ def test_cli(tmp_path):
     assert names == {"slope_clean.xlsx", "slope.xlsx",
                      "slope_missing_vendor.xlsx",
                      "slope_broken_rollforward.xlsx"}
+
+
+# ---- profiles: Slope is unchanged, Fernway is the larger demo company ----------
+
+def test_slope_profile_output_is_unchanged():
+    """Refactoring the generator into profiles must not move a single Slope row."""
+    import hashlib
+    import json
+
+    c = generate(7)
+    rows = [[*map(str, vars(r).values())] for r in c.ramp + c.bank + c.payroll]
+    digest = hashlib.sha256(json.dumps(rows).encode()).hexdigest()
+    assert digest == "242ed70adb6ba8ea22def6dc7cc9ff14f5fd811496f1f4f4814d0417d91ed114"
+    assert (len(c.ramp), len(c.bank), len(c.payroll)) == (279, 48, 204)
+
+
+def test_fernway_is_a_bigger_different_company():
+    from synth.fernway import FERNWAY
+
+    c = generate(9, FERNWAY)
+    slope = generate(7)
+    assert c.name == "Fernway" and slope.name == "Slope"
+    assert len(c.ramp) >= 1000 and len(c.payroll) >= 500
+    assert len({p.employee for p in c.payroll}) == 25
+    assert "Cooley LLP" in {r.merchant for r in c.ramp} and "Clickhouse Cloud" in {r.merchant for r in c.ramp}
+    assert len({r.merchant for r in c.ramp}) > 2 * len({r.merchant for r in slope.ramp})
+    assert len(c.ramp) < 1900  # stays inside the workbook's SUMIFS range (row 2000)
+    exp = c.expected_runway()
+    assert exp["Starting Cash"][0] == 680_000_000
+    assert all(e > 0 for e in exp["Ending Cash"])
+    for m in range(1, MONTHS):
+        assert exp["Starting Cash"][m] == exp["Ending Cash"][m - 1]
+
+
+def test_fernway_workbook_matches_its_independent_expected_values(tmp_path):
+    from synth.fernway import FERNWAY
+
+    c = generate(9, FERNWAY)
+    path = write_workbook(c, tmp_path / "fernway.xlsx")
+    wb = load_workbook(path)
+    assert wb["Runway"]["A1"].value == "Fernway runway"
+    vals = _recalc(path)
+    exp = c.expected_runway()
+    for label, row in ROW.items():
+        for m in range(MONTHS):
+            ref = f"{chr(66 + m)}{row}"
+            assert round(vals[ref] * 100) == exp[label][m], (label, ref)
+
+
+def test_demo_workbook_builder_plants_one_dropped_month(tmp_path):
+    from scripts.build_demo_workbook import BUG_CELL, build
+
+    path = build(tmp_path)
+    ws = load_workbook(path)["Runway"]
+    assert path.name == "fernway_dropped_month.xlsx"
+    assert 'DATE(YEAR(I$1),MONTH(I$1)+1,1),' in ws[BUG_CELL].value
+    assert '">="&J$1' not in ws[BUG_CELL].value
+    assert '">="&H$1' in ws["H5"].value  # neighbours keep the correct bound

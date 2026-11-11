@@ -1,6 +1,11 @@
-"""Deterministic synthetic company "Slope" (owner: A1).
+"""Deterministic synthetic companies (owner: A1).
 
-Generates 12 months (Jan-Dec 2026) of Ramp, Bank and Payroll rows from a seed.
+`generate(seed)` builds the default company "Slope": 12 months (Jan-Dec 2026) of
+Ramp, Bank and Payroll rows from a seed. `generate(seed, profile)` builds any
+other company described by a `Profile` (see `synth/fernway.py`). The Slope
+profile reproduces the original generator exactly (same RNG call order), so
+every committed sample and cache stays valid.
+
 Amounts are integer cents; the Ledger uses the contract sign convention
 (positive = in, negative = out).
 """
@@ -39,6 +44,80 @@ LATE_VENDOR_FIRST_MONTH = 7
 CONTRACTORS = ["Upwork", "Toptal", "Fiverr Pro"]
 
 
+@dataclass(frozen=True)
+class OtherItem:
+    """A recurring non-SaaS Ramp charge (Office, Marketing, Meals, ...)."""
+    merchant: str
+    category: str
+    lo: int                     # amount range in cents (negative spend)
+    hi: int
+    memo: str = ""
+    day: int = 10               # fixed day when n == 1; random day when n > 1
+    prob: float | None = None   # chance per occurrence, None = always
+    months: tuple[int, ...] | None = None  # only these month indexes
+    n: int = 1                  # occurrences per month
+
+
+@dataclass(frozen=True)
+class Profile:
+    """Everything that distinguishes one synthetic company from another."""
+    name: str
+    starting_cash_cents: int
+    # (name, annual salary dollars, start month, end month inclusive)
+    employees: tuple[tuple[str, int, int, int], ...]
+    saas_monthly: tuple[tuple[str, int], ...]
+    saas_annual: tuple[tuple[str, int, int], ...]
+    late_vendor: str
+    late_first_month: int
+    late_cents: int
+    contractors: tuple[str, ...]
+    other: tuple[OtherItem, ...]
+    refunds: tuple[tuple[int, int, str, int, str, str], ...]
+    contractor_prob: float = 0.55
+    contractor_range: tuple[int, int] = (400_000, 1_400_000)
+    aws_base: int = 18000
+    aws_growth: int = 1500
+    payouts_per_month: int = 2
+    payout_days: tuple[int, ...] = (8, 23)
+    payout_start: int = 1_500_000
+    payout_growth: float = 1.08
+    rent_cents: int = 1_450_000
+    bank_fee_cents: int = 2500
+    payroll_days: tuple[int, ...] = (15, 31)
+
+
+SLOPE = Profile(
+    name="Slope",
+    starting_cash_cents=STARTING_CASH_CENTS,
+    employees=(
+        ("Ava Chen", 190000, 0, 11), ("Ben Okafor", 175000, 0, 11),
+        ("Cara Diaz", 160000, 0, 11), ("Dev Patel", 150000, 0, 11),
+        ("Elena Rossi", 140000, 0, 11), ("Farid Nasser", 135000, 0, 5),
+        ("Grace Kim", 125000, 0, 11), ("Hugo Martin", 120000, 0, 11),
+        ("Iris Wong", 145000, 4, 11), ("Jon Baker", 130000, 8, 11),
+    ),
+    saas_monthly=tuple(SAAS_MONTHLY),
+    saas_annual=tuple(SAAS_ANNUAL),
+    late_vendor=LATE_VENDOR,
+    late_first_month=LATE_VENDOR_FIRST_MONTH,
+    late_cents=25000,
+    contractors=tuple(CONTRACTORS),
+    other=(
+        OtherItem("WeWork Supplies", "Office", 8000, 30000, "", day=10),
+        OtherItem("Google Ads", "Marketing", 1_200_000, 2_200_000, "", day=14),
+        OtherItem("DoorDash", "Meals", 20000, 60000, "team lunch", day=20),
+        OtherItem("Delta", "Travel", 30000, 120000, "", day=22, prob=0.6),
+        OtherItem("Cooley LLP", "Legal", 400000, 700000, "", day=25,
+                  months=(2, 9)),
+    ),
+    refunds=(
+        (3, 18, "Figma", 13500, "Software", "refund: seat downgrade"),
+        (6, 20, "Delta", 42000, "Travel", "refund: cancelled flight"),
+        (9, 6, "Intercom", 39000, "Software", "refund: duplicate charge"),
+    ),
+)
+
+
 @dataclass
 class RampRow:
     id: str
@@ -72,6 +151,8 @@ class Company:
     ramp: list[RampRow] = field(default_factory=list)
     bank: list[BankRow] = field(default_factory=list)
     payroll: list[PayrollRow] = field(default_factory=list)
+    name: str = "Slope"
+    starting_cash_cents: int = STARTING_CASH_CENTS
 
     # ---- ledger -------------------------------------------------------
     def ledger(self) -> Ledger:
@@ -123,7 +204,7 @@ class Company:
             out[m] = sum(rows[k][m] for k in
                          ["Payroll", "SaaS", "Contractors", "Rent", "Other"])
             net[m] = rows["Revenue"][m] - out[m]
-            start[m] = STARTING_CASH_CENTS if m == 0 else end[m - 1]
+            start[m] = self.starting_cash_cents if m == 0 else end[m - 1]
             end[m] = start[m] + net[m]
         rows.update({"Starting Cash": start, "Total Outflows": out,
                      "Net Cash Flow": net, "Ending Cash": end})
@@ -151,23 +232,17 @@ def _d(month_idx: int, day: int) -> date:
     return date(YEAR, month_idx + 1, min(day, last))
 
 
-def generate(seed: int = 7) -> Company:
+def generate(seed: int = 7, profile: Profile = SLOPE) -> Company:
     rng = random.Random(seed)
-    c = Company(seed=seed)
+    p = profile
+    c = Company(seed=seed, name=p.name,
+                starting_cash_cents=p.starting_cash_cents)
 
-    # ---- employees: 8 at start-ish, 2 hires, 1 departure ----
-    # (name, annual salary dollars, start month, end month inclusive)
-    emps = [
-        ("Ava Chen", 190000, 0, 11), ("Ben Okafor", 175000, 0, 11),
-        ("Cara Diaz", 160000, 0, 11), ("Dev Patel", 150000, 0, 11),
-        ("Elena Rossi", 140000, 0, 11), ("Farid Nasser", 135000, 0, 5),
-        ("Grace Kim", 125000, 0, 11), ("Hugo Martin", 120000, 0, 11),
-        ("Iris Wong", 145000, 4, 11), ("Jon Baker", 130000, 8, 11),
-    ]
+    # ---- payroll ----
     pid = 0
     for m in range(MONTHS):
-        for day in (15, 31):
-            for name, sal, s, e in emps:
+        for day in p.payroll_days:
+            for name, sal, s, e in p.employees:
                 if not (s <= m <= e):
                     continue
                 pid += 1
@@ -186,42 +261,39 @@ def generate(seed: int = 7) -> Company:
                               category, memo))
 
     for m in range(MONTHS):
-        for i, (v, cents) in enumerate(SAAS_MONTHLY):
-            amt = cents
-            memo = "monthly subscription"
-            add_ramp(_d(m, 1 + (i * 2) % 27), v, -amt, "Software", memo)
-        # AWS usage grows and varies
-        aws = round((18000 + 1500 * m) * rng.uniform(0.9, 1.15))
-        add_ramp(_d(m, 3), "AWS", -aws * 100 // 100, "Software", "usage-based")
-        if m >= LATE_VENDOR_FIRST_MONTH:
-            add_ramp(_d(m, 12), LATE_VENDOR, -25000, "Software",
+        for i, (v, cents) in enumerate(p.saas_monthly):
+            add_ramp(_d(m, 1 + (i * 2) % 27), v, -cents, "Software",
                      "monthly subscription")
-        for v, cents, mi in SAAS_ANNUAL:
+        # AWS usage grows and varies
+        aws = round((p.aws_base + p.aws_growth * m) * rng.uniform(0.9, 1.15))
+        add_ramp(_d(m, 3), "AWS", -aws * 100 // 100, "Software", "usage-based")
+        if m >= p.late_first_month:
+            add_ramp(_d(m, 12), p.late_vendor, -p.late_cents, "Software",
+                     "monthly subscription")
+        for v, cents, mi in p.saas_annual:
             if mi == m:
                 add_ramp(_d(m, 9), v, -cents, "Software", "annual plan")
         # contractors, irregular
-        for v in CONTRACTORS:
-            if rng.random() < 0.55:
+        lo, hi = p.contractor_range
+        for v in p.contractors:
+            if rng.random() < p.contractor_prob:
                 add_ramp(_d(m, rng.randint(5, 28)), v,
-                         -rng.randrange(400_000, 1_400_000, 100),
+                         -rng.randrange(lo, hi, 100),
                          "Contractors", "bill-pay invoice")
         # other opex
-        add_ramp(_d(m, 10), "WeWork Supplies", -rng.randrange(8000, 30000, 100),
-                 "Office", "")
-        add_ramp(_d(m, 14), "Google Ads", -rng.randrange(1_200_000, 2_200_000, 100),
-                 "Marketing", "")
-        add_ramp(_d(m, 20), "DoorDash", -rng.randrange(20000, 60000, 100),
-                 "Meals", "team lunch")
-        if rng.random() < 0.6:
-            add_ramp(_d(m, 22), "Delta", -rng.randrange(30000, 120000, 100),
-                     "Travel", "")
-        if m in (2, 9):
-            add_ramp(_d(m, 25), "Cooley LLP", -rng.randrange(400000, 700000, 100),
-                     "Legal", "")
+        for it in p.other:
+            if it.months is not None and m not in it.months:
+                continue
+            for _ in range(it.n):
+                if it.prob is not None and not rng.random() < it.prob:
+                    continue
+                day = it.day if it.n == 1 else rng.randint(1, 28)
+                add_ramp(_d(m, day), it.merchant,
+                         -rng.randrange(it.lo, it.hi, 100), it.category,
+                         it.memo)
     # refunds (positive Ramp amounts)
-    add_ramp(_d(3, 18), "Figma", 13500, "Software", "refund: seat downgrade")
-    add_ramp(_d(6, 20), "Delta", 42000, "Travel", "refund: cancelled flight")
-    add_ramp(_d(9, 6), "Intercom", 39000, "Software", "refund: duplicate charge")
+    for m, day, merchant, cents, category, memo in p.refunds:
+        add_ramp(_d(m, day), merchant, cents, category, memo)
     c.ramp.sort(key=lambda r: (r.date, r.id))
     # renumber ids chronologically
     for i, r in enumerate(c.ramp, 1):
@@ -235,16 +307,20 @@ def generate(seed: int = 7) -> Company:
         bid += 1
         c.bank.append(BankRow(f"bank-{bid:04d}", d, desc, cents))
 
-    payout = 1_500_000
+    payout = p.payout_start
+    n = p.payouts_per_month
     for m in range(MONTHS):
         total = round(payout * rng.uniform(0.97, 1.03))
-        # two payouts per month
-        first = total // 2 // 100 * 100
-        add_bank(_d(m, 8), "Stripe payout", first)
-        add_bank(_d(m, 23), "Stripe payout", total - first)
-        add_bank(_d(m, 1), "Rent - Landlord LLC", -1_450_000)
-        add_bank(_d(m, 28), "Bank fee", -2500)
-        payout = round(payout * 1.08)
+        # n payouts per month; the last one absorbs the rounding remainder
+        share = total // n // 100 * 100
+        paid = 0
+        for k, day in enumerate(p.payout_days):
+            amt = share if k < n - 1 else total - paid
+            paid += amt
+            add_bank(_d(m, day), "Stripe payout", amt)
+        add_bank(_d(m, 1), "Rent - Landlord LLC", -p.rent_cents)
+        add_bank(_d(m, 28), "Bank fee", -p.bank_fee_cents)
+        payout = round(payout * p.payout_growth)
     c.bank.sort(key=lambda b: (b.date, b.id))
     for i, b in enumerate(c.bank, 1):
         b.id = f"bank-{i:04d}"

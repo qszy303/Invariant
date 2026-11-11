@@ -1,0 +1,125 @@
+{
+ "rows": [
+  {
+   "confidence": 1,
+   "kind": "start",
+   "rationale": "Row is the starting/ending cash from previous month or input; not a rule-based calculation.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "inflow",
+   "rationale": "Formula's criterion is explicitly 'Stripe*' in counterparty/description, Bank tab; label and notes confirm.",
+   "row_label": "Revenue",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula sums gross plus employer taxes for all payroll transactions; label and note confirm all payroll outflows for the period.",
+   "row_label": "Payroll",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [],
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula filters Ramp by category = 'Software'; label/note also confirms this covers all SaaS/Software spend.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula and note limit to Ramp transactions with category Contractors; fully specified.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula specifies transactions with counterparty 'Rent*' on Bank tab; sample confirms this covers landlord rent payments.",
+   "row_label": "Rent",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula directly sums Ramp by these categories and Bank where counterparty is 'Bank fee*'; label and notes match formula intent.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp",
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "subtotal",
+   "rationale": "Row simply sums other outflow rows; no rule applies.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "net",
+   "rationale": "Subtracts total outflows from Revenue; no ledger rule.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "end",
+   "rationale": "Adds Starting Cash and Net Cash Flow; no ledger rule.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

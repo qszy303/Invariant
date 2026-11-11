@@ -1,0 +1,123 @@
+{
+ "rows": [
+  {
+   "confidence": 1.0,
+   "kind": "start",
+   "rationale": "Row is either a hardcoded opening input (Jan) or direct link from previous month ending cash; no ledger rule applies.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "inflow",
+   "rationale": "Formula and note specify Bank tab, Stripe payouts.",
+   "row_label": "Revenue",
+   "rule": {
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula sums Payroll tab gross and taxes; covers all payroll outflows.",
+   "row_label": "Payroll",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [],
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula and note specify Ramp category Software.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula and note specify Ramp category Contractors.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula and note specify Bank tab, counterparty Rent* (matches Landlord LLC pattern in sample).",
+   "row_label": "Rent",
+   "rule": {
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "outflow",
+   "rationale": "Formula itemizes Ramp by category (Travel/Meals/Office/Marketing/Legal) and Bank for Bank fee*.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "counterparty_in": [
+     "Bank fee*"
+    ],
+    "sources": [
+     "ramp",
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1.0,
+   "kind": "subtotal",
+   "rationale": "Row is a subtotal summing other outflow rows, not direct ledger items.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "net",
+   "rationale": "Row is net change: inflows minus outflows subtotal\u2014no ledger classification.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1.0,
+   "kind": "end",
+   "rationale": "Row sums starting cash plus net cash flow; purely a model calculation.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

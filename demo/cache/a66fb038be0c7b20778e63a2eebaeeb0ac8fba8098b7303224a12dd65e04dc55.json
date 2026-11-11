@@ -1,0 +1,125 @@
+{
+ "rows": [
+  {
+   "confidence": 1,
+   "kind": "start",
+   "rationale": "Row represents the starting balance, which is either hardcoded in month 1 or flowed from previous ending cash in subsequent months; not a ledger-driven inflow.",
+   "row_label": "Starting Cash",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "inflow",
+   "rationale": "Formula and note both specify this is Stripe payouts in the Bank tab; exact pattern used in formula.",
+   "row_label": "Revenue",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [
+     "Stripe*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula sums all payroll gross and employer taxes; no counterparty or category filter.",
+   "row_label": "Payroll",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [],
+    "sources": [
+     "payroll"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula uses only the \"Software\" category in Ramp tab, matching row note.",
+   "row_label": "SaaS",
+   "rule": {
+    "category_in": [
+     "Software"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula restricts to \"Contractors\" category in Ramp, matching note.",
+   "row_label": "Contractors",
+   "rule": {
+    "category_in": [
+     "Contractors"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula matches counterparty starting with 'Rent' in Bank; aligns with sample and note.",
+   "row_label": "Rent",
+   "rule": {
+    "category_in": [],
+    "counterparty_in": [
+     "Rent*"
+    ],
+    "sources": [
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "outflow",
+   "rationale": "Formula sums Ramp by 5 categories and Bank by 'Bank fee*' description; this exactly matches implementation.",
+   "row_label": "Other",
+   "rule": {
+    "category_in": [
+     "Travel",
+     "Meals",
+     "Office",
+     "Marketing",
+     "Legal"
+    ],
+    "counterparty_in": [],
+    "sources": [
+     "ramp",
+     "bank"
+    ]
+   }
+  },
+  {
+   "confidence": 1,
+   "kind": "subtotal",
+   "rationale": "Total outflows is the subtotal of outflow rows above, not a ledger rule.",
+   "row_label": "Total Outflows",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "net",
+   "rationale": "Net cash is calculated as revenue minus total outflows; not a direct ledger or rule sum.",
+   "row_label": "Net Cash Flow",
+   "rule": null
+  },
+  {
+   "confidence": 1,
+   "kind": "end",
+   "rationale": "Ending cash is computed as starting plus net; not a direct ledger or rule sum.",
+   "row_label": "Ending Cash",
+   "rule": null
+  }
+ ]
+}

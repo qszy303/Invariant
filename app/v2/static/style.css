@@ -27,7 +27,8 @@ p { margin: 0; }
 
 /* sidebar */
 .sidebar { position: fixed; inset: 0 auto 0 0; width: 220px; background: var(--surface); border-right: 1px solid var(--border); padding: 32px 16px; display: flex; flex-direction: column; gap: 40px; }
-.wordmark { padding: 0 12px; font-weight: 700; font-size: 26px; letter-spacing: -0.02em; }
+.wordmark { padding: 0 12px; font-weight: 700; font-size: 26px; letter-spacing: -0.02em; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.wordmark .logo { width: 36px; height: 36px; border-radius: 8px; flex: none; display: block; }
 .wordmark span { box-shadow: inset 0 -0.38em 0 var(--accent); }
 .nav { display: flex; flex-direction: column; gap: 4px; }
 .nav a { display: block; padding: 10px 12px; border-radius: 8px; color: var(--text); text-decoration: none; font-weight: 600; font-size: 16px; }
