@@ -1,9 +1,7 @@
 # Invariant
 
-**Checks every number in a startup's financial model against the transactions behind it.**
-The AI decides what each line means. Lean decides whether the numbers are right. The model never does arithmetic.
-
-Built for the BBS × Ramp AI Hackathon (technical track).
+**Checks every number in a startup's financial model against the transactions behind it**
+The AI decides what each line means; Lean decides whether the numbers are right; the model never does arithmetic.
 
 ![Invariant catching a month dropped from a SUMIFS range](demo/screens/10_fernway.png)
 
@@ -11,16 +9,16 @@ Built for the BBS × Ramp AI Hackathon (technical track).
 
 ## The problem
 
-A startup's biggest decisions (raising, hiring, spending) run on a spreadsheet: the runway model. Every month someone pastes in exports from Ramp, the bank, and payroll, patches the formulas, and sends it to the board. "Review" means someone eyeballing it. More and more of those formulas are written by AI, which makes models faster to build but no easier to trust.
+A startup's biggest decisions (raising, hiring, spending) all rely on a spreadsheet: the runway model. Every so often, someone or an agent exports data from Ramp, the bank, and the payroll into the spreadsheet, patching the formulas and sending it to the board. "Review" means someone eyeballing it. Nowadays, more and more of these formulas and additions are written by AI, which makes the models faster to build but not easier to trust.
 
-Spreadsheet errors are silent. One subscription counted in two categories, one month dropped from a `SUMIFS` range, and the runway on the board slide doesn't exist.
+Spreadsheet errors are silent. One subscription counted in two categories, one month dropped from a `SUMIFS` range, and the runway on the board slide doesn't exist. But a wrong number could mean thousands or millions go unaccounted for, or allow a company to burn through capital it doesn't have.
 
-## What it does
+## What Invariant does
 
 1. **Load a workbook:** the runway model plus the raw Ramp, Bank, and Payroll export tabs.
 2. **Run the check.** You get the headline (ending cash *claimed* vs *verified*) and your own sheet with problems highlighted:
    - **Red:** the number doesn't match the transactions behind it.
-   - **Amber:** Invariant isn't confident what this row should contain, so a human should confirm it.
+   - **Pink:** Invariant isn't confident what this row should contain, so a human should confirm it.
 3. **Click a red cell** to see the rule that broke, expected vs actual, and the exact transactions that contradict it.
 4. **Apply a verified fix.** Invariant proposes a corrected formula, re-runs the entire check on a copy, and marks the fix verified only if the violation is gone and nothing new broke.
 
@@ -117,9 +115,9 @@ Bug types: duplicated row, dropped month in a range, new vendor missing from cri
 ## Design decisions
 
 <!-- TODO: rewrite this section in your own words. Reviewers will read it as you. -->
-- **The LLM never does arithmetic.** It only answers "what should this line contain?" Every number is compared by exact integer equality in the checker. A hallucination can mislabel a row; it can't invent a sum.
-- **Why Lean.** A checker is only useful if you trust it more than the spreadsheet. Proving each check equivalent to its spec means a "pass" means the property holds, not "the tests I thought of passed."
-- **A Python twin of the checker.** Simple, readable, and the oracle for a differential test against Lean on every fixture plus random inputs. If they ever disagree, one of them is wrong.
+- **The LLM never does arithmetic.** It only determines what each line contains. Every number is compared by exact integer equality in the checker. A hallucination can mislabel a row; it can't invent a sum.
+- **Why Lean.** A checker is only useful if you trust it more than the spreadsheet. Proving each check equivalent to its spec means a "pass" means the property holds, and a verification language is stronger than running through test cases.
+- **A Python implementation of the checker.** Another checker, written in Python. It has the same functionality as the Lean checker but it's written in simpler code. If the two checkers disagree, this is flagged as an issue.
 - **Integer cents everywhere.** No floating-point rounding in a tool whose job is exact equality.
 - **Fixes are verified before they're offered.** A proposed formula runs through the whole pipeline again; "verified fix" is only shown if the re-check passes.
 - **Confidence gating over guessing.** An uncertain read becomes an amber cell for a human, not a confident wrong answer.
@@ -135,15 +133,21 @@ Bug types: duplicated row, dropped month in a range, new vendor missing from cri
 
 ## Roadmap
 
-1. Live connectors: Ramp API, Plaid for bank data, payroll providers.
-2. Tolerance rules for settlement timing and accruals.
-3. Assumption checks for forecast months (e.g. flag a hire in the plan with no payroll line).
-4. A verification layer for AI-generated finance work: accounting firms reviewing client models, or alongside agent-built workpapers in tools like Ramp.
+1. Live connectors: Ramp API, Plaid for bank data, payroll providers
+2. Tolerance rules for settlement timing and accruals
+3. Assumption checks for forecast months (e.g. flag a hire in the plan with no payroll line)
+4. A verification layer for AI-generated finance work: accounting firms reviewing client models, or alongside agent-built workpapers in tools like Ramp
 
 ## How I built this
 
-<!-- TODO: your words. Keep it short and specific. -->
-I designed the architecture, wrote the interface contracts and acceptance criteria for each component, and built it with Claude Code agents, one per component, each in its own branch. Every component had to pass its acceptance tests before merging, and the Lean checker had to match the Python checker byte-for-byte. I reviewed the checker and the proofs myself.
+I designed Invariant’s pipeline and wrote CONTRACTS.md to define the data each component receives and returns, the five invariants, and how amounts are represented in integer cents. I used Claude to plan the work and Claude Code agents to implement most of it, giving each agent a spec and acceptance criteria.
+
+I got the checker working with deterministic rules before adding the LLM. I compared Lean’s output against a Python reference checker on fixtures and randomized inputs, then tested whether Invariant flagged the right cell on synthetic workbooks with planted bugs.
+
+One bug changed how I handled fixes: the system could approve a formula against the same misread row that prompted the fix. I blocked automatic fixes on rows flagged for human review.
+
+The planning docs and agent briefs are in [`docs/process/`](docs/process/)
+[if present].
 
 ## Repo layout
 
