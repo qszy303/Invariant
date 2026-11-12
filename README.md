@@ -23,7 +23,7 @@ Spreadsheet errors are silent. One subscription counted in two categories, one m
 4. **Apply a verified fix.** Invariant proposes a corrected formula, re-runs the entire check on a copy, and marks the fix verified only if the violation is gone and nothing new broke.
 
 <!-- TODO: link the demo video -->
-**Demo video:** TODO
+**Demo video:** https://drive.google.com/file/d/1ge1uQwbyu9b2gQpaRBKklpNqS7y37pIs/view?usp=sharing
 
 ## Quickstart
 
